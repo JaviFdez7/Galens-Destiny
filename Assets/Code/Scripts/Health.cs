@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
             return;
         }
         currentHealth -= damageAmount;
-        Debug.Log(currentHealth)
+        Debug.Log(currentHealth);
 
     }
 

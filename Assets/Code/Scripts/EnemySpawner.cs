@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private IEnumerator Spawner(){
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds wait = new(spawnRate);
         int spawnedEnemies = 0;
         while(canSpawn && (spawnedEnemies!=numberOfEnemy)) {
             yield return wait;
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemyToSpawn = enemyPrefabs[rand];
 
             Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
-            spawnedEnemies = spawnedEnemies + 1;
+            spawnedEnemies++;
         }
     }
 

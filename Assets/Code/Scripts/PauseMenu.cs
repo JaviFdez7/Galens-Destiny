@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject playerStatsMenu;
     public GameObject playerSkillsMenu;
 
+    public GameObject activeSkillMenu;
+
+
     public bool isPaused;
 
     // Start is called before the first frame update
@@ -16,6 +19,7 @@ public class PauseMenu : MonoBehaviour
         playerStatsMenu.SetActive(false);
         pauseMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
+        activeSkillMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,6 +57,9 @@ public class PauseMenu : MonoBehaviour
         {
             playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
+        } else if(activeSkillMenu.activeSelf){
+            activeSkillMenu.SetActive(false);
+            playerSkillsMenu.SetActive(true);
         }
     }
 
@@ -70,16 +77,23 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
     }
 
-    public void PlayerStatsMenu()
+    public void OpenPlayerStatsMenu()
     {
         pauseMenu.SetActive(false);
         playerStatsMenu.SetActive(true);
     }
 
-    public void PlayerSkillsMenu()
+    public void OpenPlayerSkillsMenu()
     {
         pauseMenu.SetActive(false);
         playerSkillsMenu.SetActive(true);
     }
 
+    public int selectedSlot;    
+    public void OpenActiveSkillMenu(int slotId)
+    {
+        selectedSlot = slotId;
+        playerSkillsMenu.SetActive(false);
+        activeSkillMenu.SetActive(true);
+    }
 }

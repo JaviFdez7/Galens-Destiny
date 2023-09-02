@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecondarySkillsTree : MonoBehaviour
+public class UpgradeTree : MonoBehaviour
 {
     public class LeafObject
     {
@@ -24,8 +24,7 @@ public class SecondarySkillsTree : MonoBehaviour
         }
     }
 
-    public List<LeafObject> allLeafObjects = new List<LeafObject>();
-    
+    public List<LeafObject> allLeafObjects = new List<LeafObject>();    
     public void CreateTree()
     {
         LeafObject myLeaf = new LeafObject(1, "Key", "Opens the secret door.", 0, false, true);
@@ -44,14 +43,6 @@ public class SecondarySkillsTree : MonoBehaviour
             }
         }
         return res;
-    }
-
-    public void AvailableLeafs()
-    {
-        foreach (LeafObject l in allLeafObjects)
-        {
-            
-        }
     }
 
     // Update is called once per frame

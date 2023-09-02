@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject playerStatsMenu;
+    public GameObject playerSkillsMenu;
 
     public bool isPaused;
 
@@ -14,6 +15,7 @@ public class PauseMenu : MonoBehaviour
     {
         playerStatsMenu.SetActive(false);
         pauseMenu.SetActive(false);
+        playerSkillsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         //Add all pause menus GameObject here
         pauseMenu.SetActive(false);
         playerStatsMenu.SetActive(false);
+        playerSkillsMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -45,6 +48,10 @@ public class PauseMenu : MonoBehaviour
         if(playerStatsMenu.activeSelf)
         {
             playerStatsMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+        } else if(playerSkillsMenu.activeSelf)
+        {
+            playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
         }
     }
@@ -69,5 +76,10 @@ public class PauseMenu : MonoBehaviour
         playerStatsMenu.SetActive(true);
     }
 
+    public void PlayerSkillsMenu()
+    {
+        pauseMenu.SetActive(false);
+        playerSkillsMenu.SetActive(true);
+    }
 
 }

@@ -9,8 +9,8 @@ public class PlayerStats : MonoBehaviour
     public float currentExp; // player's current experience
     public float expMax; // exp required for the next level
     public int token; // tokens give you the possibility to advance in the skill tree and improve your character
-    public int skillSlots; // determines the maximum number of points that your skills can add
-    
+    public int skillSlotsMax; // determines the maximum number of points that your skills can add
+    public int skillSlots; // determines the number of skill points in use 
     public int vitality; // makes the character's health increase
     public int damage; // "" damage increase
     public int attackSpeed; // "" attackSpeed increase 
@@ -25,6 +25,7 @@ public class PlayerStats : MonoBehaviour
     public Text currentExpText; 
     public Text expMaxText; 
     public Text tokenText; 
+    public Text skillSlotsMaxText; 
     public Text skillSlotsText; 
     
     public Text vitalityText;

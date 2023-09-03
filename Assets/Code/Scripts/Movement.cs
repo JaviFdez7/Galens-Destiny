@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class Movement : MonoBehaviour
 {
     //Generated C# class from inputSystem
-    private UserInput input = null;
+    private MappeableInput input = null;
     private Vector2 moveVector = Vector2.zero;
     private Rigidbody2D rb = null;
     [SerializeField]
@@ -15,23 +15,23 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        input = new UserInput();
+        input = new MappeableInput();
     }
 
     private void OnEnable()
     {
-        input.Enable();
+        input.InGame.Movement.Enable();
         //Subscribe
-        input.Player.Movement.performed += OnMovementPerformed;
-        input.Player.Movement.canceled += OnMovementCanceled;
+        input.InGame.Movement.performed += OnMovementPerformed;
+        input.InGame.Movement.canceled += OnMovementCanceled;
     }
 
     private void OnDisable()
     {
         input.Disable();
         //Unsubscribe
-        input.Player.Movement.performed -= OnMovementPerformed;
-        input.Player.Movement.canceled -= OnMovementCanceled;
+        input.InGame.Movement.performed -= OnMovementPerformed;
+        input.InGame.Movement.canceled -= OnMovementCanceled;
 
     }
 

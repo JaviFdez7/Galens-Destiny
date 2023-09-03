@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 
 
@@ -13,7 +14,7 @@ public class ZoneDetection : MonoBehaviour
     public Canvas interactionUI;
     private readonly string TagToDetect = "Player";
     private MappeableInput input = null;
-
+    [SerializeField] private string SceneName = "";
 
     private void Awake()
     {
@@ -59,7 +60,7 @@ public class ZoneDetection : MonoBehaviour
 
     private void EnterMinigame(InputAction.CallbackContext inputContext)
     {
-        Debug.Log("Enter minigame");
+        SceneManager.LoadScene(SceneName);
     }
 
 

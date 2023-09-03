@@ -23317,8 +23317,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.40370002, y: -0.23485002, z: 0}
-    m_Extent: {x: 1.3774, y: 0.94285, z: 0}
+    m_Center: {x: -0.40535003, y: -0.23604998, z: 0}
+    m_Extent: {x: 1.3815501, y: 0.95484996, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -24940,6 +24940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionUI: {fileID: 385792912}
+  SceneName: MG1 Binary
 --- !u!61 &1907906654
 BoxCollider2D:
   m_ObjectHideFlags: 0

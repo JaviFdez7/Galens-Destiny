@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         playerStatsMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
+        activeSkillMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -53,13 +54,12 @@ public class PauseMenu : MonoBehaviour
         {
             playerStatsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(playerSkillsMenu.activeSelf)
+        } else if(playerSkillsMenu.activeSelf && !activeSkillMenu.activeSelf)
         {
             playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
         } else if(activeSkillMenu.activeSelf){
             activeSkillMenu.SetActive(false);
-            playerSkillsMenu.SetActive(true);
         }
     }
 
@@ -93,7 +93,6 @@ public class PauseMenu : MonoBehaviour
     public void OpenActiveSkillMenu(int slotId)
     {
         selectedSlot = slotId;
-        playerSkillsMenu.SetActive(false);
         activeSkillMenu.SetActive(true);
     }
 }

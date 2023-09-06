@@ -41,12 +41,14 @@ public class SkillsMenu : MonoBehaviour
         Skill skill1 = new Skill(1, "Skill 1", "Opens the secret door.", 1, true);
         Skill skill2 = new Skill(2, "Skill 2", "Opens the secret door.", 2, true);
         Skill skill3 = new Skill(3, "Skill 3", "Opens the secret door.", 2, true);
+        Skill skill4 = new Skill(4, "Skill 4", "Opens the secret door.", 2, false);
 
 
         allSkillObjects.Add(skill0);
         allSkillObjects.Add(skill1);
         allSkillObjects.Add(skill2);
         allSkillObjects.Add(skill3);
+        allSkillObjects.Add(skill4);
     }
 
     public void ActiveSkill(int skillId){
@@ -72,16 +74,24 @@ public class SkillsMenu : MonoBehaviour
             activeSkills[changePosition] =  null;
         }
 
-        if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) // Check that the selected skill can be equipped
+        if(selectedSkill.unlocked) // Check that the selected skill can be equipped for unlocked
         {
-            playerStats.skillSlots += activeSkillSlots;
-            activeSkills[pauseMenu.selectedSlot] = selectedSkill; // Skill change
-            playerStats.skillSlots -= selectedSkill.skillSlots;
-            SetVisibilityUnequipButtons();
-            UIText();
+            if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) // Check that the selected skill can be equipped for skill slots
+            {
+                playerStats.skillSlots += activeSkillSlots;
+                activeSkills[pauseMenu.selectedSlot] = selectedSkill; // Skill change
+                playerStats.skillSlots -= selectedSkill.skillSlots;
+                SetVisibilityUnequipButtons();
+                UIText();
+            } else 
+            {
+                TryToEquipAnUnequipableSkill(0);
+                Debug.Log("Habilidad no equipable: Skill Slots insuficientes");
+            }
         } else
         {
-            Debug.Log("Habilidad no equipable");
+            TryToEquipAnUnequipableSkill(1);
+            Debug.Log("Habilidad no equipable: Habilidad bloqueada");
         }
 
         // Muestra el nombre del objeto Skill en la posición selectedSlot si no es null
@@ -136,6 +146,23 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    private string unequipableSkillText;
+
+    public void TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
+    {
+        pauseMenu.OpenUnequipableSkillMenu();
+        if(errorControlCode == 0) // if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) 
+        {
+            unequipableSkillText = "Skill unavailable: insufficient skill slots";
+        } else if(errorControlCode == 1) // if(selectedSkill.unlocked)
+        {
+            unequipableSkillText = "Skill unavailable: locked skill";
+        }
+        UIText();
+    }
+
+    public Button acceptButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -153,22 +180,26 @@ public class SkillsMenu : MonoBehaviour
     public TextMeshProUGUI activeSkill1Name;
     public TextMeshProUGUI activeSkill2Name;
     public TextMeshProUGUI skillSlots;
+    public TextMeshProUGUI unequipableSkillMenuMessage;
     private List<string> activeSkillsName = new List<string> { "Empty", "Empty", "Empty"};
 
     public void UIText()
     {
         for(int i = 0; i < activeSkills.Count; i++)
         {
-            if(activeSkills[i]!=null)
+            if(activeSkills[i] != null)
             {
-                activeSkillsName[i]=activeSkills[i].name;
+                activeSkillsName[i] = activeSkills[i].name;
+            } else
+            {
+                activeSkillsName[i] = "Empty";
             }
         }
 
-        activeSkill0Name.text = ""+activeSkillsName[0];
-        activeSkill1Name.text = ""+activeSkillsName[1];
-        activeSkill2Name.text = ""+activeSkillsName[2];
-        skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString()+" / " + playerStats.skillSlotsMax.ToString();
+        activeSkill0Name.text = "" + activeSkillsName[0];
+        activeSkill1Name.text = "" + activeSkillsName[1];
+        activeSkill2Name.text = "" + activeSkillsName[2];
+        skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
+        unequipableSkillMenuMessage.text = "" + unequipableSkillText;
     }
-
 }

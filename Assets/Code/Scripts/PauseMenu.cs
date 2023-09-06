@@ -7,8 +7,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject playerStatsMenu;
     public GameObject playerSkillsMenu;
-
     public GameObject activeSkillMenu;
+    public GameObject unequipableSkillMenu;
+
 
 
     public bool isPaused;
@@ -20,6 +21,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
         activeSkillMenu.SetActive(false);
+        unequipableSkillMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class PauseMenu : MonoBehaviour
         playerStatsMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
         activeSkillMenu.SetActive(false);
+        unequipableSkillMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -58,8 +61,11 @@ public class PauseMenu : MonoBehaviour
         {
             playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(activeSkillMenu.activeSelf){
+        } else if(activeSkillMenu.activeSelf && !unequipableSkillMenu.activeSelf){
             activeSkillMenu.SetActive(false);
+        } else if(unequipableSkillMenu.activeSelf)
+        {
+            unequipableSkillMenu.SetActive(false);
         }
     }
 
@@ -95,4 +101,10 @@ public class PauseMenu : MonoBehaviour
         selectedSlot = slotId;
         activeSkillMenu.SetActive(true);
     }
+
+    public void OpenUnequipableSkillMenu()
+    {
+        unequipableSkillMenu.SetActive(true);
+    }
+
 }

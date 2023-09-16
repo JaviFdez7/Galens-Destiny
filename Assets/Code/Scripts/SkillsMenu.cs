@@ -51,6 +51,7 @@ public class SkillsMenu : MonoBehaviour
         allSkillObjects.Add(skill4);
     }
 
+    // Active Skill -----------------------------------------------------------------------------------------
     public void ActiveSkill(int skillId){
         Skill selectedSkill = allSkillObjects[skillId];
 
@@ -85,41 +86,15 @@ public class SkillsMenu : MonoBehaviour
                 UIText();
             } else 
             {
-                TryToEquipAnUnequipableSkill(0);
-                Debug.Log("Habilidad no equipable: Skill Slots insuficientes");
+                TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots
             }
         } else
         {
-            TryToEquipAnUnequipableSkill(1);
-            Debug.Log("Habilidad no equipable: Habilidad bloqueada");
+            TryToEquipAnUnequipableSkill(1); // Locked Skill
         }
-
-        // Muestra el nombre del objeto Skill en la posición selectedSlot si no es null
-        if (activeSkills[pauseMenu.selectedSlot] != null)
-        {
-            Debug.Log("Nombre del Skill seleccionado: " + activeSkills[pauseMenu.selectedSlot].name);
-        }
-        else
-        {
-            Debug.Log("Nombre del Skill seleccionado: null");
-        }
-
-        // Muestra los nombres de los Skills en activeSkills, maneja los elementos nulos
-        string skillNames = "";
-        for (int i = 0; i < activeSkills.Count; i++)
-        {
-            if (activeSkills[i] != null)
-            {
-                skillNames += activeSkills[i].name + ", ";
-            }
-            else
-            {
-                skillNames += "null, ";
-            }
-        }
-        Debug.Log("Nombres de los Skills en activeSkills: " + skillNames);
     }
 
+    // Unequip/Unequipable Skill ------------------------------------------------------------------------------
     public void UnequipSkill(int slotId)
     {
         playerStats.skillSlots += activeSkills[slotId].skillSlots;
@@ -147,6 +122,7 @@ public class SkillsMenu : MonoBehaviour
     }
 
     private string unequipableSkillText;
+    public Button acceptButton;
 
     public void TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
     {
@@ -161,8 +137,13 @@ public class SkillsMenu : MonoBehaviour
         UIText();
     }
 
-    public Button acceptButton;
+    // Dynamic buttons and image after equip or unequip skills --------------------------------------------------------------------
+    public void UpdateButtonsAndImagesAfterEquipOrUnequipSkills()
+    {
 
+    }
+    
+    // Start and Update -----------------------------------------------------------------------------
     // Start is called before the first frame update
     void Start()
     {
@@ -176,6 +157,7 @@ public class SkillsMenu : MonoBehaviour
     {
     }
 
+    // UI Text ---------------------------------------------------------------------------------
     public TextMeshProUGUI activeSkill0Name;
     public TextMeshProUGUI activeSkill1Name;
     public TextMeshProUGUI activeSkill2Name;

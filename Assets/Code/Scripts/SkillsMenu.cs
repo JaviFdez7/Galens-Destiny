@@ -121,18 +121,18 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
-    private string unequipableSkillText;
+    private string warningText;
     public Button acceptButton;
 
     public void TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
     {
-        pauseMenu.OpenUnequipableSkillMenu();
+        pauseMenu.OpenWarningMenu();
         if(errorControlCode == 0) // if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) 
         {
-            unequipableSkillText = "Skill unavailable: insufficient skill slots";
+            warningText = "Skill unavailable: insufficient skill slots";
         } else if(errorControlCode == 1) // if(selectedSkill.unlocked)
         {
-            unequipableSkillText = "Skill unavailable: locked skill";
+            warningText = "Skill unavailable: locked skill";
         }
         UIText();
     }
@@ -182,6 +182,6 @@ public class SkillsMenu : MonoBehaviour
         activeSkill1Name.text = "" + activeSkillsName[1];
         activeSkill2Name.text = "" + activeSkillsName[2];
         skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
-        unequipableSkillMenuMessage.text = "" + unequipableSkillText;
+        unequipableSkillMenuMessage.text = "" + warningText;
     }
 }

@@ -121,18 +121,18 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
-    private string unequipableSkillText;
+    private string warningText;
     public Button acceptButton;
 
     public void TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
     {
-        pauseMenu.OpenUnequipableSkillMenu();
+        pauseMenu.OpenWarningMenu();
         if(errorControlCode == 0) // if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) 
         {
-            unequipableSkillText = "Skill unavailable: insufficient skill slots";
+            warningText = "Skill unavailable: insufficient skill slots";
         } else if(errorControlCode == 1) // if(selectedSkill.unlocked)
         {
-            unequipableSkillText = "Skill unavailable: locked skill";
+            warningText = "Skill unavailable: locked skill";
         }
         UIText();
     }
@@ -159,11 +159,25 @@ public class SkillsMenu : MonoBehaviour
 
     // UI Text ---------------------------------------------------------------------------------
     public TextMeshProUGUI activeSkill0Name;
+    public TextMeshProUGUI activeSkill0Cost;
     public TextMeshProUGUI activeSkill1Name;
+    public TextMeshProUGUI activeSkill1Cost;
+
     public TextMeshProUGUI activeSkill2Name;
+    public TextMeshProUGUI activeSkill2Cost;
+
+    public TextMeshProUGUI skill0Cost;
+    public TextMeshProUGUI skill1Cost;
+    public TextMeshProUGUI skill2Cost;
+    public TextMeshProUGUI skill3Cost;
+    public TextMeshProUGUI skill4Cost;
+
+
     public TextMeshProUGUI skillSlots;
     public TextMeshProUGUI unequipableSkillMenuMessage;
     private List<string> activeSkillsName = new List<string> { "Empty", "Empty", "Empty"};
+    private List<string> activeSkillsCost = new List<string> { "0", "0", "0"};
+
 
     public void UIText()
     {
@@ -172,16 +186,31 @@ public class SkillsMenu : MonoBehaviour
             if(activeSkills[i] != null)
             {
                 activeSkillsName[i] = activeSkills[i].name;
+                activeSkillsCost[i] = activeSkills[i].skillSlots.ToString();
+                
             } else
             {
                 activeSkillsName[i] = "Empty";
+                activeSkillsCost[i] = "0";
             }
         }
 
         activeSkill0Name.text = "" + activeSkillsName[0];
+        activeSkill0Cost.text = "" + activeSkillsCost[0];
+
         activeSkill1Name.text = "" + activeSkillsName[1];
+        activeSkill1Cost.text = "" + activeSkillsCost[1];
+
         activeSkill2Name.text = "" + activeSkillsName[2];
+        activeSkill2Cost.text = "" + activeSkillsCost[2];
+
+        skill0Cost.text = "" + allSkillObjects[0].skillSlots.ToString();
+        skill1Cost.text = "" + allSkillObjects[1].skillSlots.ToString();
+        skill2Cost.text = "" + allSkillObjects[2].skillSlots.ToString();
+        skill3Cost.text = "" + allSkillObjects[3].skillSlots.ToString();
+        skill4Cost.text = "" + allSkillObjects[4].skillSlots.ToString();
+
         skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
-        unequipableSkillMenuMessage.text = "" + unequipableSkillText;
+        unequipableSkillMenuMessage.text = "" + warningText;
     }
 }

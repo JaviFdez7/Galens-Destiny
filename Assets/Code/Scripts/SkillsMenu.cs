@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class SkillsMenu : MonoBehaviour
 {
     public PlayerStats playerStats;
+    public WarningScreenController warningScreenController;
     public PauseMenu pauseMenu;
     private List<Skill> activeSkills = new List<Skill> { null, null, null };
 
@@ -83,16 +84,18 @@ public class SkillsMenu : MonoBehaviour
                 activeSkills[pauseMenu.selectedSlot] = selectedSkill; // Skill change
                 playerStats.skillSlots -= selectedSkill.skillSlots;
                 SetVisibilityUnequipButtons();
-                UIText();
             } else 
             {
-                TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots
+                warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
             }
         } else
         {
-            TryToEquipAnUnequipableSkill(1); // Locked Skill
+            warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(1); // Locked Skill
         }
     }
+
+    private string warningMessage;
+
 
     // Unequip/Unequipable Skill ------------------------------------------------------------------------------
     public void UnequipSkill(int slotId)
@@ -121,21 +124,9 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
-    private string warningText;
     public Button acceptButton;
 
-    public void TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
-    {
-        pauseMenu.OpenWarningMenu();
-        if(errorControlCode == 0) // if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) 
-        {
-            warningText = "Skill unavailable: insufficient skill slots";
-        } else if(errorControlCode == 1) // if(selectedSkill.unlocked)
-        {
-            warningText = "Skill unavailable: locked skill";
-        }
-        UIText();
-    }
+
 
     // Dynamic buttons and image after equip or unequip skills --------------------------------------------------------------------
     public void UpdateButtonsAndImagesAfterEquipOrUnequipSkills()
@@ -155,9 +146,11 @@ public class SkillsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UIText();
     }
 
     // UI Text ---------------------------------------------------------------------------------
+    public TextMeshProUGUI warningText;
     public TextMeshProUGUI activeSkill0Name;
     public TextMeshProUGUI activeSkill0Cost;
     public TextMeshProUGUI activeSkill1Name;
@@ -174,7 +167,6 @@ public class SkillsMenu : MonoBehaviour
 
 
     public TextMeshProUGUI skillSlots;
-    public TextMeshProUGUI unequipableSkillMenuMessage;
     private List<string> activeSkillsName = new List<string> { "Empty", "Empty", "Empty"};
     private List<string> activeSkillsCost = new List<string> { "0", "0", "0"};
 
@@ -211,6 +203,6 @@ public class SkillsMenu : MonoBehaviour
         skill4Cost.text = "" + allSkillObjects[4].skillSlots.ToString();
 
         skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
-        unequipableSkillMenuMessage.text = "" + warningText;
+        warningText.text = "" + warningMessage;
     }
 }

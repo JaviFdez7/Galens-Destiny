@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject activeSkillMenu;
     public GameObject warningMenu;
     public GameObject upgradeTreeMenu;
+    public UpgradeTree upgradeTree;
+    public SkillsMenu skillsMenu;
 
     public bool isPaused;
 
@@ -68,6 +70,8 @@ public class PauseMenu : MonoBehaviour
         } else if(warningMenu.activeSelf)
         {
             warningMenu.SetActive(false);
+            upgradeTree.warningText2.gameObject.SetActive(false);
+            skillsMenu.warningText.gameObject.SetActive(false);
         } else if(upgradeTreeMenu.activeSelf)
         {
             upgradeTreeMenu.SetActive(false);

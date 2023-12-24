@@ -8,7 +8,8 @@ using static Upgrade;
 public class UpgradeTree : MonoBehaviour
 {
     public PlayerStats playerStats;
-    public PauseMenu pauseMenu;
+    public WarningScreenController warningScreenController;
+
 
     public class Leaf
     {
@@ -125,34 +126,19 @@ public class UpgradeTree : MonoBehaviour
                     UpdateAvailableUpgrades(leafId);
                 } else
                 {
-                    TryToUnlockAnNonUnlockableUpgrade(0);
+                    warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(0);     
                 }
             } else
             {
-                TryToUnlockAnNonUnlockableUpgrade(1);
+                warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(1);
             }
         } else 
         {
-            TryToUnlockAnNonUnlockableUpgrade(2);
+            warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(2);
         }
     }
 
-
-    private string nonUnlockableUpgradeText;
-    private void TryToUnlockAnNonUnlockableUpgrade(int errorControlCode) // else in UnlockUpgrade
-    {
-        pauseMenu.OpenWarningMenu();
-        if(errorControlCode == 0) // if(playerStats.token >= upgradeLeaf.cost) 
-        {
-            nonUnlockableUpgradeText = "Upgrade non-unlockable: insufficient tokens";
-        } else if(errorControlCode == 1) // if(upgradeLeaf.available)
-        {
-            nonUnlockableUpgradeText = "Upgrade non-unlockable: unavailable upgrade";
-        } else if(errorControlCode == 2) // if(!upgradeLeaf.unlocked)
-        {
-            nonUnlockableUpgradeText = "Upgrade non-unlockable: upgrade already unlocked";
-        }
-    }
+    private string warningMessage;
 
     private void UpdateAvailableUpgrades(int leafId)
     {
@@ -187,9 +173,7 @@ public class UpgradeTree : MonoBehaviour
     }
 
     // UI Text ---------------------------------------------------------------------------------
-
-    public TextMeshProUGUI warningMessage;
-
+    public TextMeshProUGUI warningText2;
     public TextMeshProUGUI availableTokensText;
     public TextMeshProUGUI upgrade1Name;
     public TextMeshProUGUI upgrade1Cost;
@@ -287,7 +271,7 @@ public class UpgradeTree : MonoBehaviour
             upgrade6Resume.gameObject.SetActive(false);        
         } 
 
-        warningMessage.text = "" + nonUnlockableUpgradeText;
         availableTokensText.text = "Tokens: " + playerStats.token.ToString();
+        warningText2.text = "" + warningMessage;
     }
 }

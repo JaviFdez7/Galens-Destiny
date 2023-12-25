@@ -4,7 +4,7 @@ public class EnemyController : MonoBehaviour
 {
     public float moveSpeed = 2f; // Constant move speed of the enemy
     public float attackRange = 1f;
-    public float attackDamage = 10f;
+    public int attackDamage = 10;
     public float attackCooldown = 2f;
 
     private GameObject player;

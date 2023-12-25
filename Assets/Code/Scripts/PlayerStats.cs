@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public int level; // player's current level
-    public float currentExp; // player's current experience
-    public float expMax; // exp required for the next level
     public int token; // tokens give you the possibility to advance in the skill tree and improve your character
     public int skillSlotsMax; // determines the maximum number of points that your skills can add
     public int skillSlots; // determines the number of skill points in use 
@@ -21,52 +20,37 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] public bool testMode;
 
-    public Text levelText; 
-    public Text currentExpText; 
-    public Text expMaxText; 
-    public Text tokenText; 
-    public Text skillSlotsMaxText; 
-    public Text skillSlotsText; 
+    public TextMeshProUGUI levelText;  
+    public TextMeshProUGUI tokenText; 
+    public TextMeshProUGUI skillSlotsMaxText; 
+    public TextMeshProUGUI skillSlotsText; 
     
-    public Text vitalityText;
-    public Text damageText; 
-    public Text attackSpeedText; 
-    public Text armorText;
-    public Text energyText; 
-    public Text weightText; 
-    public Text movementSpeedTex; 
+    public TextMeshProUGUI vitalityText;
+    public TextMeshProUGUI damageText; 
+    public TextMeshProUGUI attackSpeedText; 
+    public TextMeshProUGUI armorText;
+    public TextMeshProUGUI energyText; 
+    public TextMeshProUGUI weightText; 
+    public TextMeshProUGUI movementSpeedTex; 
 
-
-    void SubirExp(float exp)
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            currentExp += 10;
-        }
-        if(!testMode) 
-        {
-            currentExp += exp;
-        }
-
-        while(currentExp >= expMax)
-        {
-            level++;
-            currentExp = 0 + currentExp - expMax;
-            expMax = Mathf.RoundToInt(expMax * 1.1f);
-            token++;
-        }
-    }
 
     public void UIText()
     {
+        levelText.text = "" + level;
+        tokenText.text = "" + token;
+        //skillSlotsMaxText.text = "" + skillSlotsMax;
+        //skillSlotsText.text = "" + skillSlots;
+        vitalityText.text = "" + vitality;
+        damageText.text = "" + damage;
+        attackSpeedText.text = "" + attackSpeed;
+        armorText.text = "" + armor;
+        energyText.text = "" + energy;
+        weightText.text = "" + weight;
+        movementSpeedTex.text = "" + movementSpeed;
     }
 
     void Update()
     {
-        if(testMode)
-        {
-            SubirExp(10);
-        }
         UIText();
     }
 

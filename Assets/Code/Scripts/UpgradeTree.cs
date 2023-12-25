@@ -42,7 +42,7 @@ public class UpgradeTree : MonoBehaviour
         {
             foreach (var strategy in statStrategies)
             {
-                strategy.ApplyTemporaryUpgrade(playerStats, 5);
+                strategy.ApplyPermanentUpgrade(playerStats);
             }
         }
 

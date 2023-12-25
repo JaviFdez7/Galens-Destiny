@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public int maxHealth = 100;
+    private int currentHealth;
     public HealthBar healthBar;
 
     private void Start()
@@ -13,7 +14,12 @@ public class Health : MonoBehaviour
         healthBar.InitializeHealthBar(currentHealth);
     }
 
-    public void TakeDamage(float damageAmount)
+    private void Update()
+    {
+        UIText();
+    }
+
+    public void TakeDamage(int damageAmount)
     {
 
         currentHealth -= damageAmount;
@@ -36,4 +42,12 @@ public class Health : MonoBehaviour
         Debug.Log("Player died!");
         // You may want to disable player controls, show a game over screen, etc.
     }
+
+    public TextMeshProUGUI currentHealthBarMaxHealth;
+
+    public void UIText()
+    {
+        currentHealthBarMaxHealth.text = "" + currentHealth + " / " + maxHealth;
+    }
+
 }

@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject upgradeTreeMenu;
     public UpgradeTree upgradeTree;
     public SkillsMenu skillsMenu;
+    public HUD HUD;
+
 
     public bool isPaused;
 
@@ -50,29 +52,30 @@ public class PauseMenu : MonoBehaviour
         activeSkillMenu.SetActive(false);
         warningMenu.SetActive(false);
         upgradeTreeMenu.SetActive(false);
+        HUD.ActiveHUD();
         Time.timeScale = 1f;
         isPaused = false;
     }
 
     public void ReturnPreviousMenu()
     {
-        if(playerStatsMenu.activeSelf)
+        if(playerStatsMenu.activeSelf) // Player stats menu
         {
             playerStatsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(playerSkillsMenu.activeSelf && !activeSkillMenu.activeSelf)
+        } else if(playerSkillsMenu.activeSelf && !activeSkillMenu.activeSelf) // Player skill menu
         {
             playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(activeSkillMenu.activeSelf && !warningMenu.activeSelf)
+        } else if(activeSkillMenu.activeSelf && !warningMenu.activeSelf) // Player skill menu
         {
             activeSkillMenu.SetActive(false);
-        } else if(warningMenu.activeSelf)
+        } else if(warningMenu.activeSelf) // Warning menu
         {
             warningMenu.SetActive(false);
             upgradeTree.warningText2.gameObject.SetActive(false);
             skillsMenu.warningText.gameObject.SetActive(false);
-        } else if(upgradeTreeMenu.activeSelf)
+        } else if(upgradeTreeMenu.activeSelf) // Player upgrades menu
         {
             upgradeTreeMenu.SetActive(false);
             pauseMenu.SetActive(true);
@@ -81,13 +84,17 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        HUD.DisableHUD();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
 
+
+
     public void ResumeGame()
     {
+        HUD.ActiveHUD();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;

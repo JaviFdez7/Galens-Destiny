@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b8937fe08be3888499b2b6a26235df66
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ruda
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e61860147234ba547adf2081befa0404, type: 3}
+  - {fileID: 12800000, guid: d12d40934db91fb4d8e4a5ccd364a577, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -59,7 +59,6 @@ public class PlayerStats : MonoBehaviour
 
     public void UIText()
     {
-        levelText.text = ""+level;
     }
 
     void Update()

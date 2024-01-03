@@ -5,28 +5,36 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SkillsMenu : MonoBehaviour
 {
     public PlayerStats playerStats;
     public WarningScreenController warningScreenController;
     public PauseMenu pauseMenu;
-    private List<Skill> activeSkills = new List<Skill> { null, null, null };
-
+    public List<ActiveSkillsMenu> activeSkillsMenus;
+    public List<Sprite> skillImages;
+    public List<Skill> activeSkills = new List<Skill> { null, null, null };
+    
     public class Skill
     {
         public int id { get; private set; }
         public string name { get; private set; }
-        public string description { get; private set; }
+        public string longDescription { get; private set; }
+        public string shortDescription { get; private set; }
+
         public int skillSlots { get; private set; }
         public bool unlocked { get; private set; }
+        public Sprite skillImage { get; private set; }
 
-        public Skill(int id, string name, string description, int skillSlots, bool unlocked)
+        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, Sprite skillImage)
         {
             this.id = id;
             this.name = name;
-            this.description = description;
+            this.longDescription = longdescription;
+            this.shortDescription =  shortDescription;
             this.skillSlots = skillSlots;
             this.unlocked = unlocked;
+            this.skillImage = skillImage;
         }
     }
 
@@ -38,11 +46,11 @@ public class SkillsMenu : MonoBehaviour
         allUnequipButtons.Add(unequipButtonE);
         allUnequipButtons.Add(unequipButtonC);
 
-        Skill skill0 = new Skill(0, "Skill 0", "Opens the secret door.", 1, true);
-        Skill skill1 = new Skill(1, "Skill 1", "Opens the secret door.", 1, true);
-        Skill skill2 = new Skill(2, "Skill 2", "Opens the secret door.", 2, true);
-        Skill skill3 = new Skill(3, "Skill 3", "Opens the secret door.", 2, true);
-        Skill skill4 = new Skill(4, "Skill 4", "Opens the secret door.", 2, false);
+        Skill skill0 = new Skill(0, "Skill 0", "This is the skill 0 with a very very very very very very very long description", "Kill all enemies around the IA's mate", 1, true, skillImages[0]);
+        Skill skill1 = new Skill(1, "Skill 1", "This is the skill 1 with a very very very very very very very long description", "Generates a large storm that pushes enemies", 1, true, skillImages[1]);
+        Skill skill2 = new Skill(2, "Skill 2", "This is the skill 2 with a very very very very very very very long description", "Teleport in a range's distance", 2, true, skillImages[2]);
+        Skill skill3 = new Skill(3, "Skill 3", "This is the skill 3 with a very very very very very very very long description", "Summon  3 littles robots", 2, true, skillImages[3]);
+        Skill skill4 = new Skill(4, "Skill 4", "This is the skill 4 with a very very very very very very very long description", "Throw a big energy ball", 2, false, skillImages[4]);
 
 
         allSkillObjects.Add(skill0);
@@ -74,6 +82,7 @@ public class SkillsMenu : MonoBehaviour
             }
             playerStats.skillSlots += activeSkills[changePosition].skillSlots;
             activeSkills[changePosition] =  null;
+            UpdateActiveSkillPanel(null, changePosition);
         }
 
         if(selectedSkill.unlocked) // Check that the selected skill can be equipped for unlocked
@@ -84,6 +93,7 @@ public class SkillsMenu : MonoBehaviour
                 activeSkills[pauseMenu.selectedSlot] = selectedSkill; // Skill change
                 playerStats.skillSlots -= selectedSkill.skillSlots;
                 SetVisibilityUnequipButtons();
+                UpdateActiveSkillPanel(selectedSkill, pauseMenu.selectedSlot);
             } else 
             {
                 warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
@@ -103,6 +113,7 @@ public class SkillsMenu : MonoBehaviour
         playerStats.skillSlots += activeSkills[slotId].skillSlots;
         activeSkills[slotId] =  null;
         allUnequipButtons[slotId].gameObject.SetActive(false);
+        UpdateActiveSkillPanel(null, slotId);
         UIText();
     }    
 
@@ -132,6 +143,17 @@ public class SkillsMenu : MonoBehaviour
     public void UpdateButtonsAndImagesAfterEquipOrUnequipSkills()
     {
 
+    }
+
+    public void UpdateActiveSkillPanel(Skill skill, int slotId)
+    {
+        for(int i = 0; i < activeSkillsMenus.Count; i++)
+        {
+            if(activeSkillsMenus[i].index == slotId)
+            {
+                activeSkillsMenus[i].LoadActiveSkillsSprites(skill);
+            }
+        }
     }
     
     // Start and Update -----------------------------------------------------------------------------

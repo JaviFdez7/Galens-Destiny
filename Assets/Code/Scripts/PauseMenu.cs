@@ -109,6 +109,7 @@ public class PauseMenu : MonoBehaviour
     public void OpenPlayerSkillsMenu()
     {
         pauseMenu.SetActive(false);
+        playerStatsMenu.SetActive(false);
         playerSkillsMenu.SetActive(true);
     }
 

@@ -42,15 +42,11 @@ public class SkillsMenu : MonoBehaviour
     
     public void Initialize()
     {
-        allUnequipButtons.Add(unequipButtonQ);
-        allUnequipButtons.Add(unequipButtonE);
-        allUnequipButtons.Add(unequipButtonC);
-
-        Skill skill0 = new Skill(0, "Skill 0", "This is the skill 0 with a very very very very very very very long description", "Kill all enemies around the IA's mate", 1, true, skillImages[0]);
-        Skill skill1 = new Skill(1, "Skill 1", "This is the skill 1 with a very very very very very very very long description", "Generates a large storm that pushes enemies", 1, true, skillImages[1]);
-        Skill skill2 = new Skill(2, "Skill 2", "This is the skill 2 with a very very very very very very very long description", "Teleport in a range's distance", 2, true, skillImages[2]);
-        Skill skill3 = new Skill(3, "Skill 3", "This is the skill 3 with a very very very very very very very long description", "Summon  3 littles robots", 2, true, skillImages[3]);
-        Skill skill4 = new Skill(4, "Skill 4", "This is the skill 4 with a very very very very very very very long description", "Throw a big energy ball", 2, false, skillImages[4]);
+        Skill skill0 = new Skill(0, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, skillImages[0]);
+        Skill skill1 = new Skill(1, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, true, skillImages[1]);
+        Skill skill2 = new Skill(2, "Multidimensional Creativity", "Approaching problems from diverse perspectives, merging ideas to generate innovative solutions.", "Teleport in a range's distance", 2, true, skillImages[2]);
+        Skill skill3 = new Skill(3, "Resilient Adaptability", "Adapting flexibly to changes, overcoming challenges with emotional and mental resilience.", "Summon  3 littles robots", 2, true, skillImages[3]);
+        Skill skill4 = new Skill(4, "Persuasive Communication", "Ethically influencing through compelling arguments, using empathy and integrity to achieve consensus and positive impact.", "Throw a big energy ball", 2, false, skillImages[4]);
 
 
         allSkillObjects.Add(skill0);
@@ -92,7 +88,6 @@ public class SkillsMenu : MonoBehaviour
                 playerStats.skillSlots += activeSkillSlots;
                 activeSkills[pauseMenu.selectedSlot] = selectedSkill; // Skill change
                 playerStats.skillSlots -= selectedSkill.skillSlots;
-                SetVisibilityUnequipButtons();
                 UpdateActiveSkillPanel(selectedSkill, pauseMenu.selectedSlot);
             } else 
             {
@@ -112,32 +107,9 @@ public class SkillsMenu : MonoBehaviour
     {
         playerStats.skillSlots += activeSkills[slotId].skillSlots;
         activeSkills[slotId] =  null;
-        allUnequipButtons[slotId].gameObject.SetActive(false);
         UpdateActiveSkillPanel(null, slotId);
         UIText();
     }    
-
-    public Button unequipButtonQ;
-    public Button unequipButtonE;
-    public Button unequipButtonC;
-    private List<Button> allUnequipButtons = new List<Button>();
-
-    public void SetVisibilityUnequipButtons()
-    {
-        for(int i = 0; i < allUnequipButtons.Count; i++)
-        {
-            if(activeSkills[i]!=null)
-            {
-                allUnequipButtons[i].gameObject.SetActive(true);
-            } else {
-                allUnequipButtons[i].gameObject.SetActive(false);
-            }
-        }
-    }
-
-    public Button acceptButton;
-
-
 
     // Dynamic buttons and image after equip or unequip skills --------------------------------------------------------------------
     public void UpdateButtonsAndImagesAfterEquipOrUnequipSkills()
@@ -161,8 +133,10 @@ public class SkillsMenu : MonoBehaviour
     void Start()
     {
         Initialize();
-        SetVisibilityUnequipButtons();
         UIText();
+        UpdateActiveSkillPanel(activeSkills[0], 0);
+        UpdateActiveSkillPanel(activeSkills[1], 1);
+        UpdateActiveSkillPanel(activeSkills[2], 2);
     }
 
     // Update is called once per frame
@@ -173,13 +147,6 @@ public class SkillsMenu : MonoBehaviour
 
     // UI Text ---------------------------------------------------------------------------------
     public TextMeshProUGUI warningText;
-    public TextMeshProUGUI activeSkill0Name;
-    public TextMeshProUGUI activeSkill0Cost;
-    public TextMeshProUGUI activeSkill1Name;
-    public TextMeshProUGUI activeSkill1Cost;
-
-    public TextMeshProUGUI activeSkill2Name;
-    public TextMeshProUGUI activeSkill2Cost;
 
     public TextMeshProUGUI skill0Cost;
     public TextMeshProUGUI skill1Cost;
@@ -188,43 +155,20 @@ public class SkillsMenu : MonoBehaviour
     public TextMeshProUGUI skill4Cost;
 
 
-    public TextMeshProUGUI skillSlots;
-    private List<string> activeSkillsName = new List<string> { "Empty", "Empty", "Empty"};
-    private List<string> activeSkillsCost = new List<string> { "0", "0", "0"};
-
+    public List<TextMeshProUGUI> skillSlotsText;
 
     public void UIText()
     {
-        for(int i = 0; i < activeSkills.Count; i++)
-        {
-            if(activeSkills[i] != null)
-            {
-                activeSkillsName[i] = activeSkills[i].name;
-                activeSkillsCost[i] = activeSkills[i].skillSlots.ToString();
-                
-            } else
-            {
-                activeSkillsName[i] = "Empty";
-                activeSkillsCost[i] = "0";
-            }
-        }
-
-        activeSkill0Name.text = "" + activeSkillsName[0];
-        activeSkill0Cost.text = "" + activeSkillsCost[0];
-
-        activeSkill1Name.text = "" + activeSkillsName[1];
-        activeSkill1Cost.text = "" + activeSkillsCost[1];
-
-        activeSkill2Name.text = "" + activeSkillsName[2];
-        activeSkill2Cost.text = "" + activeSkillsCost[2];
-
         skill0Cost.text = "" + allSkillObjects[0].skillSlots.ToString();
         skill1Cost.text = "" + allSkillObjects[1].skillSlots.ToString();
         skill2Cost.text = "" + allSkillObjects[2].skillSlots.ToString();
         skill3Cost.text = "" + allSkillObjects[3].skillSlots.ToString();
         skill4Cost.text = "" + allSkillObjects[4].skillSlots.ToString();
 
-        skillSlots.text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
+        for(int i = 0; i < skillSlotsText.Count; i++){
+            skillSlotsText[i].text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
+        }
+
         warningText.text = "" + warningMessage;
     }
 }

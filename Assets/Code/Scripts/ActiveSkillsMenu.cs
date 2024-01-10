@@ -12,6 +12,10 @@ public class ActiveSkillsMenu : MonoBehaviour
     public Image skillImage;
     public TextMeshProUGUI skillName;
     public TextMeshProUGUI skillShortDescription;
+    public TextMeshProUGUI skillLongDescription;
+    public TextMeshProUGUI skillSlots;
+    public List<GameObject> activeSkillOptions;
+
     public Sprite unequippedSkillSprite;
     public void LoadActiveSkillsSprites(Skill skill)
     {
@@ -19,12 +23,34 @@ public class ActiveSkillsMenu : MonoBehaviour
         {
             skillImage.sprite = skill.skillImage;
             skillName.text = skill.name;
-            skillShortDescription.text = skill.shortDescription;
+            if(skillShortDescription!=null){
+                skillShortDescription.text = skill.shortDescription;
+            }
+            if(skillLongDescription!=null){
+                skillLongDescription.text = skill.longDescription;
+            }
+            if(skillSlots!=null){
+                skillSlots.text = skill.skillSlots.ToString();
+            }
+            for(int i = 0; i < activeSkillOptions.Count; i++){
+                activeSkillOptions[i].SetActive(true);
+            }
         } else
         {
             skillImage.sprite = unequippedSkillSprite;
-            skillName.text = "UNEQUIPPED SKILL";
-            skillShortDescription.text = "Equip a skill available from the Skills menu";
+            skillName.text = "Unequipped Skill";
+            if(skillShortDescription!=null){
+                skillShortDescription.text = "Equip a skill available from the Skills menu";
+            }
+            if(skillLongDescription!=null){
+                skillLongDescription.text = "Equip a skill available from the Skills menu";
+            }
+            if(skillSlots!=null){
+                skillSlots.text = "";
+            }
+            for(int i = 0; i < activeSkillOptions.Count; i++){
+                activeSkillOptions[i].SetActive(false);
+            }
         }
     }
 }

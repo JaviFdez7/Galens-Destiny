@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject mapMenu;
     public GameObject playerStatsMenu;
     public GameObject playerSkillsMenu;
-    public GameObject activeSkillMenu;
     public GameObject equippedSkillsDetailsMenu;
     public GameObject warningMenu;
     public GameObject upgradeTreeMenu;
@@ -46,7 +45,6 @@ public class PauseMenu : MonoBehaviour
         mapMenu.SetActive(false);
         playerStatsMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
-        activeSkillMenu.SetActive(false);
         equippedSkillsDetailsMenu.SetActive(false);
         warningMenu.SetActive(false);
         upgradeTreeMenu.SetActive(false);
@@ -63,7 +61,6 @@ public class PauseMenu : MonoBehaviour
         playerStatsMenu.SetActive(false);
         equippedSkillsDetailsMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
-        activeSkillMenu.SetActive(false);
         warningMenu.SetActive(false);
         upgradeTreeMenu.SetActive(false);
         notebookMenu.SetActive(false);
@@ -75,22 +72,19 @@ public class PauseMenu : MonoBehaviour
         {
             playerStatsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(playerSkillsMenu.activeSelf && !activeSkillMenu.activeSelf && !equippedSkillsDetailsMenu.activeSelf) // Player skill menu
+        } else if(playerSkillsMenu.activeSelf && !equippedSkillsDetailsMenu.activeSelf && !warningMenu.activeSelf) // Player skill menu
         {
             playerSkillsMenu.SetActive(false);
             pauseMenu.SetActive(true);
-        } else if(activeSkillMenu.activeSelf && !warningMenu.activeSelf && !equippedSkillsDetailsMenu.activeSelf) // Player skill menu
-        {
-            activeSkillMenu.SetActive(false);
-        } else if(equippedSkillsDetailsMenu.activeSelf){ // Equipped skills details menu
+        } else if(equippedSkillsDetailsMenu.activeSelf) // Equipped skills details menu
+        { 
             equippedSkillsDetailsMenu.SetActive(false);
-        }
-         else if(warningMenu.activeSelf) // Warning menu
+        } else if(warningMenu.activeSelf) // Warning menu
         {
             warningMenu.SetActive(false);
             upgradeTree.warningText2.gameObject.SetActive(false);
             skillsMenu.warningText.gameObject.SetActive(false);
-        } else if(upgradeTreeMenu.activeSelf) // Player upgrades menu
+        } else if(upgradeTreeMenu.activeSelf && !warningMenu.activeSelf) // Player upgrades menu
         {
             upgradeTreeMenu.SetActive(false);
             pauseMenu.SetActive(true);
@@ -132,13 +126,6 @@ public class PauseMenu : MonoBehaviour
     {
         CloseAllViews();
         playerSkillsMenu.SetActive(true);
-    }
-
-    public int selectedSlot;    
-    public void OpenActiveSkillMenu(int slotId)
-    {
-        selectedSlot = slotId;
-        activeSkillMenu.SetActive(true);
     }
 
     public void OpenEquippedSkillsDetailsMenu()

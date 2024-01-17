@@ -10,11 +10,6 @@ public class SkillHoverDetection : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        ChangeSkillInfo(id);
-    }
-
-    public void ChangeSkillInfo(int id)
-    {
         skillHoverInformation.ChangeSkillInformation(id);
     }
 }

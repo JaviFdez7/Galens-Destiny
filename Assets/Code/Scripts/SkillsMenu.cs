@@ -14,6 +14,7 @@ public class SkillsMenu : MonoBehaviour
     public PlayerStats playerStats;
     public WarningScreenController warningScreenController;
     public SkillGridManager skillGridManager;
+    public SkillInvoker skillInvoker;
     public List<ActiveSkillsMenu> activeSkillsMenus;
     public List<Sprite> skillImages;
     public List<Skill> activeSkills = new List<Skill> { null, null, null };
@@ -25,13 +26,13 @@ public class SkillsMenu : MonoBehaviour
         public string name { get; private set; }
         public string longDescription { get; private set; }
         public string shortDescription { get; private set; }
-
         public int skillSlots { get; private set; }
         public bool unlocked { get; private set; }
         public bool passive { get; private set; }
         public Sprite skillImage { get; private set; }
+        public SkillCommand skillCommand { get; private set; }
 
-        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, Sprite skillImage)
+        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, Sprite skillImage, SkillCommand skillCommand)
         {
             this.id = id;
             this.name = name;
@@ -41,6 +42,7 @@ public class SkillsMenu : MonoBehaviour
             this.unlocked = unlocked;
             this.passive = passive;
             this.skillImage = skillImage;
+            this.skillCommand = skillCommand;
         }
     }
 
@@ -48,19 +50,19 @@ public class SkillsMenu : MonoBehaviour
     
     public void Initialize()
     {
-        Skill skill0 = new Skill(0, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, false, skillImages[0]);
-        Skill skill1 = new Skill(1, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, true, false, skillImages[1]);
-        Skill skill2 = new Skill(2, "Multidimensional Creativity", "Approaching problems from diverse perspectives, merging ideas to generate innovative solutions.", "Teleport in a range's distance", 2, true, false, skillImages[2]);
-        Skill skill3 = new Skill(3, "Resilient Adaptability", "Adapting flexibly to changes, overcoming challenges with emotional and mental resilience.", "Summon  3 littles robots", 2, true, false, skillImages[3]);
-        Skill skill4 = new Skill(4, "Persuasive Communication", "Ethically influencing through compelling arguments, using empathy and integrity to achieve consensus and positive impact.", "Throw a big energy ball", 2, false, false, skillImages[4]);
-        Skill skill5Passive = new Skill(5, "Fire Punch", "The skill to control and manipulate flames with precision, used for both defensive and offensive purposes. Requires mental focus and a deep understanding of fire dynamics.", "Expert fire control for offense and defense.", 2, true, true, skillImages[5]);
-        Skill skill6 = new Skill(6, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, false, skillImages[6]);
-        Skill skill7 = new Skill(7, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, false, skillImages[7]);
-        Skill skill8Passive = new Skill(8, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[8]);
-        Skill skill9Passive = new Skill(9, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[9]);
-        Skill skill10Passive = new Skill(10, "Locked Skill", "Locked Skill", "Locked Skill", 1, true, true, skillImages[10]);
-        Skill skill11Passive = new Skill(11, "Locked Skill", "Locked Skill", "Locked Skill", 1, true, true, skillImages[11]);
-        Skill skill12Passive = new Skill(12, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[12]);
+        Skill skill0 = new Skill(0, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, false, skillImages[0], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill1 = new Skill(1, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, true, false, skillImages[1], new SkillCommand(new StrategicForesightSkill()));
+        Skill skill2 = new Skill(2, "Multidimensional Creativity", "Approaching problems from diverse perspectives, merging ideas to generate innovative solutions.", "Teleport in a range's distance", 2, true, false, skillImages[2], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill3 = new Skill(3, "Resilient Adaptability", "Adapting flexibly to changes, overcoming challenges with emotional and mental resilience.", "Summon  3 littles robots", 2, true, false, skillImages[3], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill4 = new Skill(4, "Persuasive Communication", "Ethically influencing through compelling arguments, using empathy and integrity to achieve consensus and positive impact.", "Throw a big energy ball", 2, false, false, skillImages[4], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill5Passive = new Skill(5, "Fire Punch", "The skill to control and manipulate flames with precision, used for both defensive and offensive purposes. Requires mental focus and a deep understanding of fire dynamics.", "Expert fire control for offense and defense.", 2, true, true, skillImages[5], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill6 = new Skill(6, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, false, skillImages[6], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill7 = new Skill(7, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, false, skillImages[7], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill8Passive = new Skill(8, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[8], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill9Passive = new Skill(9, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[9], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill10Passive = new Skill(10, "Locked Skill", "Locked Skill", "Locked Skill", 1, true, true, skillImages[10], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill11Passive = new Skill(11, "Locked Skill", "Locked Skill", "Locked Skill", 1, true, true, skillImages[11], new SkillCommand(new EmotionalInsightSkill()));
+        Skill skill12Passive = new Skill(12, "Locked Skill", "Locked Skill", "Locked Skill", 2, false, true, skillImages[12], new SkillCommand(new EmotionalInsightSkill()));
 
         allSkillObjects.Add(skill0);
         allSkillObjects.Add(skill1);
@@ -114,6 +116,7 @@ public class SkillsMenu : MonoBehaviour
                     activeSkills[selectedSlot] = selectedSkill; // Skill change
                     playerStats.skillSlots -= selectedSkill.skillSlots;
                     UpdateActiveSkillPanel(selectedSkill, selectedSlot);
+                    CreateAndUpdateNewCommandsForNewActiveSkills();
                 } else 
                 {
                     warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
@@ -148,6 +151,31 @@ public class SkillsMenu : MonoBehaviour
         }
     }
 
+    public void CreateAndUpdateNewCommandsForNewActiveSkills()
+    {
+        for(int i = 0; i < activeSkills.Count; i++)
+        {
+            if(activeSkills[i] != null)
+            {
+                if(i == 0)
+                    skillInvoker.AddNewCommand(KeyCode.Q, activeSkills[i].skillCommand);
+                else if(i == 1)
+                    skillInvoker.AddNewCommand(KeyCode.E, activeSkills[i].skillCommand);
+                else if(i == 2)
+                    skillInvoker.AddNewCommand(KeyCode.C, activeSkills[i].skillCommand);
+            } else
+            {
+                if(i == 0)
+                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.Q);
+                else if(i == 1)
+                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.E);
+                else if(i == 2)
+                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.C);
+            }
+        }
+
+    }
+
     private string warningMessage;
 
 
@@ -158,6 +186,7 @@ public class SkillsMenu : MonoBehaviour
         {
             playerStats.skillSlots += activeSkills[slotId].skillSlots;
             activeSkills[slotId] =  null;
+            CreateAndUpdateNewCommandsForNewActiveSkills();
         } else // Unequip passive Skill
         {
             playerStats.skillSlots += passiveActiveSkill.skillSlots;
@@ -185,8 +214,10 @@ public class SkillsMenu : MonoBehaviour
         selectedSlot = slotId;
         if(slotId == 3)
             ChangeSkillsGrid("Passive");
-        else if(slotId<0)
-            ChangeSkillsGrid("None");
+        else if(slotId==-1)
+            ChangeSkillsGrid("None Active");
+        else if(slotId==-2)
+            ChangeSkillsGrid("None Passive");
         else
             ChangeSkillsGrid("Usable");
                 
@@ -207,19 +238,18 @@ public class SkillsMenu : MonoBehaviour
 
     private void ChangeSkillsGrid(string selectedSkillType)
     {
-        if(selectedSkillType == "None")
-            ApplyNewSkillsGrid(usableSkills, "None");
+        if(selectedSkillType == "None Active")
+            skillGridManager.BuildSkillsGrid(usableSkills, "None");
+        if(selectedSkillType == "None Passive")
+            skillGridManager.BuildSkillsGrid(passiveSkills, "None");
         else if(selectedSkillType == "Usable")
-            ApplyNewSkillsGrid(usableSkills, "Usable");
+            skillGridManager.BuildSkillsGrid(usableSkills, "Usable");
         else if(selectedSkillType == "Passive")
-            ApplyNewSkillsGrid(passiveSkills, "Passive");
+            skillGridManager.BuildSkillsGrid(passiveSkills, "Passive");
     }
 
-    private void ApplyNewSkillsGrid(List<Skill> skills, string selectedSkillType)
-    {
-        skillGridManager.BuildSkillsGrid(skills, selectedSkillType);
-    }
     
+
     // Start and Update -----------------------------------------------------------------------------
     void Start()
     {
@@ -230,7 +260,7 @@ public class SkillsMenu : MonoBehaviour
         UpdateActiveSkillPanel(activeSkills[2], 2);
         UpdateActiveSkillPanel(passiveActiveSkill, 3);
         FilterSkillsLists();
-        ChangeSkillsGrid("None");
+        ChangeSkillsGrid("None Active");
     }
 
     void Update()

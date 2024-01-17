@@ -3,17 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static SkillsMenu;
+using TMPro;
 
 public class SkillGridManager : MonoBehaviour
 {
     public GameObject skillGridElementPrefab;
     public GridLayoutGroup skillGridPanel;
+    public GameObject filterSkillsToggle;
     public SkillHoverInformation skillHoverInformation;
     public SkillsMenu skillsMenu;
+    public TextMeshProUGUI activeSkillsToggleText;
+    public TextMeshProUGUI passiveSkillsToggleText;
 
     public void BuildSkillsGrid(List<Skill> skills, string selectedSkillTypeIsPassive)
     {
-            
+        if(selectedSkillTypeIsPassive != "None")
+            filterSkillsToggle.SetActive(false);
+        else
+            filterSkillsToggle.SetActive(true);
+
+        if(skills[0].passive)
+        {
+            activeSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+            passiveSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+        }
+        else
+        {
+            passiveSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+            activeSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+        }
+
         foreach (Transform child in skillGridPanel.transform) // When selecting passive or usable skill, you have to delete the current skill to insert the new ones
         {
             Destroy(child.gameObject);
@@ -30,6 +49,10 @@ public class SkillGridManager : MonoBehaviour
             if(selectedSkillTypeIsPassive != "None")
             {
                 skillGridElement.GetComponent<Button>().onClick.AddListener(() => skillsMenu.ActiveSkill(skill.id));
+
+                ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
+                colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+                skillGridElement.GetComponent<Button>().colors = colors;
             }
 
             if (!skill.unlocked) // Change locked skills to black
@@ -51,6 +74,4 @@ public class SkillGridManager : MonoBehaviour
             }
         }
     }
-
-
 }

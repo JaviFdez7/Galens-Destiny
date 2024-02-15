@@ -96,7 +96,7 @@ public class SkillsMenu : MonoBehaviour
             if(activeSkills.Contains(selectedSkill) && activeSkills[selectedSlot]!=selectedSkill) // Make the change if the selected skill is already equipped but in another position 
             {
                 int changePosition = 0;
-                for(int i = 0; i<activeSkills.Count; i++)
+                for(int i = 0; i < activeSkills.Count; i++)
                 {
                     if(activeSkills[i]==selectedSkill)
                     {

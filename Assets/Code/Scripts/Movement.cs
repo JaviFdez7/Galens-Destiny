@@ -49,6 +49,6 @@ public class Movement : MonoBehaviour
     //FixedUpdate because we use rigidBody
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVector * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + moveSpeed * Time.fixedDeltaTime * moveVector);
     }
 }

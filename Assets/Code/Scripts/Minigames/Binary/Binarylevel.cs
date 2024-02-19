@@ -8,25 +8,31 @@ using static BinaryManager;
 
 public class Binary : MonoBehaviour 
 {
-    public DigitNumbersLoyout digitNumbersLoyout;
+    public BinaryScore binaryScore;
+    public DigitNumbersLayout digitNumbersLoyout;
+    public BlockLayout blockLayout;
     private int currentValue = 0;
     private int targetValue;
     private List<int> binaryNumbers = new List<int>();
     public List<DigitPanel> digitPanels;
     public TextMeshProUGUI currentValueText;
     public TextMeshProUGUI targetValueText;
+    private int currentNumberOfClicks = 0;
+    private int minimumNumberOfClicksInTheActiveHistory;
 
-
-    private void SetupBinaryMinigame(BinaryLevel binaryLevel)
+    private void SetupBinaryMinigame(BinaryLevel binaryLevel, int minimumNumberOfClicksInTheActiveHistory)
     {
         targetValue = GenerateRandomTarget(binaryLevel); // Generate a random target
         InitializeBinaryNumbers(binaryLevel); // Initialize current value respect to the generated random target and the binary level configuration
-        digitNumbersLoyout.BuildDigitsGrid(binaryLevel.digitsCount, binaryNumbers, digitPanels); // Buiñd the digits grid with the generated current value 
+        digitNumbersLoyout.BuildDigitsGrid(binaryLevel.digitsCount, binaryNumbers, digitPanels); // Build the digits grid with the generated current value 
+        blockLayout.InitializeBlockPanel(binaryLevel.blocksSecuence);
         for(int i = 0; i < digitPanels.Count; i++){
             int reversedIndex = binaryNumbers.Count - 1 - i;
             UpdateDigitsPanel(i, reversedIndex);
         }
         UpdateUIElement();
+        this.minimumNumberOfClicksInTheActiveHistory = minimumNumberOfClicksInTheActiveHistory; 
+        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveHistory, currentNumberOfClicks);
     }
 
     // Generate Target -------------------------------------------------------------
@@ -71,6 +77,10 @@ public class Binary : MonoBehaviour
                 binaryNumbers.Add(targetBinaryNumber[i]);
         }
 
+        string binaryString = string.Concat(binaryNumbers.ConvertAll(num => num.ToString()));
+        int decimalNumber = Convert.ToInt32(binaryString, 2);
+        currentValue = decimalNumber;
+
         for (int i = 0; i < binaryLevel.digitsCount; i++)
         {
             if(targetBinaryNumber[i] != binaryNumbers[i])
@@ -95,13 +105,16 @@ public class Binary : MonoBehaviour
     // Changing a digit binary value from current value -------------------------------------------
     public void ChangeDigitBinaryValue(int index)
     {
+        currentNumberOfClicks++;
         int reversedIndex = binaryNumbers.Count - 1 - index;
         binaryNumbers[reversedIndex] = binaryNumbers[reversedIndex] == 0 ? 1 : 0;
         string binaryString = string.Concat(binaryNumbers.ConvertAll(num => num.ToString()));
         int decimalNumber = Convert.ToInt32(binaryString, 2);
         currentValue = decimalNumber;
+        blockLayout.NextBlockPanelStep();
         UpdateDigitsPanel(index, reversedIndex);
         UpdateUIElement();
+        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveHistory, currentNumberOfClicks);
     }
 
     private void UpdateDigitsPanel(int index, int reversedIndex)
@@ -139,7 +152,7 @@ public class Binary : MonoBehaviour
     }
     void Start()
     {
-         SetupBinaryMinigame(new BinaryLevel(1, 1, 7, 1, 0, 2)); 
+         SetupBinaryMinigame(new BinaryLevel(1, 1, 7, new List<int> { 1, 0}, 2), 2); 
     }
 
 

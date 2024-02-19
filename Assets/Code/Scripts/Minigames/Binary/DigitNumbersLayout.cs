@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DigitNumbersLoyout : MonoBehaviour
+public class DigitNumbersLayout : MonoBehaviour
 {
     public Binary binary;
     public GridLayoutGroup digitGridPanel;

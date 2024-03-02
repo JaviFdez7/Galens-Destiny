@@ -27,7 +27,7 @@ public class FollowCamera : MonoBehaviour
     {
         posX = targetPosX + leftMax;
         posY = targetPosY + highMin;
-        transform.position = Vector3.Lerp(transform.position, new Vector3(posX,posY,-1),1);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(posX,posY,transform.position.z),1);
 
     }
 

@@ -38,7 +38,6 @@ public class BlockLayout : MonoBehaviour
     public void NextBlockPanelStep()
     {
         currentPointer++;
-        Debug.Log(currentPointer);
 
         foreach (Transform child in blockGridPanel.transform)
             Destroy(child.gameObject);
@@ -54,6 +53,14 @@ public class BlockLayout : MonoBehaviour
                 Instantiate(whiteBlockPrefab, blockGridPanel.transform);
             else
                 Instantiate(blackBlockPrefab, blockGridPanel.transform);
+        }
+    }
+
+    public void DestroyBlockGrid()
+    {
+        foreach (Transform child in blockGridPanel.transform)
+        {
+            Destroy(child.gameObject);
         }
     }
 

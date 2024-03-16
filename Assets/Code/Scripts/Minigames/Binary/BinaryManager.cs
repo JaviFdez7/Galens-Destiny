@@ -6,7 +6,7 @@ using UnityEngine;
 public class BinaryManager : MonoBehaviour
 {
     public Binary binary;
-    List<BinaryLevel> binaryLevels = new List<BinaryLevel>();
+    private List<BinaryLevel> binaryLevels = new List<BinaryLevel>();
     private int currentLevel = 0;
     private int currentHistory = 1;
 
@@ -41,52 +41,55 @@ public class BinaryManager : MonoBehaviour
         }
     }
 
-    public int minimumNumberOfClicksInTheActiveHistory(int history)
-    {
-        int minimumNumberOfClicksInTheActiveHistory = 0;
-        foreach(BinaryLevel binaryLevel in binaryLevels)
-            if(binaryLevel.history == history)
-                minimumNumberOfClicksInTheActiveHistory += binaryLevel.minimumNumberOfClicks;
+    private List<BinaryLevel> binaryLevelsOfTheActiveHistory = new List<BinaryLevel>();
 
-        return minimumNumberOfClicksInTheActiveHistory;
+    private void DetectLevelsOfTheActiveHistory() {
+        foreach(BinaryLevel binaryLevel in binaryLevels)
+            if(binaryLevel.history == currentHistory)
+                binaryLevelsOfTheActiveHistory.Add(binaryLevel);
     }
 
     public void NextLevelOrFinishMinigame()
     {   
         if(binary.IsTargetValueReached())
         {
-            if(currentLevel == 0)
+            if(currentLevel < binaryLevelsOfTheActiveHistory.Count)
             {
-
-            } else if(true)
+                binary.currentNumberOfClicks = 0;
+                binary.SetupBinaryMinigame(binaryLevelsOfTheActiveHistory[currentLevel], binaryLevelsOfTheActiveHistory[currentLevel].minimumNumberOfClicks);
+                currentLevel++;
+                Debug.Log("CORRECTO");
+            } else
             {
-                
-            }
-            else{
-
+                Debug.Log("MINIJUEGO COMPLETADO");
             }
         } else
         {
+            binary.WrongResponse(100);
             Debug.Log("INCORRECTO");
         }
         
     }
 
-    private void Initialize()
+    private void InitializeHistoryLevels()
     {
-        BinaryLevel history1level1 = new BinaryLevel(1, 1, 2, new List<int> { 0, 0, 0, 1, 1 }, 1);
-        BinaryLevel history1level2 = new BinaryLevel(1, 2, 3, new List<int> { 0, 0, 0, 1, 1 }, 1);
-        BinaryLevel history1level3 = new BinaryLevel(1, 3, 6, new List<int> { 0, 0, 0, 1, 1 }, 3);
-        BinaryLevel history1level4 = new BinaryLevel(1, 4, 8, new List<int> { 0, 0, 0, 1, 1 }, 5);
+        BinaryLevel history1level1 = new BinaryLevel(1, 1, 2, new List<int> { 0, 0, 0, 0, 1, 0, 0, 1, 0 }, 1);
+        BinaryLevel history1level2 = new BinaryLevel(1, 2, 3, new List<int> { 1, 0, 0, 1, 0, 1, 0 ,1 }, 1);
+        BinaryLevel history1level3 = new BinaryLevel(1, 3, 6, new List<int> { 1, 0, 0, 1, 0 , 0 }, 3);
+        BinaryLevel history1level4 = new BinaryLevel(1, 4, 8, new List<int> { 1, 1, 0, 1, 1 }, 5);
+        BinaryLevel history2level1 = new BinaryLevel(2, 1, 8, new List<int> { 0, 0, 0, 1, 1 }, 5);
 
         binaryLevels.Add(history1level1);
         binaryLevels.Add(history1level2);
         binaryLevels.Add(history1level3);
         binaryLevels.Add(history1level4);
+        binaryLevels.Add(history2level1);
     }
 
     void Start()
     {
-        Initialize();
+        InitializeHistoryLevels();
+        DetectLevelsOfTheActiveHistory();
+        NextLevelOrFinishMinigame();
     }
 }

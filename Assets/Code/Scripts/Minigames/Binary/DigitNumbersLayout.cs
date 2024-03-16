@@ -23,4 +23,12 @@ public class DigitNumbersLayout : MonoBehaviour
             digitPanels.Add(digitGridElement.GetComponent<DigitPanel>());
         }
     }
+
+    public void DestroyDigitsGrid()
+    {
+        foreach (Transform child in digitGridPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

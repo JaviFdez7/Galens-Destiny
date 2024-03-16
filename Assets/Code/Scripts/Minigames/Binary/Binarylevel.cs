@@ -14,14 +14,21 @@ public class Binary : MonoBehaviour
     private int currentValue = 0;
     private int targetValue;
     private List<int> binaryNumbers = new List<int>();
+    private List<int> targetBinaryNumber = new List<int>();
     public List<DigitPanel> digitPanels;
     public TextMeshProUGUI currentValueText;
     public TextMeshProUGUI targetValueText;
-    private int currentNumberOfClicks = 0;
-    private int minimumNumberOfClicksInTheActiveHistory;
+    public int currentNumberOfClicks = 0;
+    private int minimumNumberOfClicksInTheActiveLevel;
+    public TextMeshProUGUI currentNumberOfClicksText;
+    public TextMeshProUGUI minimumNumberOfClicksInTheActiveLevelText;
+    public BinaryChat binaryChat;
 
-    private void SetupBinaryMinigame(BinaryLevel binaryLevel, int minimumNumberOfClicksInTheActiveHistory)
+    public void SetupBinaryMinigame(BinaryLevel binaryLevel, int minimumNumberOfClicksInTheActiveLevel)
     {
+        digitNumbersLoyout.DestroyDigitsGrid();
+        blockLayout.DestroyBlockGrid();
+        binaryNumbers.Clear();
         targetValue = GenerateRandomTarget(binaryLevel); // Generate a random target
         InitializeBinaryNumbers(binaryLevel); // Initialize current value respect to the generated random target and the binary level configuration
         digitNumbersLoyout.BuildDigitsGrid(binaryLevel.digitsCount, binaryNumbers, digitPanels); // Build the digits grid with the generated current value 
@@ -30,9 +37,10 @@ public class Binary : MonoBehaviour
             int reversedIndex = binaryNumbers.Count - 1 - i;
             UpdateDigitsPanel(i, reversedIndex);
         }
+        this.minimumNumberOfClicksInTheActiveLevel = minimumNumberOfClicksInTheActiveLevel; 
+        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveLevel, currentNumberOfClicks);
+        binaryChat.SetupBinaryChat(binaryScore, CorrectAnswer());
         UpdateUIElement();
-        this.minimumNumberOfClicksInTheActiveHistory = minimumNumberOfClicksInTheActiveHistory; 
-        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveHistory, currentNumberOfClicks);
     }
 
     // Generate Target -------------------------------------------------------------
@@ -67,7 +75,7 @@ public class Binary : MonoBehaviour
                 randomDifferentPositions.Add(randomNumber);
         }
 
-        List<int> targetBinaryNumber = ConvertToBinaryList(targetValue, binaryLevel);
+        targetBinaryNumber = ConvertToBinaryList(targetValue, binaryLevel);
 
         for (int i = 0; i < binaryLevel.digitsCount; i++)
         {
@@ -81,11 +89,6 @@ public class Binary : MonoBehaviour
         int decimalNumber = Convert.ToInt32(binaryString, 2);
         currentValue = decimalNumber;
 
-        for (int i = 0; i < binaryLevel.digitsCount; i++)
-        {
-            if(targetBinaryNumber[i] != binaryNumbers[i])
-                Debug.Log("CAMBIA LA POSICIÓN "+ i);
-        }
     }
 
     private List<int> ConvertToBinaryList(int number, BinaryLevel binaryLevel)
@@ -101,6 +104,7 @@ public class Binary : MonoBehaviour
         binaryList.Reverse();
         return binaryList;
     }
+    
 
     // Changing a digit binary value from current value -------------------------------------------
     public void ChangeDigitBinaryValue(int index)
@@ -114,7 +118,7 @@ public class Binary : MonoBehaviour
         blockLayout.NextBlockPanelStep();
         UpdateDigitsPanel(index, reversedIndex);
         UpdateUIElement();
-        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveHistory, currentNumberOfClicks);
+        binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveLevel, currentNumberOfClicks);
     }
 
     private void UpdateDigitsPanel(int index, int reversedIndex)
@@ -132,16 +136,11 @@ public class Binary : MonoBehaviour
         return currentValue == targetValue;
     }
 
-    public void CheckTargetValue()
+    public void WrongResponse(int negativePoints)
     {
-        if(IsTargetValueReached())
-        {
-            Debug.Log("CORRECTO");
-        } else
-        {
-            Debug.Log("INCORRECTO");
-        }
+        binaryScore.SubstractPoints(negativePoints);
     }
+    
 
     // Update visual elements ----------------------------------------------------
 
@@ -149,17 +148,22 @@ public class Binary : MonoBehaviour
     {
         currentValueText.text = currentValue.ToString();
         targetValueText.text = targetValue.ToString();
-    }
-    void Start()
-    {
-         SetupBinaryMinigame(new BinaryLevel(1, 1, 7, new List<int> { 1, 0}, 2), 2); 
+        currentNumberOfClicksText.text = currentNumberOfClicks.ToString();
+        minimumNumberOfClicksInTheActiveLevelText.text = minimumNumberOfClicksInTheActiveLevel.ToString();
     }
 
+    // Question auxiliar functions ----------------------------------------------------
 
-
-    // Update is called once per frame
-    void Update()
+    private string CorrectAnswer()
     {
-        
+        string result = "";
+        for (int i = 0; i < targetBinaryNumber.Count; i++)
+        {
+            result += targetBinaryNumber[i].ToString();
+        }
+
+        return result;
     }
 }
+
+

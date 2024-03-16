@@ -49,7 +49,6 @@ public class SkillCommand : ICommand
 
 public interface ISkill
 {
-    
     void Activate(Energy energy);
 }
 

@@ -16,6 +16,7 @@ public class ChatManager : MonoBehaviour
 
     public class Question
     {
+        public int id { get; private set; }
         public string question { get; private set; }
         public string answer { get; private set; }
         public int difficulty { get; private set; }
@@ -23,10 +24,11 @@ public class ChatManager : MonoBehaviour
         public bool covered { get; set; }
 
 
-        public Question(string question, string answer, int difficulty, int lostPoints)
+        public Question(int id, string question, string answer, int difficulty, int lostPoints)
         {
             if(ValidateParameters(question, answer, difficulty, lostPoints))
             {
+                this.id = id;
                 this.question = question;
                 this.answer = answer;
                 this.difficulty = difficulty;
@@ -38,13 +40,20 @@ public class ChatManager : MonoBehaviour
 
         private bool ValidateParameters(string question, string answer, int difficulty, int lostPoints)
         {
-            bool validQuestion = question.Length<=110;
-            bool validAnswer = answer.Length <= 110 ;
+            bool validQuestion = question.Length <= 300;
+            bool validAnswer = answer.Length <= 300 ;
             bool validDifficulty = 1 <= difficulty && difficulty <= 3;
             bool validLostPoints = 0 <= lostPoints && lostPoints <= 1000;
 
             return validQuestion && validAnswer && validDifficulty && validLostPoints;
         }
+
+        public void UpdateCurrentAnswers(string newAnswer)
+        {
+            if(covered == true)
+                answer = newAnswer;
+        }
+
     }
 
     public void InitializeChat(string minigame, List<Question> questions)

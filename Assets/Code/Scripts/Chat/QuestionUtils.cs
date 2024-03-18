@@ -3,7 +3,7 @@ using static ChatManager;
 
 public static class QuestionUtils
 {
-    public static List<Question> Generate4RandomQuestions(List<Question> allQuestions, int countDifficulty1, int countDifficulty2, int countDifficulty3)
+    public static List<Question> GenerateRandomQuestions(List<Question> allQuestions, int countDifficulty1, int countDifficulty2, int countDifficulty3)
     {
         List<Question> result = new List<Question>();
 

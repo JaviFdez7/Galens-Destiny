@@ -380,6 +380,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3271484e802b4a947afac3101d2de41a, type: 3}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442839888008487791, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8750408134534820175, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
       propertyPath: m_Name
       value: QuestionPanel
@@ -1616,8 +1640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -673.72, y: -227.15002}
-  m_SizeDelta: {x: 514.99, y: 597.70984}
+  m_AnchoredPosition: {x: -673.72, y: -117.31}
+  m_SizeDelta: {x: 514.99, y: 817.39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595107717
 MonoBehaviour:
@@ -1639,7 +1663,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 1
-  m_CellSize: {x: 550, y: 150}
+  m_CellSize: {x: 550, y: 200}
   m_Spacing: {x: 0, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -1656,15 +1680,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b88ae74fa008f5348860e3a3217ba024, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1696,6 +1720,10 @@ MonoBehaviour:
   chatManager: {fileID: 1274275346}
   questionPanelPrefab: {fileID: 8750408134534820175, guid: 9b1d6239f29f26d4fa735cb161481007, type: 3}
   chatGridPanel: {fileID: 1595107715}
+  panelSprites:
+  - {fileID: 21300000, guid: 3271484e802b4a947afac3101d2de41a, type: 3}
+  - {fileID: 21300000, guid: 8618f6d7131aada4abc6b2941ee95ecb, type: 3}
+  - {fileID: 21300000, guid: 8bb8f2b761a94464ca20d60095145575, type: 3}
 --- !u!114 &1595107721
 MonoBehaviour:
   m_ObjectHideFlags: 0

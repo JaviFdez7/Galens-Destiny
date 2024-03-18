@@ -39,7 +39,7 @@ public class Binary : MonoBehaviour
         }
         this.minimumNumberOfClicksInTheActiveLevel = minimumNumberOfClicksInTheActiveLevel; 
         binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveLevel, currentNumberOfClicks);
-        binaryChat.SetupBinaryChat(binaryScore, CorrectAnswer());
+        binaryChat.SetupBinaryChat(CorrectAnswer(), CorrectPositions(), IncorrectPositions(), CorrectValueOfARandomPosition(), FirstHalfOfTargetValue(), SecondHalfOfTargetValue());
         UpdateUIElement();
     }
 
@@ -119,6 +119,7 @@ public class Binary : MonoBehaviour
         UpdateDigitsPanel(index, reversedIndex);
         UpdateUIElement();
         binaryScore.CalculateCurrentScore(minimumNumberOfClicksInTheActiveLevel, currentNumberOfClicks);
+        binaryChat.UpdateQuestionsAnswers(CorrectAnswer(), CorrectPositions(), IncorrectPositions(), CorrectValueOfARandomPosition(), FirstHalfOfTargetValue(), SecondHalfOfTargetValue());
     }
 
     private void UpdateDigitsPanel(int index, int reversedIndex)
@@ -158,8 +159,74 @@ public class Binary : MonoBehaviour
     {
         string result = "";
         for (int i = 0; i < targetBinaryNumber.Count; i++)
-        {
             result += targetBinaryNumber[i].ToString();
+
+        return result;
+    }
+
+    private string CorrectPositions()
+    {
+        int correctPositions = 0;
+
+        for (int i = 0; i < binaryNumbers.Count; i++)
+            if (binaryNumbers[i] == targetBinaryNumber[i])
+                correctPositions++;
+
+        return correctPositions.ToString();
+    }
+
+    private string IncorrectPositions()
+    {
+        int incorrectPositions = 0;
+
+        for (int i = 0; i < binaryNumbers.Count; i++)
+            if (binaryNumbers[i] != targetBinaryNumber[i])
+                incorrectPositions++;
+
+        return incorrectPositions.ToString();
+    }
+
+    private string[] CorrectValueOfARandomPosition()
+    {
+        System.Random random = new System.Random();
+        int randomNumber = random.Next(0, targetBinaryNumber.Count);
+        string[] correctValueOfARandomPosition = new string[2];
+
+        correctValueOfARandomPosition[0] = randomNumber.ToString();
+        correctValueOfARandomPosition[1] = targetBinaryNumber[targetBinaryNumber.Count - 1 - randomNumber].ToString();
+
+        return correctValueOfARandomPosition;
+    }
+
+    private string FirstHalfOfTargetValue()
+    {
+        int halfLength = targetBinaryNumber.Count / 2;
+        if (targetBinaryNumber.Count % 2 != 0)
+            halfLength++;
+            
+        string result = "";
+        for (int i = 0; i < targetBinaryNumber.Count; i++)
+        {
+            if(i<halfLength)
+                result += targetBinaryNumber[i];
+            else
+                result += "X";
+        }
+
+        return result;
+    }
+
+    private string SecondHalfOfTargetValue()
+    {
+        int halfLength = targetBinaryNumber.Count / 2;
+            
+        string result = "";
+        for (int i = 0; i < targetBinaryNumber.Count; i++)
+        {
+            if(i>=halfLength)
+                result += targetBinaryNumber[i];
+            else
+                result += "X";
         }
 
         return result;

@@ -19,7 +19,7 @@ public class FollowCamera : MonoBehaviour
 
     public float speed;
     public bool on = true;
-
+    private float cameraZ = -500;
 
 
     // Use this for initialization
@@ -50,7 +50,7 @@ public class FollowCamera : MonoBehaviour
                     posY = targetPosY;
                 }
 
-                transform.position = Vector3.Lerp(transform.position, new Vector3(posX,posY,-1), speed * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, new Vector3(posX,posY,cameraZ), speed * Time.deltaTime);
             }
         }
     }

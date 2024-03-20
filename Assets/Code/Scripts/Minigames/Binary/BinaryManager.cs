@@ -58,6 +58,8 @@ public class BinaryManager : MonoBehaviour
                 binary.currentNumberOfClicks = 0;
                 binary.SetupBinaryMinigame(binaryLevelsOfTheActiveHistory[currentLevel], binaryLevelsOfTheActiveHistory[currentLevel].minimumNumberOfClicks);
                 currentLevel++;
+                if(currentLevel != 1)
+                    SoundBinaryManager.instance.PlayVictorySound();
                 Debug.Log("CORRECTO");
             } else
             {
@@ -91,5 +93,6 @@ public class BinaryManager : MonoBehaviour
         InitializeHistoryLevels();
         DetectLevelsOfTheActiveHistory();
         NextLevelOrFinishMinigame();
+        SoundBinaryManager.instance.PlayBinaryMusicSound();
     }
 }

@@ -18,7 +18,7 @@ public class BinaryScore : MonoBehaviour
                 else
                     currentScore = 0;
             
-        currentScoreText.text = "Current Score: " + currentScore.ToString();
+        currentScoreText.text = currentScore.ToString();
     }
 
     public void SubstractPoints(int negativePoints)
@@ -28,7 +28,7 @@ public class BinaryScore : MonoBehaviour
         else
             currentScore = 0;
 
-        currentScoreText.text = "Current Score: " + currentScore.ToString();
+        currentScoreText.text = currentScore.ToString();
     }
 
 }

@@ -18,6 +18,7 @@ public class DigitNumbersLayout : MonoBehaviour
             GameObject digitGridElement = Instantiate(digitPanelPrefab, digitGridPanel.transform);
             digitGridElement.GetComponent<DigitPanel>().index = i;
             digitGridElement.GetComponent<Button>().onClick.AddListener(() => binary.ChangeDigitBinaryValue(index));
+            digitGridElement.GetComponent<Button>().onClick.AddListener(() => digitGridElement.GetComponent<DigitPanel>().PlayButtonSound());
             digitGridElement.GetComponentInChildren<TextMeshProUGUI>().text = binaryNumbers[index].ToString();
 
             digitPanels.Add(digitGridElement.GetComponent<DigitPanel>());

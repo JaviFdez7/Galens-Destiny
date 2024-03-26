@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: iso-blocks-aseprite
     originalName: 
-    pivot: {x: 1.6, y: -15}
+    pivot: {x: 1.3333334, y: -15}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 320
+      width: 384
       height: 64
     spriteID: c98394b5388a81f4ebd4ca06bd972049
     spriteBone: []
@@ -153,7 +153,7 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 960
-        width: 320
+        width: 384
         height: 64
       spriteId: c98394b5388a81f4ebd4ca06bd972049
     linkedCells: []

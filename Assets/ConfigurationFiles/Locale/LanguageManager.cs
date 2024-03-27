@@ -45,9 +45,9 @@ public class LanguageManager : MonoBehaviour
         Debug.Log("SetLocale: " + localeId);
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[localeId];
 
-        // Save the selected locale to a file
-
-        PersistenceManager.SerializeData("locale", LocalizationSettings.SelectedLocale);
+        // Save the selected language
+        SettingsManager.LanguageIndex = localeId;
+        SettingsManager.Serialize();
     }
 
 }

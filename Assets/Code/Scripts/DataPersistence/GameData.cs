@@ -5,8 +5,6 @@ using UnityEngine;
 
 public static class GameData
 {
-    //singleton
-    public static SettingsData Settings = new SettingsData();
     public static List<SavedGame> SavedGames = new List<SavedGame>();
 
 

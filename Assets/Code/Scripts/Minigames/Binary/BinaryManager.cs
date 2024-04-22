@@ -67,6 +67,7 @@ public class BinaryManager : MonoBehaviour
             }
         } else
         {
+            SoundBinaryManager.instance.PlayWrongSound();
             binary.WrongResponse(100);
             Debug.Log("INCORRECTO");
         }
@@ -93,6 +94,5 @@ public class BinaryManager : MonoBehaviour
         InitializeHistoryLevels();
         DetectLevelsOfTheActiveHistory();
         NextLevelOrFinishMinigame();
-        SoundBinaryManager.instance.PlayBinaryMusicSound();
     }
 }

@@ -13,6 +13,7 @@ public class ChatAnimation : MonoBehaviour
         box.LeanMoveLocalY(0, 1f).setEaseOutExpo();
         dropup.SetActive(false);
         dropdown.SetActive(true);
+        SoundBinaryManager.instance.PlayChatDragSound();
     }
 
     public void CloseChat()
@@ -20,6 +21,7 @@ public class ChatAnimation : MonoBehaviour
         box.LeanMoveLocalY(-918, 1f).setEaseOutExpo();
         dropup.SetActive(true);
         dropdown.SetActive(false);
+        SoundBinaryManager.instance.PlayChatDragSound();
     }
     
     void Start()

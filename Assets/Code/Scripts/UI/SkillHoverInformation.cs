@@ -7,7 +7,6 @@ using static SkillsMenu;
 
 public class SkillHoverInformation : MonoBehaviour
 {
-    public SkillsMenu skillsMenu;
     public Image skillImage;
     public TextMeshProUGUI skillNameText;
     public TextMeshProUGUI skillLongDescriptionText;
@@ -17,7 +16,7 @@ public class SkillHoverInformation : MonoBehaviour
 
     public void ChangeSkillInformation(int skillId)
     {
-        Skill skill = skillsMenu.allSkillObjects[skillId];
+        Skill skill = SkillData.instance.allSkillObjects[skillId];
 
         if(skill.unlocked)
         {
@@ -33,7 +32,7 @@ public class SkillHoverInformation : MonoBehaviour
             {
                 adviceText.text = "";
             }
-            if(skillsMenu.activeSkills.Contains(skill))
+            if(SkillData.instance.activeSkills.Contains(skill))
             {
                 adviceText.text = "Equipped Skill";
             } 

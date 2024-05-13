@@ -4,21 +4,20 @@ using System.Collections.Generic;
 public class SkillInvoker : MonoBehaviour
 {
     public Energy energy;
-    public Dictionary<KeyCode, ICommand> commands = new Dictionary<KeyCode, ICommand>();
     public void AddNewCommand(KeyCode keyCode, SkillCommand skillCommand)
     {
-        commands.Remove(keyCode);
-        commands.Add(keyCode, skillCommand);
+        SkillData.instance.commands.Remove(keyCode);
+        SkillData.instance.commands.Add(keyCode, skillCommand);
     }
 
     public void DeleteExistingCommandFromKeyCode(KeyCode keyCode)
     {
-        commands.Remove(keyCode);
+        SkillData.instance.commands.Remove(keyCode);
     }
 
     private void Update()
     {
-        foreach (var kvp in commands)
+        foreach (var kvp in SkillData.instance.commands)
         {
             if (Input.GetKeyDown(kvp.Key))
             {

@@ -51,7 +51,7 @@ public class BinaryManager : MonoBehaviour
 
     public void NextLevelOrFinishMinigame()
     {   
-        if(binary.IsTargetValueReached() || true)
+        if(binary.IsTargetValueReached())
         {
             if(currentLevel < binaryLevelsOfTheActiveHistory.Count)
             {

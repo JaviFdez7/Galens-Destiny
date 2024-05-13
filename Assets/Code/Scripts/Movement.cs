@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
+    public Camera sceneCamera;
     //Generated C# class from inputSystem
     private MappeableInput input = null;
     private Vector2 moveVector = Vector2.zero;
+    private Vector2 mousePosition;
     private Rigidbody2D rb = null;
     [SerializeField]
     private float moveSpeed= 1f;
@@ -18,12 +20,24 @@ public class Movement : MonoBehaviour
         input = new MappeableInput();
     }
 
+    void Update()
+    {
+        ProccesInputs();
+    }
+
+    void ProccesInputs()
+    {
+        mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+    }
+
     private void OnEnable()
     {
         input.InGame.Movement.Enable();
         //Subscribe
         input.InGame.Movement.performed += OnMovementPerformed;
         input.InGame.Movement.canceled += OnMovementCanceled;
+
+        
     }
 
     private void OnDisable()
@@ -50,5 +64,9 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVector * moveSpeed * Time.fixedDeltaTime);
+
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = aimAngle;
     }
 }

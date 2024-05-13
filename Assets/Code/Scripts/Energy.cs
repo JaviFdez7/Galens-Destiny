@@ -6,7 +6,7 @@ using UnityEngine;
 public class Energy : MonoBehaviour
 {
     public int maxEnergy = 100;
-    private int currentEnergy;
+    public int currentEnergy;
     public EnergyBar energyBar;
 
     private void Start()

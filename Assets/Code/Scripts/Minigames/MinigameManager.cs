@@ -44,12 +44,7 @@ public class MinigameManager : MonoBehaviour
             if (skill.name == skillName)
             {
                 skill.UnlockSkill();
-                Debug.Log("Skill " + skillName + " unlocked!");
                 break;
             }
-        else
-        {
-            Debug.LogError("SkillsMenu instance is not available.");
-        }
     }
 }

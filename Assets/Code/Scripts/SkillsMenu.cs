@@ -27,10 +27,11 @@ public class SkillsMenu : MonoBehaviour
         public int skillSlots { get; private set; }
         public bool unlocked { get; set; }
         public bool passive { get; private set; }
+        public int energyCost { get; private set; }
         public Sprite skillImage { get; private set; }
         public SkillCommand skillCommand { get; private set; }
 
-        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, Sprite skillImage, SkillCommand skillCommand)
+        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, SkillCommand skillCommand)
         {
             this.id = id;
             this.name = name;
@@ -39,6 +40,7 @@ public class SkillsMenu : MonoBehaviour
             this.skillSlots = skillSlots;
             this.unlocked = unlocked;
             this.passive = passive;
+            this.energyCost = energyCost;
             this.skillImage = skillImage;
             this.skillCommand = skillCommand;
         }

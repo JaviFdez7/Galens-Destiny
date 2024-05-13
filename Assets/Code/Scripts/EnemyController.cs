@@ -6,10 +6,17 @@ public class EnemyController : MonoBehaviour
     public float attackRange = 1f;
     public int attackDamage = 10;
     public float attackCooldown = 2f;
+    private int currentHealth;
+    public int maxHealth = 100;
 
     private GameObject player;
     private Rigidbody2D rb;
     private bool canAttack = true;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
 
     private void Awake()
     {
@@ -54,5 +61,13 @@ public class EnemyController : MonoBehaviour
     void ResetAttack()
     {
         canAttack = true;
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+
+        if(currentHealth <= 0)
+            Destroy(gameObject);
     }
 }

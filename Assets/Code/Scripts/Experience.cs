@@ -5,36 +5,34 @@ using UnityEngine;
 
 public class Experience : MonoBehaviour
 {
-    public int currentExp; // player's current experience
-    public int maxExp = 10; // exp required for the next level
-    public ExperienceBar experienceBar;
+    
 
     void SubirExp(int exp)
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            currentExp += 2;
+            PlayerData.instance.currentExp += 2;
         }
         if(!PlayerData.instance.testMode) 
         {
-            currentExp += exp;
+            PlayerData.instance.currentExp += exp;
         }
 
-        while(currentExp >= maxExp)
+        while(PlayerData.instance.currentExp >= PlayerData.instance.maxExp)
         {
             PlayerData.instance.level++;
-            currentExp = 0 + currentExp - maxExp;
-            maxExp = Mathf.RoundToInt(maxExp * 1.1f);
+            PlayerData.instance.currentExp = 0 + PlayerData.instance.currentExp - PlayerData.instance.maxExp;
+            PlayerData.instance.maxExp = Mathf.RoundToInt(PlayerData.instance.maxExp * 1.1f);
             PlayerData.instance.token++;
         }
-        experienceBar.ChangeMaxExperience(maxExp);
-        experienceBar.ChangeCurrentExperience(currentExp);
+        ExperienceBar.instance.ChangeMaxExperience(PlayerData.instance.maxExp);
+        ExperienceBar.instance.ChangeCurrentExperience(PlayerData.instance.currentExp);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        experienceBar.InitializeExperienceBar(currentExp, maxExp);
+        ExperienceBar.instance.InitializeExperienceBar(PlayerData.instance.currentExp, PlayerData.instance.maxExp);
     }
 
     // Update is called once per frame
@@ -51,6 +49,6 @@ public class Experience : MonoBehaviour
 
     public void UIText()
     {
-        currentExpBarMaxExp.text = "" + currentExp + " / " + maxExp;
+        currentExpBarMaxExp.text = "" + PlayerData.instance.currentExp + " / " + PlayerData.instance.maxExp;
     }
 }

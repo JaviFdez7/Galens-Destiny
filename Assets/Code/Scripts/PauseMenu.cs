@@ -12,7 +12,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject warningMenu;
     public GameObject upgradeTreeMenu;
     public GameObject notebookMenu;
-    public HUD HUD;
 
     public static PauseMenu instance;
 
@@ -60,7 +59,7 @@ public class PauseMenu : MonoBehaviour
         warningMenu.SetActive(false);
         upgradeTreeMenu.SetActive(false);
         notebookMenu.SetActive(false);
-        HUD.ActiveHUD();
+        HUD.instance.ActiveHUD();
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -112,7 +111,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        HUD.DisableHUD();
+        HUD.instance.DisableHUD();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -121,7 +120,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        HUD.ActiveHUD();
+        HUD.instance.ActiveHUD();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;

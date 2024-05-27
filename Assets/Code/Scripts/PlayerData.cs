@@ -4,6 +4,15 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public bool testMode;
+
+
+    public int maxHealth = 100;
+    public int currentHealth;
+
+    public int currentExp; // player's current experience
+    public int maxExp = 10; // exp required for the next level
+
+
     public int level; // player's current level
     public int token; // tokens give you the possibility to advance in the skill tree and improve your character
     public int skillSlotsMax; // determines the maximum number of points that your skills can add
@@ -27,5 +36,10 @@ public class PlayerData : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        currentHealth = maxHealth;
     }
 }

@@ -2113,7 +2113,6 @@ MonoBehaviour:
   - {fileID: 513697268}
   - {fileID: 1083848996}
   - {fileID: 1324184419}
-  skillsMenu: {fileID: 1405495083}
 --- !u!1 &104954641
 GameObject:
   m_ObjectHideFlags: 0
@@ -15154,10 +15153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testMode: 0
+  maxHealth: 100
+  currentHealth: 0
   level: 0
   token: 0
   skillSlotsMax: 4
-  skillSlots: 0
+  skillSlots: 4
   vitality: 0
   damage: 0
   attackSpeed: 0
@@ -17382,8 +17383,6 @@ MonoBehaviour:
   warningMenu: {fileID: 1700046626}
   upgradeTreeMenu: {fileID: 1717596397}
   notebookMenu: {fileID: 532697638}
-  upgradeTree: {fileID: 1405495075}
-  HUD: {fileID: 1829072408}
   isPaused: 0
 --- !u!4 &987482063
 Transform:
@@ -17412,8 +17411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee94c5f470d5e0c408865ab38514641c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 987482062}
-  upgradeTree: {fileID: 1405495075}
 --- !u!1 &990176861
 GameObject:
   m_ObjectHideFlags: 0
@@ -40778,8 +40775,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.4102, y: -0.23784998, z: 0}
-    m_Extent: {x: 1.3778, y: 0.95235, z: 0}
+    m_Center: {x: -0.40535, y: -0.23494998, z: 0}
+    m_Extent: {x: 1.37975, y: 0.95455, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43761,8 +43758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70cac477bd227f4994c31e6a2ea3381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  healthBar: {fileID: 2042461995}
   currentHealthBarMaxHealth: {fileID: 1876249116}
 --- !u!114 &1405495069
 MonoBehaviour:
@@ -43849,7 +43844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df07a5d4a702eb4a9b1cfef2b67f94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningScreenController: {fileID: 987482064}
   warningText2: {fileID: 349761118}
   availableTokensText: {fileID: 1592365116}
   upgrade1Name: {fileID: 1967468102}
@@ -43927,7 +43921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcafb8f618bd384a95774dcc3abfbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningScreenController: {fileID: 987482064}
   skillGridManager: {fileID: 2051872220}
   skillInvoker: {fileID: 1405495081}
   activeSkillsMenus:
@@ -50697,7 +50690,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2313f4a003502745bcd6e77a5aa0776, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 2042461995}
   energyBar: {fileID: 404765203}
   experienceBar: {fileID: 457918111}
 --- !u!1 &1835775004
@@ -54793,17 +54785,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 378276746543070723, guid: 04cf4798c9022cb4f816d867fb6623c2, type: 3}
   m_PrefabInstance: {fileID: 3830431119939375806}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2042461995 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 934205800377073790, guid: 04cf4798c9022cb4f816d867fb6623c2, type: 3}
-  m_PrefabInstance: {fileID: 3830431119939375806}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709d0488ac7179242900a2168da9bc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2042461996 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6237848407322092756, guid: 04cf4798c9022cb4f816d867fb6623c2, type: 3}
@@ -55097,7 +55078,6 @@ MonoBehaviour:
   skillGridPanel: {fileID: 2051872219}
   filterSkillsToggle: {fileID: 1465792144}
   skillHoverInformation: {fileID: 1465150530}
-  skillsMenu: {fileID: 1405495083}
   activeSkillsToggleText: {fileID: 1539009516}
   passiveSkillsToggleText: {fileID: 1057637931}
 --- !u!1 &2054433986

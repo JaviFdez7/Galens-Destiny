@@ -8,6 +8,18 @@ public class ExperienceBar : MonoBehaviour
     public Slider sliderHUD;
     public Slider sliderStatsMenu;
 
+    public static ExperienceBar instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+
     public void ChangeMaxExperience(int maxExperience)
     {
         sliderHUD.maxValue = maxExperience;

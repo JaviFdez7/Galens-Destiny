@@ -12,7 +12,6 @@ public class SkillHoverInformation : MonoBehaviour
     public TextMeshProUGUI skillLongDescriptionText;
     public TextMeshProUGUI skillSlotsText;
     public TextMeshProUGUI adviceText;
-    public PlayerStats playerStats;
 
     public void ChangeSkillInformation(int skillId)
     {
@@ -25,7 +24,7 @@ public class SkillHoverInformation : MonoBehaviour
             skillNameText.text = skill.name;
             skillLongDescriptionText.text = skill.longDescription;
             skillSlotsText.text = skill.skillSlots.ToString();
-            if(playerStats.skillSlots<skill.skillSlots)
+            if(PlayerData.instance.skillSlots<skill.skillSlots)
             {
                 adviceText.text = "Insuficient Skill Slots";
             } else

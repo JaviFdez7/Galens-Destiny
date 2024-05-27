@@ -11,7 +11,6 @@ public class SkillGridManager : MonoBehaviour
     public GridLayoutGroup skillGridPanel;
     public GameObject filterSkillsToggle;
     public SkillHoverInformation skillHoverInformation;
-    public SkillsMenu skillsMenu;
     public TextMeshProUGUI activeSkillsToggleText;
     public TextMeshProUGUI passiveSkillsToggleText;
 
@@ -48,7 +47,7 @@ public class SkillGridManager : MonoBehaviour
 
             if(selectedSkillTypeIsPassive != "None")
             {
-                skillGridElement.GetComponent<Button>().onClick.AddListener(() => skillsMenu.ActiveSkill(skill.id));
+                skillGridElement.GetComponent<Button>().onClick.AddListener(() => SkillsMenu.instance.ActiveSkill(skill.id));
 
                 ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
                 colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);

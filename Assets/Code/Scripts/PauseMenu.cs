@@ -13,7 +13,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject upgradeTreeMenu;
     public GameObject notebookMenu;
     public UpgradeTree upgradeTree;
-    public SkillsMenu skillsMenu;
     public HUD HUD;
 
 
@@ -83,7 +82,7 @@ public class PauseMenu : MonoBehaviour
         {
             warningMenu.SetActive(false);
             upgradeTree.warningText2.gameObject.SetActive(false);
-            skillsMenu.warningText.gameObject.SetActive(false);
+            SkillsMenu.instance.warningText.gameObject.SetActive(false);
         } else if(upgradeTreeMenu.activeSelf && !warningMenu.activeSelf) // Player upgrades menu
         {
             upgradeTreeMenu.SetActive(false);

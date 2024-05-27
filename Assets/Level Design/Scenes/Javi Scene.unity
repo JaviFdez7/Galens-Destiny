@@ -9011,7 +9011,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1646464360}
   skillName: {fileID: 636608935}
   skillShortDescription: {fileID: 983686378}
@@ -9482,7 +9481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 990176863}
   skillName: {fileID: 180306470}
   skillShortDescription: {fileID: 387215133}
@@ -9577,7 +9575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6657612264115584138, guid: f026540c059ce8d4783a12965757e176, type: 3}
-  firePoint: {fileID: 1050825277}
   fireForce: 10
 --- !u!1 &532662678
 GameObject:
@@ -11146,7 +11143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1443142853}
   skillName: {fileID: 2085795367}
   skillShortDescription: {fileID: 1218471239}
@@ -14656,7 +14652,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 694480767}
   skillName: {fileID: 52227892}
   skillShortDescription: {fileID: 0}
@@ -15097,6 +15092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 833540576}
   - component: {fileID: 833540577}
+  - component: {fileID: 833540578}
   m_Layer: 0
   m_Name: Singleton
   m_TagString: Untagged
@@ -15145,6 +15141,30 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5c8c9cfb3f62d2c4fbee57da1112ca40, type: 3}
   - {fileID: 21300000, guid: 7107e302aa2bf1544a121b47b9b8be59, type: 3}
   - {fileID: 21300000, guid: 5bd92604f7d9cd84b9b2604418fa3593, type: 3}
+--- !u!114 &833540578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833540574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951c25d3f2acd2b4f91ecf716e52b6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testMode: 0
+  level: 0
+  token: 0
+  skillSlotsMax: 4
+  skillSlots: 0
+  vitality: 0
+  damage: 0
+  attackSpeed: 0
+  armor: 0
+  energy: 0
+  weight: 0
+  movementSpeed: 0
 --- !u!1 &843374022
 GameObject:
   m_ObjectHideFlags: 0
@@ -17363,7 +17383,6 @@ MonoBehaviour:
   upgradeTreeMenu: {fileID: 1717596397}
   notebookMenu: {fileID: 532697638}
   upgradeTree: {fileID: 1405495075}
-  skillsMenu: {fileID: 0}
   HUD: {fileID: 1829072408}
   isPaused: 0
 --- !u!4 &987482063
@@ -17395,7 +17414,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 987482062}
   upgradeTree: {fileID: 1405495075}
-  skillsMenu: {fileID: 0}
 --- !u!1 &990176861
 GameObject:
   m_ObjectHideFlags: 0
@@ -18988,7 +19006,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 2096900438}
   skillName: {fileID: 1436573485}
   skillShortDescription: {fileID: 322595523}
@@ -40761,8 +40778,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.39514998, y: -0.2344, z: 0}
-    m_Extent: {x: 1.37695, y: 0.95799994, z: 0}
+    m_Center: {x: -0.4102, y: -0.23784998, z: 0}
+    m_Extent: {x: 1.3778, y: 0.95235, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -42058,7 +42075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 3
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1656145509}
   skillName: {fileID: 1292388991}
   skillShortDescription: {fileID: 85111775}
@@ -43082,7 +43098,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 3
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1446901812}
   skillName: {fileID: 397478382}
   skillShortDescription: {fileID: 0}
@@ -43761,18 +43776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a7f66e7046f8742b3ae2344c787125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  token: 0
-  skillSlotsMax: 4
-  skillSlots: 4
-  vitality: 0
-  damage: 0
-  attackSpeed: 0
-  armor: 0
-  energy: 0
-  weight: 0
-  movementSpeed: 0
-  testMode: 1
   levelText: {fileID: 959094262}
   tokenText: {fileID: 1978015375}
   skillSlotsMaxText: {fileID: 0}
@@ -43846,7 +43849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df07a5d4a702eb4a9b1cfef2b67f94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 1405495069}
   warningScreenController: {fileID: 987482064}
   warningText2: {fileID: 349761118}
   availableTokensText: {fileID: 1592365116}
@@ -43881,6 +43883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnergy: 100
+  currentEnergy: 0
   energyBar: {fileID: 404765203}
   currentEnergyBarMaxEnergy: {fileID: 1724437876}
 --- !u!114 &1405495079
@@ -43897,7 +43900,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentExp: 0
   maxExp: 10
-  playerStats: {fileID: 1405495069}
   experienceBar: {fileID: 457918111}
   currentExpBarMaxExp: {fileID: 878200772}
 --- !u!114 &1405495081
@@ -43925,7 +43927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fcafb8f618bd384a95774dcc3abfbe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 1405495069}
   warningScreenController: {fileID: 987482064}
   skillGridManager: {fileID: 2051872220}
   skillInvoker: {fileID: 1405495081}
@@ -44574,7 +44575,6 @@ MonoBehaviour:
   skillLongDescriptionText: {fileID: 1168101555}
   skillSlotsText: {fileID: 278031150}
   adviceText: {fileID: 1612390457}
-  playerStats: {fileID: 1405495069}
 --- !u!1 &1465282739
 GameObject:
   m_ObjectHideFlags: 0
@@ -45861,7 +45861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 239377836}
   skillName: {fileID: 746421506}
   skillShortDescription: {fileID: 534775294}
@@ -46597,7 +46596,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 2
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 144880216}
   skillName: {fileID: 714432707}
   skillShortDescription: {fileID: 0}
@@ -47189,7 +47187,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 1
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 832474832}
   skillName: {fileID: 1689118604}
   skillShortDescription: {fileID: 0}
@@ -50375,7 +50372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1835775007}
   skillName: {fileID: 1919590396}
   skillShortDescription: {fileID: 1849735779}
@@ -52906,7 +52902,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 3
-  skillsMenu: {fileID: 1405495083}
   skillImage: {fileID: 1511901597}
   skillName: {fileID: 1797862989}
   skillShortDescription: {fileID: 885059015}

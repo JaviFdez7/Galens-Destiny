@@ -11,12 +11,22 @@ using UnityEngine.UI;
 
 public class SkillsMenu : MonoBehaviour
 {
-    public PlayerStats playerStats;
     public WarningScreenController warningScreenController;
     public SkillGridManager skillGridManager;
     public SkillInvoker skillInvoker;
     public List<ActiveSkillsMenu> activeSkillsMenus;
     public static SkillsMenu instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     public class Skill
     {
@@ -74,18 +84,18 @@ public class SkillsMenu : MonoBehaviour
                         changePosition = i;
                     }
                 }
-                playerStats.skillSlots += SkillData.instance.activeSkills[changePosition].skillSlots;
+                PlayerData.instance.skillSlots += SkillData.instance.activeSkills[changePosition].skillSlots;
                 SkillData.instance.activeSkills[changePosition] =  null;
                 UpdateActiveSkillPanel(null, changePosition);
             }
 
             if(selectedSkill.unlocked) // Check that the selected skill can be equipped for unlocked
             {
-                if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) // Check that the selected skill can be equipped for skill slots
+                if(selectedSkill.skillSlots <= activeSkillSlots + PlayerData.instance.skillSlots) // Check that the selected skill can be equipped for skill slots
                 {
-                    playerStats.skillSlots += activeSkillSlots;
+                    PlayerData.instance.skillSlots += activeSkillSlots;
                     SkillData.instance.activeSkills[selectedSlot] = selectedSkill; // Skill change
-                    playerStats.skillSlots -= selectedSkill.skillSlots;
+                    PlayerData.instance.skillSlots -= selectedSkill.skillSlots;
                     UpdateActiveSkillPanel(selectedSkill, selectedSlot);
                     CreateAndUpdateNewCommandsForNewActiveSkills();
                 } else 
@@ -105,11 +115,11 @@ public class SkillsMenu : MonoBehaviour
 
             if(selectedSkill.unlocked) // Check that the selected skill can be equipped for unlocked
             {
-                if(selectedSkill.skillSlots <= activeSkillSlots + playerStats.skillSlots) // Check that the selected skill can be equipped for skill slots
+                if(selectedSkill.skillSlots <= activeSkillSlots + PlayerData.instance.skillSlots) // Check that the selected skill can be equipped for skill slots
                 {
-                    playerStats.skillSlots += activeSkillSlots;
+                    PlayerData.instance.skillSlots += activeSkillSlots;
                     SkillData.instance.passiveActiveSkill = selectedSkill; // Skill change
-                    playerStats.skillSlots -= selectedSkill.skillSlots;
+                    PlayerData.instance.skillSlots -= selectedSkill.skillSlots;
                     UpdateActiveSkillPanel(selectedSkill, 3);
                 } else 
                 {
@@ -155,12 +165,12 @@ public class SkillsMenu : MonoBehaviour
     {
         if(slotId != 3) // Unequip normal Skills
         {
-            playerStats.skillSlots += SkillData.instance.activeSkills[slotId].skillSlots;
+            PlayerData.instance.skillSlots += SkillData.instance.activeSkills[slotId].skillSlots;
             SkillData.instance.activeSkills[slotId] =  null;
             CreateAndUpdateNewCommandsForNewActiveSkills();
         } else // Unequip passive Skill
         {
-            playerStats.skillSlots += SkillData.instance.passiveActiveSkill.skillSlots;
+            PlayerData.instance.skillSlots += SkillData.instance.passiveActiveSkill.skillSlots;
             SkillData.instance.passiveActiveSkill = null;
         }
         UpdateActiveSkillPanel(null, slotId);
@@ -247,7 +257,7 @@ public class SkillsMenu : MonoBehaviour
     {
         for(int i = 0; i < skillSlotsText.Count; i++)
         {
-            skillSlotsText[i].text = "Skill Slots: " + playerStats.skillSlots.ToString() + " / " + playerStats.skillSlotsMax.ToString();
+            skillSlotsText[i].text = "Skill Slots: " + PlayerData.instance.skillSlots.ToString() + " / " + PlayerData.instance.skillSlotsMax.ToString();
         }
         
         warningText.text = "" + warningMessage;

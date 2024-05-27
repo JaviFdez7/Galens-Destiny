@@ -7,10 +7,10 @@ public class Upgrade : MonoBehaviour
 {
     public interface IStatStrategy
     {
-        void ApplyPermanentUpgrade(PlayerStats playerStats);
-        void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds);
+        void ApplyPermanentUpgrade();
+        void ApplyTemporaryUpgrade(int seconds);
         int GetValue();
-        string ResumeToString(PlayerStats playerStats, bool available);
+        string ResumeToString(bool available);
     }
 
     public class StatStrategyFactory
@@ -63,19 +63,19 @@ public class Upgrade : MonoBehaviour
             this.vitality = vitality;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.vitality += vitality;
+            PlayerData.instance.vitality += vitality;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.vitality += vitality;
+            PlayerData.instance.vitality += vitality;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.vitality -= vitality;
+                PlayerData.instance.vitality -= vitality;
 
                 timer.Stop();
                 timer.Dispose();
@@ -89,12 +89,12 @@ public class Upgrade : MonoBehaviour
             return vitality;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Vitality: +" + vitality;
             if(available)
             {
-                return res +" (" + playerStats.vitality.ToString() + " -> " + (vitality + playerStats.vitality).ToString() + ")";
+                return res +" (" + PlayerData.instance.vitality.ToString() + " -> " + (vitality + PlayerData.instance.vitality).ToString() + ")";
             } 
             return res;
         }
@@ -109,19 +109,19 @@ public class Upgrade : MonoBehaviour
             this.damage = damage;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.damage += damage;
+            PlayerData.instance.damage += damage;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.damage += damage;
+            PlayerData.instance.damage += damage;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.damage -= damage;
+                PlayerData.instance.damage -= damage;
 
                 timer.Stop();
                 timer.Dispose();
@@ -135,12 +135,12 @@ public class Upgrade : MonoBehaviour
             return damage;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Damage: +" + damage;
             if(available)
             {
-                return res +" (" + playerStats.damage.ToString() + " -> " + (damage + playerStats.damage).ToString() + ")";
+                return res +" (" + PlayerData.instance.damage.ToString() + " -> " + (damage + PlayerData.instance.damage).ToString() + ")";
             } 
             return res;
         }
@@ -155,19 +155,19 @@ public class Upgrade : MonoBehaviour
             this.attackSpeed = attackSpeed;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.attackSpeed += attackSpeed;
+            PlayerData.instance.attackSpeed += attackSpeed;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.attackSpeed += attackSpeed;
+            PlayerData.instance.attackSpeed += attackSpeed;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.attackSpeed -= attackSpeed;
+                PlayerData.instance.attackSpeed -= attackSpeed;
 
                 timer.Stop();
                 timer.Dispose();
@@ -181,12 +181,12 @@ public class Upgrade : MonoBehaviour
             return attackSpeed;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Attack Speed: +" + attackSpeed;
             if(available)
             {
-                return res +" (" + playerStats.attackSpeed.ToString() + " -> " + (attackSpeed + playerStats.attackSpeed).ToString() + ")";
+                return res +" (" + PlayerData.instance.attackSpeed.ToString() + " -> " + (attackSpeed + PlayerData.instance.attackSpeed).ToString() + ")";
             } 
             return res;
         }
@@ -201,19 +201,19 @@ public class Upgrade : MonoBehaviour
             this.armor = armor;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.armor += armor;
+            PlayerData.instance.armor += armor;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.armor += armor;
+            PlayerData.instance.armor += armor;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.armor -= armor;
+                PlayerData.instance.armor -= armor;
 
                 timer.Stop();
                 timer.Dispose();
@@ -227,12 +227,12 @@ public class Upgrade : MonoBehaviour
             return armor;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Armor: +" + armor;
             if(available)
             {
-                return res +" (" + playerStats.armor.ToString() + " -> " + (armor + playerStats.armor).ToString() + ")";
+                return res +" (" + PlayerData.instance.armor.ToString() + " -> " + (armor + PlayerData.instance.armor).ToString() + ")";
             } 
             return res;
         }
@@ -247,19 +247,19 @@ public class Upgrade : MonoBehaviour
             this.energy = energy;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.energy += energy;
+            PlayerData.instance.energy += energy;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.energy += energy;
+            PlayerData.instance.energy += energy;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.energy -= energy;
+                PlayerData.instance.energy -= energy;
 
                 timer.Stop();
                 timer.Dispose();
@@ -273,12 +273,12 @@ public class Upgrade : MonoBehaviour
             return energy;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Energy: +" + energy;
             if(available)
             {
-                return res +" (" + playerStats.energy.ToString() + " -> " + (energy + playerStats.energy).ToString() + ")";
+                return res +" (" + PlayerData.instance.energy.ToString() + " -> " + (energy + PlayerData.instance.energy).ToString() + ")";
             } 
             return res;
         }
@@ -293,19 +293,19 @@ public class Upgrade : MonoBehaviour
             this.weight = weight;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.weight += weight;
+            PlayerData.instance.weight += weight;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.weight += weight;
+            PlayerData.instance.weight += weight;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.weight -= weight;
+                PlayerData.instance.weight -= weight;
 
                 timer.Stop();
                 timer.Dispose();
@@ -319,12 +319,12 @@ public class Upgrade : MonoBehaviour
             return weight;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Weight: +" + weight;
             if(available)
             {
-                return res +" (" + playerStats.weight.ToString() + " -> " + (weight + playerStats.weight).ToString() + ")";
+                return res +" (" + PlayerData.instance.weight.ToString() + " -> " + (weight + PlayerData.instance.weight).ToString() + ")";
             } 
             return res;
         }
@@ -339,19 +339,19 @@ public class Upgrade : MonoBehaviour
             this.movementSpeed = movementSpeed;
         }
 
-        public void ApplyPermanentUpgrade(PlayerStats playerStats)
+        public void ApplyPermanentUpgrade()
         {
-            playerStats.movementSpeed += movementSpeed;
+            PlayerData.instance.movementSpeed += movementSpeed;
         }
 
-        public void ApplyTemporaryUpgrade(PlayerStats playerStats, int seconds)
+        public void ApplyTemporaryUpgrade(int seconds)
         {
-            playerStats.movementSpeed += movementSpeed;
+            PlayerData.instance.movementSpeed += movementSpeed;
 
             Timer timer = new Timer(seconds * 1000);
             timer.Elapsed += (sender, e) => // when the timer reaches 0 it is executed timer.Elapsed
             {
-                playerStats.movementSpeed -= movementSpeed;
+                PlayerData.instance.movementSpeed -= movementSpeed;
 
                 timer.Stop();
                 timer.Dispose();
@@ -365,12 +365,12 @@ public class Upgrade : MonoBehaviour
             return movementSpeed;
         }
 
-        public string ResumeToString(PlayerStats playerStats, bool available)
+        public string ResumeToString(bool available)
         {
             string res = "Movement Speed: +" + movementSpeed;
             if(available)
             {
-                return res +" (" + playerStats.movementSpeed.ToString() + " -> " + (movementSpeed + playerStats.movementSpeed).ToString() + ")";
+                return res +" (" + PlayerData.instance.movementSpeed.ToString() + " -> " + (movementSpeed + PlayerData.instance.movementSpeed).ToString() + ")";
             } 
             return res;
         }

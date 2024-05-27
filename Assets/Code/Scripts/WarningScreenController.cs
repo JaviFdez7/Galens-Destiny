@@ -8,7 +8,6 @@ public class WarningScreenController : MonoBehaviour
 {
     public PauseMenu pauseMenu;
     public UpgradeTree upgradeTree;
-    public SkillsMenu skillsMenu;
 
     public string TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
     {
@@ -21,7 +20,7 @@ public class WarningScreenController : MonoBehaviour
             warningMessage = "Skill unavailable: locked skill";
         }
         pauseMenu.OpenWarningMenu();
-        skillsMenu.warningText.gameObject.SetActive(true);
+        SkillsMenu.instance.warningText.gameObject.SetActive(true);
         return warningMessage;
     }
 

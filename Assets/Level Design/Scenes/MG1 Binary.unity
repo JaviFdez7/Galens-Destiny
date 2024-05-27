@@ -5120,7 +5120,7 @@ MonoBehaviour:
   minigame: {fileID: 1200570990}
   beginPanel: {fileID: 400080877}
   endPanel: {fileID: 192609130}
-  skillName: LOOOL
+  skillName: Emotional Insight
 --- !u!1001 &1275092408
 PrefabInstance:
   m_ObjectHideFlags: 0

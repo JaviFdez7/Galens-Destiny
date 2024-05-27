@@ -7,7 +7,6 @@ public class Experience : MonoBehaviour
 {
     public int currentExp; // player's current experience
     public int maxExp = 10; // exp required for the next level
-    public PlayerStats playerStats;
     public ExperienceBar experienceBar;
 
     void SubirExp(int exp)
@@ -16,17 +15,17 @@ public class Experience : MonoBehaviour
         {
             currentExp += 2;
         }
-        if(!playerStats.testMode) 
+        if(!PlayerData.instance.testMode) 
         {
             currentExp += exp;
         }
 
         while(currentExp >= maxExp)
         {
-            playerStats.level++;
+            PlayerData.instance.level++;
             currentExp = 0 + currentExp - maxExp;
             maxExp = Mathf.RoundToInt(maxExp * 1.1f);
-            playerStats.token++;
+            PlayerData.instance.token++;
         }
         experienceBar.ChangeMaxExperience(maxExp);
         experienceBar.ChangeCurrentExperience(currentExp);
@@ -42,7 +41,7 @@ public class Experience : MonoBehaviour
     void Update()
     {
         UIText();
-        if(playerStats.testMode)
+        if(PlayerData.instance.testMode)
         {
             SubirExp(2);
         }

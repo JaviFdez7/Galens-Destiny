@@ -15092,6 +15092,7 @@ GameObject:
   - component: {fileID: 833540576}
   - component: {fileID: 833540577}
   - component: {fileID: 833540578}
+  - component: {fileID: 833540579}
   m_Layer: 0
   m_Name: Singleton
   m_TagString: Untagged
@@ -15155,6 +15156,10 @@ MonoBehaviour:
   testMode: 0
   maxHealth: 100
   currentHealth: 0
+  maxEnergy: 100
+  currentEnergy: 0
+  currentExp: 0
+  maxExp: 10
   level: 0
   token: 0
   skillSlotsMax: 4
@@ -15166,6 +15171,20 @@ MonoBehaviour:
   energy: 0
   weight: 0
   movementSpeed: 0
+--- !u!114 &833540579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833540574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aba7a4fd3cb904e994a2cb9ac03ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  history: 2
+  skillName: 0
 --- !u!1 &843374022
 GameObject:
   m_ObjectHideFlags: 0
@@ -40775,8 +40794,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.40535, y: -0.23494998, z: 0}
-    m_Extent: {x: 1.37975, y: 0.95455, z: 0}
+    m_Center: {x: -0.40495, y: -0.23709998, z: 0}
+    m_Extent: {x: 1.38365, y: 0.94579995, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -43876,9 +43895,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f102a31dc5e4954595e92ab4c545323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergy: 100
-  currentEnergy: 0
-  energyBar: {fileID: 404765203}
   currentEnergyBarMaxEnergy: {fileID: 1724437876}
 --- !u!114 &1405495079
 MonoBehaviour:
@@ -43892,9 +43908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 990fe4b834c35964fa88efd16cb309af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentExp: 0
-  maxExp: 10
-  experienceBar: {fileID: 457918111}
   currentExpBarMaxExp: {fileID: 878200772}
 --- !u!114 &1405495081
 MonoBehaviour:
@@ -43908,7 +43921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e10694542748d344b57380b2eaad174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energy: {fileID: 1405495077}
 --- !u!114 &1405495083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43922,7 +43934,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillGridManager: {fileID: 2051872220}
-  skillInvoker: {fileID: 1405495081}
   activeSkillsMenus:
   - {fileID: 620030748}
   - {fileID: 449587154}
@@ -51982,6 +51993,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionUI: {fileID: 385792912}
   SceneName: MG1 Binary
+  history: 2
+  skillName: 2
 --- !u!61 &1907906654
 BoxCollider2D:
   m_ObjectHideFlags: 0

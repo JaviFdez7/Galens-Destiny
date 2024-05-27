@@ -5,6 +5,18 @@ using UnityEngine;
 
 public class BinaryScore : MonoBehaviour
 {
+    public static BinaryScore instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+
     private int currentScore = 1000;
     public TextMeshProUGUI currentScoreText;
     public void CalculateCurrentScore(int minimumNumberOfClicksInTheLevel, int currentNumberOfClicks)

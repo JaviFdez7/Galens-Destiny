@@ -6,14 +6,13 @@ using static ChatManager;
 
 public class SubtractScore : MonoBehaviour
 {
-    public BinaryScore binaryScore;
     // Add more minigamesScore class
     public void SubtractScoreOfTheActiveMinigame(string minigame, Question question)
     {
         if(question.covered == true){
             if(minigame == "binary")
             {
-                binaryScore.SubstractPoints(question.lostPoints);
+                BinaryScore.instance.SubstractPoints(question.lostPoints);
             }
             // Add more minigames
         }

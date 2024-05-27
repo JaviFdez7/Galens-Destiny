@@ -3,7 +3,19 @@ using System.Collections.Generic;
 
 public class SkillInvoker : MonoBehaviour
 {
-    public Energy energy;
+    public static SkillInvoker instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
     public void AddNewCommand(KeyCode keyCode, SkillCommand skillCommand)
     {
         SkillData.instance.commands.Remove(keyCode);
@@ -21,7 +33,7 @@ public class SkillInvoker : MonoBehaviour
         {
             if (Input.GetKeyDown(kvp.Key))
             {
-                kvp.Value.Execute(energy);
+                kvp.Value.Execute();
             }
         }
     }
@@ -29,7 +41,7 @@ public class SkillInvoker : MonoBehaviour
 
 public interface ICommand
 {
-    void Execute(Energy energy);
+    void Execute();
 }
 
 public class SkillCommand : ICommand
@@ -40,14 +52,14 @@ public class SkillCommand : ICommand
     {
         this.skill = skill;
     }
-    public void Execute(Energy energy)
+    public void Execute()
     {
-        skill.Activate(energy);
+        skill.Activate();
     }
 }
 
 public interface ISkill
 {
-    void Activate(Energy energy);
+    void Activate();
 }
 

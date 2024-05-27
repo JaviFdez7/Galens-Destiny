@@ -12,7 +12,6 @@ using UnityEngine.UI;
 public class SkillsMenu : MonoBehaviour
 {
     public SkillGridManager skillGridManager;
-    public SkillInvoker skillInvoker;
     public List<ActiveSkillsMenu> activeSkillsMenus;
     public static SkillsMenu instance;
 
@@ -30,6 +29,7 @@ public class SkillsMenu : MonoBehaviour
     public class Skill
     {
         public int id { get; private set; }
+        public SkillEnum skillEnum { get; private set; }
         public string name { get; private set; }
         public string longDescription { get; private set; }
         public string shortDescription { get; private set; }
@@ -40,8 +40,9 @@ public class SkillsMenu : MonoBehaviour
         public Sprite skillImage { get; private set; }
         public SkillCommand skillCommand { get; private set; }
 
-        public Skill(int id, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, SkillCommand skillCommand)
+        public Skill(int id, SkillEnum skillEnum, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, SkillCommand skillCommand)
         {
+            this.skillEnum = skillEnum;
             this.id = id;
             this.name = name;
             this.longDescription = longdescription;
@@ -138,19 +139,19 @@ public class SkillsMenu : MonoBehaviour
             if(SkillData.instance.activeSkills[i] != null)
             {
                 if(i == 0)
-                    skillInvoker.AddNewCommand(KeyCode.Q, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.Q, SkillData.instance.activeSkills[i].skillCommand);
                 else if(i == 1)
-                    skillInvoker.AddNewCommand(KeyCode.E, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.E, SkillData.instance.activeSkills[i].skillCommand);
                 else if(i == 2)
-                    skillInvoker.AddNewCommand(KeyCode.C, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.C, SkillData.instance.activeSkills[i].skillCommand);
             } else
             {
                 if(i == 0)
-                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.Q);
+                    SkillInvoker.instance.DeleteExistingCommandFromKeyCode(KeyCode.Q);
                 else if(i == 1)
-                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.E);
+                    SkillInvoker.instance.DeleteExistingCommandFromKeyCode(KeyCode.E);
                 else if(i == 2)
-                    skillInvoker.DeleteExistingCommandFromKeyCode(KeyCode.C);
+                    SkillInvoker.instance.DeleteExistingCommandFromKeyCode(KeyCode.C);
             }
         }
 

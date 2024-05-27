@@ -8,7 +8,7 @@ public class BinaryManager : MonoBehaviour
     public Binary binary;
     private List<BinaryLevel> binaryLevels = new List<BinaryLevel>();
     private int currentLevel = 0;
-    private int currentHistory = 1;
+    private int currentHistory = MinigameSetupData.instance.history;
 
     public class BinaryLevel
     {

@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
-    public int maxEnergy = 100;
-    public int currentEnergy;
-    public EnergyBar energyBar;
+    public static Energy instance;
 
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+    
     private void Start()
     {
-        currentEnergy = maxEnergy;
-        energyBar.InitializeEnergyBar(currentEnergy);
+        EnergyBar.instance.InitializeEnergyBar(PlayerData.instance.maxEnergy, PlayerData.instance.currentEnergy);
     }
 
     private void Update()
@@ -22,14 +30,14 @@ public class Energy : MonoBehaviour
 
     public void SpendEnergy(int usedEnergy)
     {
-        currentEnergy -= usedEnergy;
-        energyBar.ChangeCurrentEnergy(currentEnergy);
+        PlayerData.instance.currentEnergy -= usedEnergy;
+        EnergyBar.instance.ChangeCurrentEnergy(PlayerData.instance.currentEnergy);
     }
 
     public TextMeshProUGUI currentEnergyBarMaxEnergy;
 
     public void UIText()
     {
-        currentEnergyBarMaxEnergy.text = "" + currentEnergy + " / " + maxEnergy;
+        currentEnergyBarMaxEnergy.text = "" + PlayerData.instance.currentEnergy + " / " + PlayerData.instance.maxEnergy;
     }
 }

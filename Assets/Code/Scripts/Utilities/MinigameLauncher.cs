@@ -15,6 +15,8 @@ public class ZoneDetection : MonoBehaviour
     private readonly string TagToDetect = "Player";
     private MappeableInput input = null;
     [SerializeField] private string SceneName = "";
+    [SerializeField] private int history = 1;
+    [SerializeField] private SkillEnum skillNameForUnlock = SkillEnum.None;
 
     private void Awake()
     {
@@ -60,6 +62,8 @@ public class ZoneDetection : MonoBehaviour
 
     private void EnterMinigame(InputAction.CallbackContext inputContext)
     {
+        MinigameSetupData.instance.skillName = skillNameForUnlock;
+        MinigameSetupData.instance.history = history;
         SceneManager.LoadScene(SceneName);
     }
 

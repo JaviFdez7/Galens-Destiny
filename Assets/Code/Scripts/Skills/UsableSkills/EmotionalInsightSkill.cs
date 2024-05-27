@@ -6,7 +6,7 @@ public class EmotionalInsightSkill : MonoBehaviour, ISkill
     public GameObject bulletPrefab;
     private Transform firePoint;
     public float fireForce;
-    public void Activate(Energy energy)
+    public void Activate()
     {
         Skill activeSkill = null;
 
@@ -18,10 +18,10 @@ public class EmotionalInsightSkill : MonoBehaviour, ISkill
             }
                 
 
-        if (energy.currentEnergy - activeSkill.energyCost < 0)
+        if (PlayerData.instance.currentEnergy - activeSkill.energyCost < 0)
             return;
 
-        energy.SpendEnergy(2);
+        Energy.instance.SpendEnergy(2);
         Fire();
     }
 

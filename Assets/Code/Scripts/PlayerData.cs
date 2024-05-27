@@ -9,6 +9,9 @@ public class PlayerData : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public int maxEnergy = 100;
+    public int currentEnergy;
+
     public int currentExp; // player's current experience
     public int maxExp = 10; // exp required for the next level
 
@@ -16,7 +19,7 @@ public class PlayerData : MonoBehaviour
     public int level; // player's current level
     public int token; // tokens give you the possibility to advance in the skill tree and improve your character
     public int skillSlotsMax; // determines the maximum number of points that your skills can add
-    public int skillSlots; // determines the number of skill points in use 
+    public int skillSlots; // determines the number of skill points that player have
     public int vitality; // makes the character's health increase
     public int damage; // "" damage increase
     public int attackSpeed; // "" attackSpeed increase 
@@ -41,5 +44,6 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        currentEnergy = maxEnergy;
     }
 }

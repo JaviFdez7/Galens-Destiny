@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Experience : MonoBehaviour
 {
-    
-
     void SubirExp(int exp)
     {
         if(Input.GetKeyDown(KeyCode.Space))

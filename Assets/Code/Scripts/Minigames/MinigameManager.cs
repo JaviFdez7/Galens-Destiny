@@ -9,7 +9,6 @@ public class MinigameManager : MonoBehaviour
     public GameObject minigame;
     public GameObject beginPanel;
     public GameObject endPanel;
-    public string skillName;
 
     void Awake()
     {
@@ -33,15 +32,16 @@ public class MinigameManager : MonoBehaviour
 
     public void FinishMinigame()
     {
-        UnlockSkill(skillName);
+        if(MinigameSetupData.instance.skillName != SkillEnum.None)
+            UnlockSkill(MinigameSetupData.instance.skillName);
         minigame.SetActive(false);
         endPanel.SetActive(true);
     }
 
-    void UnlockSkill(string skillName)
+    void UnlockSkill(SkillEnum skillName)
     {
-        foreach (var skill in SkillData.instance.allSkillObjects)
-            if (skill.name == skillName)
+        foreach (Skill skill in SkillData.instance.allSkillObjects)
+            if (skill.skillEnum == skillName)
             {
                 skill.UnlockSkill();
                 break;

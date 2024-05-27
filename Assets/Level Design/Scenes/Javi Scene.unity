@@ -40794,8 +40794,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.40495, y: -0.23709998, z: 0}
-    m_Extent: {x: 1.38365, y: 0.94579995, z: 0}
+    m_Center: {x: -0.39875, y: -0.2319, z: 0}
+    m_Extent: {x: 1.3787501, y: 0.95650005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -51994,7 +51994,7 @@ MonoBehaviour:
   interactionUI: {fileID: 385792912}
   SceneName: MG1 Binary
   history: 2
-  skillName: 2
+  skillNameForUnlock: 2
 --- !u!61 &1907906654
 BoxCollider2D:
   m_ObjectHideFlags: 0

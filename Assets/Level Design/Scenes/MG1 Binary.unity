@@ -4167,6 +4167,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3531270072033194419, guid: 7da1dae503aadf144a333a388ca9520b, type: 3}
+      propertyPath: m_text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5010840620995792388, guid: 7da1dae503aadf144a333a388ca9520b, type: 3}
       propertyPath: m_Name
       value: Value (11)
@@ -5120,7 +5124,6 @@ MonoBehaviour:
   minigame: {fileID: 1200570990}
   beginPanel: {fileID: 400080877}
   endPanel: {fileID: 192609130}
-  skillName: Emotional Insight
 --- !u!1001 &1275092408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6980,7 +6983,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60a8c2caf153c458a228c41d503c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  binaryScore: {fileID: 2118061945}
 --- !u!1 &1596971518
 GameObject:
   m_ObjectHideFlags: 0

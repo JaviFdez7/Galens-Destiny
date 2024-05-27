@@ -8,15 +8,7 @@ public class EmotionalInsightSkill : MonoBehaviour, ISkill
     public float fireForce;
     public void Activate()
     {
-        Skill activeSkill = null;
-
-        foreach (Skill skill in SkillData.instance.activeSkills)
-            if (skill != null && skill.name == "Emotional Insight")
-            {
-                activeSkill = skill;
-                break;
-            }
-                
+        Skill activeSkill = SkillUtils.GetActiveSkill(SkillEnum.EmotionalInsight);
 
         if (PlayerData.instance.currentEnergy - activeSkill.energyCost < 0)
             return;

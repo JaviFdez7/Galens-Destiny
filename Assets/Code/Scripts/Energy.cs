@@ -1,11 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
     public static Energy instance;
+
+    private Coroutine regenerationCoroutine;
+    private const float regenerationDelay = 3.0f; // Waiting for start the regeneration
+    private const int regenerationAmount = 1; // Regeneration per interval
+    private const float regenerationInterval = 0.2f; // 
 
     void Awake()
     {
@@ -31,13 +35,34 @@ public class Energy : MonoBehaviour
     public void SpendEnergy(int usedEnergy)
     {
         PlayerData.instance.currentEnergy -= usedEnergy;
+        PlayerData.instance.currentEnergy = Mathf.Clamp(PlayerData.instance.currentEnergy, 0, PlayerData.instance.maxEnergy);
         EnergyBar.instance.ChangeCurrentEnergy(PlayerData.instance.currentEnergy);
+
+        // Reiniciar la coroutine de regeneración
+        if (regenerationCoroutine != null)
+        {
+            StopCoroutine(regenerationCoroutine);
+        }
+        regenerationCoroutine = StartCoroutine(RegenerateEnergyAfterDelay());
+    }
+
+    private IEnumerator RegenerateEnergyAfterDelay()
+    {
+        yield return new WaitForSeconds(regenerationDelay);
+        while (PlayerData.instance.currentEnergy < PlayerData.instance.maxEnergy)
+        {
+            PlayerData.instance.currentEnergy += regenerationAmount;
+            PlayerData.instance.currentEnergy = Mathf.Clamp(PlayerData.instance.currentEnergy, 0, PlayerData.instance.maxEnergy);
+            EnergyBar.instance.ChangeCurrentEnergy(PlayerData.instance.currentEnergy);
+            yield return new WaitForSeconds(regenerationInterval);
+        }
+        regenerationCoroutine = null;
     }
 
     public TextMeshProUGUI currentEnergyBarMaxEnergy;
 
     public void UIText()
     {
-        currentEnergyBarMaxEnergy.text = "" + PlayerData.instance.currentEnergy + " / " + PlayerData.instance.maxEnergy;
+        currentEnergyBarMaxEnergy.text = PlayerData.instance.currentEnergy + " / " + PlayerData.instance.maxEnergy;
     }
 }

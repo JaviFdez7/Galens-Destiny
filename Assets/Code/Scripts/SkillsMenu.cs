@@ -11,7 +11,6 @@ using UnityEngine.UI;
 
 public class SkillsMenu : MonoBehaviour
 {
-    public WarningScreenController warningScreenController;
     public SkillGridManager skillGridManager;
     public SkillInvoker skillInvoker;
     public List<ActiveSkillsMenu> activeSkillsMenus;
@@ -100,11 +99,11 @@ public class SkillsMenu : MonoBehaviour
                     CreateAndUpdateNewCommandsForNewActiveSkills();
                 } else 
                 {
-                    warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
+                    warningMessage = WarningScreenController.instance.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
                 }
             } else
             {
-                warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(1); // Locked Skill
+                warningMessage = WarningScreenController.instance.TryToEquipAnUnequipableSkill(1); // Locked Skill
             }
         } else // If selected skill is a passive Skill
         {
@@ -123,11 +122,11 @@ public class SkillsMenu : MonoBehaviour
                     UpdateActiveSkillPanel(selectedSkill, 3);
                 } else 
                 {
-                    warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
+                    warningMessage = WarningScreenController.instance.TryToEquipAnUnequipableSkill(0); // Insuficient Skill Slots 
                 }
             } else
             {
-                warningMessage = warningScreenController.TryToEquipAnUnequipableSkill(1); // Locked Skill
+                warningMessage = WarningScreenController.instance.TryToEquipAnUnequipableSkill(1); // Locked Skill
             }
         }
     }

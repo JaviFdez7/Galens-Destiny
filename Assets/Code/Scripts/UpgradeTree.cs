@@ -7,8 +7,18 @@ using static Upgrade;
 
 public class UpgradeTree : MonoBehaviour
 {
-    public WarningScreenController warningScreenController;
+    public static UpgradeTree instance;
 
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     public class Leaf
     {
@@ -125,15 +135,15 @@ public class UpgradeTree : MonoBehaviour
                     UpdateAvailableUpgrades(leafId);
                 } else
                 {
-                    warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(0);     
+                    warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(0);     
                 }
             } else
             {
-                warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(1);
+                warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(1);
             }
         } else 
         {
-            warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(2);
+            warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(2);
         }
     }
 

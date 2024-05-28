@@ -34,7 +34,7 @@ public class HealthBar : MonoBehaviour
 
     public void InitializeHealthBar(int maxHealth, int currentHealth)
     {
-        ChangeCurrentHealth(currentHealth);
         ChangeMaxHealth(maxHealth);
+        ChangeCurrentHealth(currentHealth);
     }
 }

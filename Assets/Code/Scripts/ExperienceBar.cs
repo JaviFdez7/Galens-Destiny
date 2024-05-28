@@ -34,7 +34,7 @@ public class ExperienceBar : MonoBehaviour
 
     public void InitializeExperienceBar(int maxExperience, int maxExp)
     {
-        ChangeCurrentExperience(maxExperience);
         ChangeMaxExperience(maxExp);
+        ChangeCurrentExperience(maxExperience);
     }
 }

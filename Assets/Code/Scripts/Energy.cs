@@ -7,9 +7,9 @@ public class Energy : MonoBehaviour
     public static Energy instance;
 
     private Coroutine regenerationCoroutine;
-    private const float regenerationDelay = 3.0f; // Waiting for start the regeneration
-    private const int regenerationAmount = 1; // Regeneration per interval
-    private const float regenerationInterval = 0.2f; // 
+    public float regenerationDelay = 3.0f; // Waiting for start the regeneration
+    public int regenerationAmount = 1; // Regeneration per interval
+    public float regenerationInterval = 0.2f; // 
 
     void Awake()
     {
@@ -38,7 +38,7 @@ public class Energy : MonoBehaviour
         PlayerData.instance.currentEnergy = Mathf.Clamp(PlayerData.instance.currentEnergy, 0, PlayerData.instance.maxEnergy);
         EnergyBar.instance.ChangeCurrentEnergy(PlayerData.instance.currentEnergy);
 
-        // Reiniciar la coroutine de regeneración
+        // Restart the regeneration Coroutine
         if (regenerationCoroutine != null)
         {
             StopCoroutine(regenerationCoroutine);

@@ -34,7 +34,7 @@ public class EnergyBar : MonoBehaviour
 
     public void InitializeEnergyBar(int maxEnergy, int currentEnergy)
     {
-        ChangeCurrentEnergy(currentEnergy);
         ChangeMaxEnergy(maxEnergy);
+        ChangeCurrentEnergy(currentEnergy);
     }
 }

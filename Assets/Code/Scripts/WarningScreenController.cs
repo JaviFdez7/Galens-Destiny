@@ -6,9 +6,18 @@ using TMPro;
 
 public class WarningScreenController : MonoBehaviour
 {
-    public PauseMenu pauseMenu;
-    public UpgradeTree upgradeTree;
-    public SkillsMenu skillsMenu;
+    public static WarningScreenController instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     public string TryToEquipAnUnequipableSkill(int errorControlCode) // else in ActiveSkill
     {
@@ -20,8 +29,8 @@ public class WarningScreenController : MonoBehaviour
         {
             warningMessage = "Skill unavailable: locked skill";
         }
-        pauseMenu.OpenWarningMenu();
-        skillsMenu.warningText.gameObject.SetActive(true);
+        PauseMenu.instance.OpenWarningMenu();
+        SkillsMenu.instance.warningText.gameObject.SetActive(true);
         return warningMessage;
     }
 
@@ -39,8 +48,8 @@ public class WarningScreenController : MonoBehaviour
         {
             warningMessage = "Upgrade non-unlockable: upgrade already unlocked";
         }
-        pauseMenu.OpenWarningMenu();
-        upgradeTree.warningText2.gameObject.SetActive(true);
+        PauseMenu.instance.OpenWarningMenu();
+        UpgradeTree.instance.warningText2.gameObject.SetActive(true);
         return warningMessage;
     }
 }

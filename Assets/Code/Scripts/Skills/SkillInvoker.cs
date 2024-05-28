@@ -1,28 +1,40 @@
 using UnityEngine;
 using System.Collections.Generic;
+using static SkillsMenu;
 
 public class SkillInvoker : MonoBehaviour
 {
-    public Energy energy;
-    public Dictionary<KeyCode, ICommand> commands = new Dictionary<KeyCode, ICommand>();
+    public static SkillInvoker instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
+
     public void AddNewCommand(KeyCode keyCode, SkillCommand skillCommand)
     {
-        commands.Remove(keyCode);
-        commands.Add(keyCode, skillCommand);
+        SkillData.instance.commands.Remove(keyCode);
+        SkillData.instance.commands.Add(keyCode, skillCommand);
     }
 
     public void DeleteExistingCommandFromKeyCode(KeyCode keyCode)
     {
-        commands.Remove(keyCode);
+        SkillData.instance.commands.Remove(keyCode);
     }
 
     private void Update()
     {
-        foreach (var kvp in commands)
+        foreach (var kvp in SkillData.instance.commands)
         {
             if (Input.GetKeyDown(kvp.Key))
             {
-                kvp.Value.Execute(energy);
+                kvp.Value.Execute();
             }
         }
     }
@@ -30,7 +42,7 @@ public class SkillInvoker : MonoBehaviour
 
 public interface ICommand
 {
-    void Execute(Energy energy);
+    void Execute();
 }
 
 public class SkillCommand : ICommand
@@ -41,15 +53,14 @@ public class SkillCommand : ICommand
     {
         this.skill = skill;
     }
-    public void Execute(Energy energy)
+    public void Execute()
     {
-        skill.Activate(energy);
+        skill.Activate();
     }
 }
 
 public interface ISkill
 {
-    
-    void Activate(Energy energy);
+    void Activate();
 }
 

@@ -8,6 +8,18 @@ public class EnergyBar : MonoBehaviour
     public Slider sliderHUD;
     public Slider sliderStatsMenu;
 
+    public static EnergyBar instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+
     public void ChangeMaxEnergy(int maxEnergy)
     {
         sliderHUD.maxValue = maxEnergy;
@@ -20,9 +32,9 @@ public class EnergyBar : MonoBehaviour
         sliderStatsMenu.value = currentEnergy;
     }
 
-    public void InitializeEnergyBar(int maxEnergy)
+    public void InitializeEnergyBar(int maxEnergy, int currentEnergy)
     {
-        ChangeCurrentEnergy(maxEnergy);
+        ChangeCurrentEnergy(currentEnergy);
         ChangeMaxEnergy(maxEnergy);
     }
 }

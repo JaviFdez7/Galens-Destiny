@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
-    private int currentHealth;
-    public HealthBar healthBar;
-
-    private void Start()
+    void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.InitializeHealthBar(currentHealth);
+        HealthBar.instance.InitializeHealthBar(PlayerData.instance.maxHealth, PlayerData.instance.currentHealth);
     }
 
     private void Update()
@@ -22,12 +17,12 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
 
-        currentHealth -= damageAmount;
+        PlayerData.instance.currentHealth -= damageAmount;
         
-        healthBar.ChangeCurrentHealth(currentHealth);
+        HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
 
-        Debug.Log(currentHealth);
-        if (currentHealth <= 0f)
+        Debug.Log(PlayerData.instance.currentHealth);
+        if (PlayerData.instance.currentHealth <= 0f)
         {
             Die();
             return;
@@ -47,7 +42,7 @@ public class Health : MonoBehaviour
 
     public void UIText()
     {
-        currentHealthBarMaxHealth.text = "" + currentHealth + " / " + maxHealth;
+        currentHealthBarMaxHealth.text = "" + PlayerData.instance.currentHealth + " / " + PlayerData.instance.maxHealth;
     }
 
 }

@@ -8,6 +8,18 @@ public class HealthBar : MonoBehaviour
     public Slider sliderHUD;
     public Slider sliderStatsMenu;
 
+    public static HealthBar instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+
     public void ChangeMaxHealth(int maxHealth)
     {
         sliderHUD.maxValue = maxHealth;
@@ -20,9 +32,9 @@ public class HealthBar : MonoBehaviour
         sliderStatsMenu.value = currentHealth;
     }
 
-    public void InitializeHealthBar(int maxHealth)
+    public void InitializeHealthBar(int maxHealth, int currentHealth)
     {
-        ChangeCurrentHealth(maxHealth);
+        ChangeCurrentHealth(currentHealth);
         ChangeMaxHealth(maxHealth);
     }
 }

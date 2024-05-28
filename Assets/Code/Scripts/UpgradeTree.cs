@@ -7,9 +7,18 @@ using static Upgrade;
 
 public class UpgradeTree : MonoBehaviour
 {
-    public PlayerStats playerStats;
-    public WarningScreenController warningScreenController;
+    public static UpgradeTree instance;
 
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
     public class Leaf
     {
@@ -38,20 +47,20 @@ public class UpgradeTree : MonoBehaviour
             statStrategies.Add(strategy);
         }
 
-        public void ApplyStatStrategies(PlayerStats playerStats)
+        public void ApplyStatStrategies()
         {
             foreach (var strategy in statStrategies)
             {
-                strategy.ApplyPermanentUpgrade(playerStats);
+                strategy.ApplyPermanentUpgrade();
             }
         }
 
-        public string ResumeToString(PlayerStats playerStats)
+        public string ResumeToString()
         {
             string res = "";
             for(int i = 0; i < statStrategies.Count; i++)
             {
-                res += statStrategies[i].ResumeToString(playerStats, available);
+                res += statStrategies[i].ResumeToString(available);
                 if(statStrategies.Count-1 > i)
                 {
                     res += "\n";
@@ -119,22 +128,22 @@ public class UpgradeTree : MonoBehaviour
         {
             if(upgradeLeaf.available)
             {
-                if(playerStats.token >= upgradeLeaf.cost)
+                if(PlayerData.instance.token >= upgradeLeaf.cost)
                 {
-                    playerStats.token -= upgradeLeaf.cost;
+                    PlayerData.instance.token -= upgradeLeaf.cost;
                     ExecuteUpgrade(leafId);
                     UpdateAvailableUpgrades(leafId);
                 } else
                 {
-                    warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(0);     
+                    warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(0);     
                 }
             } else
             {
-                warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(1);
+                warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(1);
             }
         } else 
         {
-            warningMessage = warningScreenController.TryToUnlockAnNonUnlockableUpgrade(2);
+            warningMessage = WarningScreenController.instance.TryToUnlockAnNonUnlockableUpgrade(2);
         }
     }
 
@@ -155,7 +164,7 @@ public class UpgradeTree : MonoBehaviour
 
     private void ExecuteUpgrade(int leafId)
     {
-        allLeafObjects[leafId].ApplyStatStrategies(playerStats);
+        allLeafObjects[leafId].ApplyStatStrategies();
     }
 
     // Start and Update -----------------------------------------------------------------------------
@@ -209,7 +218,7 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade1Name.text = "" + allUpgradeName[1];
             upgrade1Cost.text = "Cost: " + allUpgradeCost[1];
-            upgrade1Resume.text = allLeafObjects[1].ResumeToString(playerStats); 
+            upgrade1Resume.text = allLeafObjects[1].ResumeToString(); 
         } else
         {
             upgrade1Cost.text = "Unlocked";
@@ -220,7 +229,7 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade2Name.text = "" + allUpgradeName[2];
             upgrade2Cost.text = "Cost: " + allUpgradeCost[2];
-            upgrade2Resume.text = allLeafObjects[2].ResumeToString(playerStats); 
+            upgrade2Resume.text = allLeafObjects[2].ResumeToString(); 
         } else
         {
             upgrade2Cost.text = "Unlocked";
@@ -231,7 +240,7 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade3Name.text = "" + allUpgradeName[3];
             upgrade3Cost.text = "Cost: " + allUpgradeCost[3];
-            upgrade3Resume.text = allLeafObjects[3].ResumeToString(playerStats); 
+            upgrade3Resume.text = allLeafObjects[3].ResumeToString(); 
         } else
         {
             upgrade3Cost.text = "Unlocked";
@@ -242,7 +251,7 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade4Name.text = "" + allUpgradeName[4];
             upgrade4Cost.text = "Cost: " + allUpgradeCost[4];
-            upgrade4Resume.text = allLeafObjects[4].ResumeToString(playerStats); 
+            upgrade4Resume.text = allLeafObjects[4].ResumeToString(); 
         } else
         {
             upgrade4Cost.text = "Unlocked";
@@ -253,7 +262,7 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade5Name.text = "" + allUpgradeName[5];
             upgrade5Cost.text = "Cost: " + allUpgradeCost[5];
-            upgrade5Resume.text = allLeafObjects[5].ResumeToString(playerStats); 
+            upgrade5Resume.text = allLeafObjects[5].ResumeToString(); 
         } else
         {
             upgrade5Cost.text = "Unlocked";
@@ -264,14 +273,14 @@ public class UpgradeTree : MonoBehaviour
         {
             upgrade6Name.text = "" + allUpgradeName[6];
             upgrade6Cost.text = "Cost: " + allUpgradeCost[6];
-            upgrade6Resume.text = allLeafObjects[6].ResumeToString(playerStats); 
+            upgrade6Resume.text = allLeafObjects[6].ResumeToString(); 
         } else
         {
             upgrade6Cost.text = "Unlocked";
             upgrade6Resume.gameObject.SetActive(false);        
         } 
 
-        availableTokensText.text = "Tokens: " + playerStats.token.ToString();
+        availableTokensText.text = "Tokens: " + PlayerData.instance.token.ToString();
         warningText2.text = "" + warningMessage;
     }
 }

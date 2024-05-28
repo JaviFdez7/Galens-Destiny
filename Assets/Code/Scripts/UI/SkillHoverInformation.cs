@@ -7,17 +7,15 @@ using static SkillsMenu;
 
 public class SkillHoverInformation : MonoBehaviour
 {
-    public SkillsMenu skillsMenu;
     public Image skillImage;
     public TextMeshProUGUI skillNameText;
     public TextMeshProUGUI skillLongDescriptionText;
     public TextMeshProUGUI skillSlotsText;
     public TextMeshProUGUI adviceText;
-    public PlayerStats playerStats;
 
     public void ChangeSkillInformation(int skillId)
     {
-        Skill skill = skillsMenu.allSkillObjects[skillId];
+        Skill skill = SkillData.instance.allSkillObjects[skillId];
 
         if(skill.unlocked)
         {
@@ -26,14 +24,14 @@ public class SkillHoverInformation : MonoBehaviour
             skillNameText.text = skill.name;
             skillLongDescriptionText.text = skill.longDescription;
             skillSlotsText.text = skill.skillSlots.ToString();
-            if(playerStats.skillSlots<skill.skillSlots)
+            if(PlayerData.instance.skillSlots<skill.skillSlots)
             {
                 adviceText.text = "Insuficient Skill Slots";
             } else
             {
                 adviceText.text = "";
             }
-            if(skillsMenu.activeSkills.Contains(skill))
+            if(SkillData.instance.activeSkills.Contains(skill))
             {
                 adviceText.text = "Equipped Skill";
             } 

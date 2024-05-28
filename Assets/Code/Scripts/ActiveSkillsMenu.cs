@@ -8,7 +8,6 @@ using static SkillsMenu;
 public class ActiveSkillsMenu : MonoBehaviour
 {
     public int index;
-    public SkillsMenu skillsMenu;
     public Image skillImage;
     public TextMeshProUGUI skillName;
     public TextMeshProUGUI skillShortDescription;

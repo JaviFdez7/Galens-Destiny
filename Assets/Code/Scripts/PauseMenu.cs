@@ -12,9 +12,19 @@ public class PauseMenu : MonoBehaviour
     public GameObject warningMenu;
     public GameObject upgradeTreeMenu;
     public GameObject notebookMenu;
-    public UpgradeTree upgradeTree;
-    public SkillsMenu skillsMenu;
-    public HUD HUD;
+
+    public static PauseMenu instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+    }
 
 
     public bool isPaused;
@@ -49,7 +59,7 @@ public class PauseMenu : MonoBehaviour
         warningMenu.SetActive(false);
         upgradeTreeMenu.SetActive(false);
         notebookMenu.SetActive(false);
-        HUD.ActiveHUD();
+        HUD.instance.ActiveHUD();
         Time.timeScale = 1f;
         isPaused = false;
     }
@@ -82,8 +92,8 @@ public class PauseMenu : MonoBehaviour
         } else if(warningMenu.activeSelf) // Warning menu
         {
             warningMenu.SetActive(false);
-            upgradeTree.warningText2.gameObject.SetActive(false);
-            skillsMenu.warningText.gameObject.SetActive(false);
+            UpgradeTree.instance.warningText2.gameObject.SetActive(false);
+            SkillsMenu.instance.warningText.gameObject.SetActive(false);
         } else if(upgradeTreeMenu.activeSelf && !warningMenu.activeSelf) // Player upgrades menu
         {
             upgradeTreeMenu.SetActive(false);
@@ -101,7 +111,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
-        HUD.DisableHUD();
+        HUD.instance.DisableHUD();
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
@@ -110,7 +120,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ResumeGame()
     {
-        HUD.ActiveHUD();
+        HUD.instance.ActiveHUD();
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;

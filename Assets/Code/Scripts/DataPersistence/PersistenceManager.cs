@@ -44,7 +44,7 @@ public class JsonPersistor
         {
             // Load GameData from Json file
             string json = File.ReadAllText(Application.persistentDataPath + "/" + fileName + ".json");
-            T data = JsonUtility.FromJson<T>(json);
+            T data = JsonConvert.DeserializeObject<T>(json);
             Debug.Log("loaded: " + json);
             return data;
 

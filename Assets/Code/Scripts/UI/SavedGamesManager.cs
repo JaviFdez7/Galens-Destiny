@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class SavedGamesManager : MonoBehaviour
 {
 
-    public Button buttonPrefab;
+    //Oject with two buttons one to play the game and the other to delete the game
+    public GameObject buttonsPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +26,8 @@ public class SavedGamesManager : MonoBehaviour
         }
         for (int i = 0; i < GameData.SavedGames.Count; i++)
         {
-            Button buttonGO = Instantiate(buttonPrefab, transform);
-            buttonGO.GetComponentInChildren<TextMeshProUGUI>().text = GameData.SavedGames[i].Name;
-            int savedGameIndex = i;
-            buttonGO.onClick.AddListener(() => GameData.CurrentSavedGameIndex = savedGameIndex);
+            GameObject go = Instantiate(buttonsPrefab, transform);
+            go.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = GameData.SavedGames[i].Name;
             
         }
     }

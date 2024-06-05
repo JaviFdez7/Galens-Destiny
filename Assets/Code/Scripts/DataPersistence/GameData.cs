@@ -7,8 +7,18 @@ using UnityEngine;
 
 public static class GameData
 {
+    public static int CurrentSavedGameIndex;
     public static List<SavedGame> SavedGames = new List<SavedGame>();
 
+    public static void Serialize()
+    {
+        JsonPersistor.SerializeData("GameData", SavedGames);
+    }
+
+    public static void Deserialize()
+    {
+        SavedGames = JsonPersistor.DeserializeData<List<SavedGame>>("GameData");
+    }
 
 }
 

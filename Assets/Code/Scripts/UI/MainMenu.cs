@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
 
     public void PlayGame() {
-        SceneManager.LoadScene("isometric scene");
+        SceneManager.LoadScene("MainGame");
     }
     public void QuitGame(){
         Application.Quit();

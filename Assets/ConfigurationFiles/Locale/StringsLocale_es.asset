@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Mis Partidas
     m_Metadata:
       m_Items: []
+  - m_Id: 100286856133795840
+    m_Localized: Cargando Partida
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

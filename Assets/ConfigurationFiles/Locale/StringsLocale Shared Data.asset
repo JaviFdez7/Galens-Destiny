@@ -43,6 +43,14 @@ MonoBehaviour:
     m_Key: Loading_Game
     m_Metadata:
       m_Items: []
+  - m_Id: 100741938214264832
+    m_Key: Saved_games_subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100743102884405248
+    m_Key: Create_Game_btn
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

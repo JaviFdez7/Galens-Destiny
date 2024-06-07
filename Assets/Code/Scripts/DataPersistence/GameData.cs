@@ -18,6 +18,10 @@ public static class GameData
     public static void Deserialize()
     {
         SavedGames = JsonPersistor.DeserializeData<List<SavedGame>>("GameData");
+        if (SavedGames == null)
+        {
+            SavedGames = new List<SavedGame>();
+        }
     }
 
 }

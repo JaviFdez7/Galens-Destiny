@@ -20416,8 +20416,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.40455, y: -0.22944996, z: 0}
-    m_Extent: {x: 1.36965, y: 0.94764996, z: 0}
+    m_Center: {x: -0.40289998, y: -0.23589998, z: 0}
+    m_Extent: {x: 1.3798, y: 0.9408, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -23253,9 +23253,9 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.03}
-    oldSize: {x: 0.48, y: 1.267}
-    newSize: {x: 0.48, y: 1.267}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.91, y: 5.7}
+    newSize: {x: 7.91, y: 1.267}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -36587,7 +36587,7 @@ PrefabInstance:
     - target: {fileID: 8156803029918190750, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9d697411ce4bc4944b3c35f831704945, type: 3}
+      objectReference: {fileID: -1562554947, guid: ab4bb95fed9287140a3133129625a6b5, type: 3}
     - target: {fileID: 8156803029918190750, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

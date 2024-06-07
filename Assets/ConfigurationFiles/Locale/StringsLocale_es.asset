@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 61611397120
-    m_Localized: Empezar Partida
+    m_Localized: Jugar Partida
     m_Metadata:
       m_Items: []
   - m_Id: 7299767947264
@@ -40,6 +40,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 100286856133795840
     m_Localized: Cargando Partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100741938214264832
+    m_Localized: 'Mis partidas:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100743102884405248
+    m_Localized: Crear Nueva
     m_Metadata:
       m_Items: []
   references:

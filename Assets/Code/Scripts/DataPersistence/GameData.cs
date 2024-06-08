@@ -7,7 +7,7 @@ using UnityEngine;
 
 public static class GameData
 {
-    public static int CurrentSavedGameIndex;
+    public static int CurrentGameSelectedId;
     public static List<SavedGame> SavedGames = new List<SavedGame>();
 
     public static void Serialize()
@@ -31,6 +31,7 @@ public static class GameData
 
 public class SavedGame
 {
+    public int id;
     public string Name;
     public string Date;
     public string worldMapId;

@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : MonoBehaviour
+public static class SceneLoader
 {
-    public void LoadSceneOnClick(string sceneName)
+    public static void LoadSceneOnClick(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }

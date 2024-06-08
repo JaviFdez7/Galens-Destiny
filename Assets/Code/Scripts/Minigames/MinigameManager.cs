@@ -30,6 +30,10 @@ public class MinigameManager : MonoBehaviour
         beginPanel.SetActive(false);
     }
 
+    public void ReturnToMainGame()
+    {
+        SceneLoader.LoadSceneOnClick("Main Game");
+    }
     public void FinishMinigame()
     {
         if(MinigameSetupData.instance.skillName != SkillEnum.None)

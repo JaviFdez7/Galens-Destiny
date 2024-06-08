@@ -2289,7 +2289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153.10004, y: -71.70996}
+  m_AnchoredPosition: {x: -153.09998, y: -71.70996}
   m_SizeDelta: {x: -523.85, y: -908.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515651104
@@ -6531,7 +6531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Continue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6798,10 +6798,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 192609134}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneOnClick
-        m_Mode: 5
+      - m_Target: {fileID: 1274275347}
+        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
+        m_MethodName: ReturnToMainGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7917,7 +7917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -380.00006, y: 303}
+  m_AnchoredPosition: {x: -380.00012, y: 303}
   m_SizeDelta: {x: -1719.82, y: -679.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964480053

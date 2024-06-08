@@ -13,9 +13,12 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private bool canAttack = true;
 
+    public HealthEnemyBar healthEnemyBar;
+
     void Start()
     {
         currentHealth = maxHealth;
+        healthEnemyBar.InitializeHealthBar(maxHealth, currentHealth);
     }
 
     private void Awake()
@@ -69,5 +72,7 @@ public class EnemyController : MonoBehaviour
 
         if(currentHealth <= 0)
             Destroy(gameObject);
+        else
+            healthEnemyBar.ChangeCurrentHealth(currentHealth);
     }
 }

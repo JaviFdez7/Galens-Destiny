@@ -20416,8 +20416,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.40289998, y: -0.23589998, z: 0}
-    m_Extent: {x: 1.3798, y: 0.9408, z: 0}
+    m_Center: {x: -0.41075, y: -0.23940003, z: 0}
+    m_Extent: {x: 1.37655, y: 0.9448, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -23307,6 +23307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f102a31dc5e4954595e92ab4c545323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenerationDelay: 3
+  regenerationAmount: 1
+  regenerationInterval: 0.2
   currentEnergyBarMaxEnergy: {fileID: 1724437876}
 --- !u!114 &1405495079
 MonoBehaviour:

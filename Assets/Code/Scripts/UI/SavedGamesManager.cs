@@ -35,7 +35,7 @@ public class SavedGamesManager : MonoBehaviour
             go.GetComponentInChildren<Button>().onClick.AddListener(() => {
                 GameData.CurrentGameSelectedId = game.id;
                 // Load the game scene
-                SceneLoader.LoadSceneOnClick("Main Game");
+                SceneLoader.LoadSceneAsyncWithLoadingBar("Main Game");
             });
             
         }

@@ -32,7 +32,7 @@ public class MinigameManager : MonoBehaviour
 
     public void ReturnToMainGame()
     {
-        SceneLoader.LoadSceneOnClick("Main Game");
+        SceneLoader.LoadSceneAsyncWithLoadingBar("Main Game");
     }
     public void FinishMinigame()
     {

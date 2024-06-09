@@ -64,7 +64,7 @@ public class ZoneDetection : MonoBehaviour
     {
         MinigameSetupData.instance.skillName = skillNameForUnlock;
         MinigameSetupData.instance.history = history;
-        SceneManager.LoadScene(SceneName);
+        SceneLoader.LoadSceneAsyncWithLoadingBar(SceneName);
     }
 
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,7 +11,10 @@ public class CameraFollow : MonoBehaviour
 
     private Camera cam; // Reference to the camera
 
+    public Animator shakeAnimatior;
+
     private static List<Shake> screenShakes = new List<Shake>();
+
 
     public static void ScreenShake(float duration, float magnitude)
     {
@@ -30,26 +34,7 @@ public class CameraFollow : MonoBehaviour
     }
 
 
-    private IEnumerator ShakeCamera(float intensity, float duration)
-    {
-        Vector3 originalPosition = Camera.main.transform.position;
-        Vector3 lastCameraMovement = Vector3.zero;
-        intensity = Mathf.Clamp(intensity, 0f, 1f)/10;
 
-        while (duration > 0f)
-        {
-            duration -= Time.unscaledDeltaTime;
-            Vector3 randomMovement = new Vector3(
-                Random.Range(-1f, 1f), 
-                Random.Range(-1f, 1f)
-            ).normalized * intensity;
-            Camera.main.transform.position = Camera.main.transform.position - lastCameraMovement + randomMovement;
-            lastCameraMovement = randomMovement;
-            yield return null;
-        }
-
-        Camera.main.transform.position = originalPosition;
-    }
 
     void Start()
     {
@@ -80,12 +65,12 @@ public class CameraFollow : MonoBehaviour
         }
         if (screenShakes.Count > 0)
         {
-            StartCoroutine(ShakeCamera(screenShakes[0].duration, screenShakes[0].magnitude));
+            ShakeCamera(screenShakes[0].duration, screenShakes[0].magnitude);
             screenShakes.RemoveAt(0);
         }
 
         if (Input.GetMouseButtonDown(0)){
-            ScreenShake(0.1f, 0.5f);
+            ScreenShake(0.2f, 0.2f);
         }
 
         // Get the mouse position in the world
@@ -98,5 +83,11 @@ public class CameraFollow : MonoBehaviour
         // Smoothly move the camera to the midpoint
         Vector3 newPosition = Vector3.Lerp(transform.position, new Vector3(midpoint.x, midpoint.y, transform.position.z), followSpeed * Time.deltaTime);
         transform.position = newPosition;
+    }
+
+    private void ShakeCamera(float duration, float magnitude)
+    {
+        //animation
+        shakeAnimatior.Play("ScreenShake");
     }
 }

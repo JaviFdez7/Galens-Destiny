@@ -43,7 +43,7 @@ public class WorldGen : MonoBehaviour
         foreach (SectorData sector in worldMapData.sectors)
         {
             Vector2 position = new(sector.x * worldMapData.cellWidth, sector.y * worldMapData.cellHeight);
-            GameObject room = Instantiate(Resources.Load<GameObject>("Rooms/" + sector.roomPrefabName), position, Quaternion.identity);
+            GameObject room = Instantiate(Resources.Load<GameObject>("Prefabs/Rooms/" + sector.roomPrefabName), position, Quaternion.identity);
             room.name = sector.name;
         }
     }

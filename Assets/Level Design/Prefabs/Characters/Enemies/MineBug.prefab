@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 6766477270548109464}
   - component: {fileID: 4677483433708894111}
   m_Layer: 0
-  m_Name: Hexagon Flat-Top
+  m_Name: MineBug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

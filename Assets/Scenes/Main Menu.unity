@@ -2138,7 +2138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Saved games
+  m_text: Minigames
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ad914d563413e84ca17ae1ddb176a01, type: 2}
   m_sharedMaterial: {fileID: -3864953938901718612, guid: 7ad914d563413e84ca17ae1ddb176a01, type: 2}

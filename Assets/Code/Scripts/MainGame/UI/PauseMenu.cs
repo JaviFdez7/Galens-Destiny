@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
     public GameObject mapMenu;
     public GameObject playerStatsMenu;
     public GameObject playerSkillsMenu;
@@ -51,7 +50,6 @@ public class PauseMenu : MonoBehaviour
     public void FastResume() 
     {
         //Add all pause menus GameObject here
-        pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         playerStatsMenu.SetActive(false);
         playerSkillsMenu.SetActive(false);
@@ -66,7 +64,6 @@ public class PauseMenu : MonoBehaviour
 
     public void CloseAllViews() 
     {
-        pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         playerStatsMenu.SetActive(false);
         equippedSkillsDetailsMenu.SetActive(false);
@@ -78,15 +75,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReturnPreviousMenu()
     {
-        if(playerStatsMenu.activeSelf && !equippedSkillsDetailsMenu.activeSelf) // Player stats menu
-        {
-            playerStatsMenu.SetActive(false);
-            pauseMenu.SetActive(true);
-        } else if(playerSkillsMenu.activeSelf && !equippedSkillsDetailsMenu.activeSelf && !warningMenu.activeSelf) // Player skill menu
-        {
-            playerSkillsMenu.SetActive(false);
-            pauseMenu.SetActive(true);
-        } else if(equippedSkillsDetailsMenu.activeSelf) // Equipped skills details menu
+        if(equippedSkillsDetailsMenu.activeSelf) // Equipped skills details menu
         { 
             equippedSkillsDetailsMenu.SetActive(false);
         } else if(warningMenu.activeSelf) // Warning menu
@@ -94,37 +83,18 @@ public class PauseMenu : MonoBehaviour
             warningMenu.SetActive(false);
             UpgradeTree.instance.warningText2.gameObject.SetActive(false);
             SkillsMenu.instance.warningText.gameObject.SetActive(false);
-        } else if(upgradeTreeMenu.activeSelf && !warningMenu.activeSelf) // Player upgrades menu
-        {
-            upgradeTreeMenu.SetActive(false);
-            pauseMenu.SetActive(true);
-        } else if(mapMenu.activeSelf) // Map menu
-        { 
-            mapMenu.SetActive(false);
-            pauseMenu.SetActive(true);
-        } else if(notebookMenu.activeSelf) // Notebook menu
-        {
-            notebookMenu.SetActive(false);
-            pauseMenu.SetActive(true);
         }
     }
 
     public void PauseGame()
     {
         HUD.instance.DisableHUD();
-        pauseMenu.SetActive(true);
+        mapMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
     }
 
 
-    public void ResumeGame()
-    {
-        HUD.instance.ActiveHUD();
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        isPaused = false;
-    }
 
     public void OpenPlayerStatsMenu()
     {

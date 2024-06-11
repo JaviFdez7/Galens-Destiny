@@ -36,7 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 100029314841931776
-    m_Key: Menu_saved_games
+    m_Key: Menu_minigames
     m_Metadata:
       m_Items: []
   - m_Id: 100286856133795840
@@ -49,6 +49,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 100743102884405248
     m_Key: Create_Game_btn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102066759204827136
+    m_Key: Minigames_subtitle
     m_Metadata:
       m_Items: []
   m_Metadata:

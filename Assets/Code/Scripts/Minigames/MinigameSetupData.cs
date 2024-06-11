@@ -1,21 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MinigameSetupData : MonoBehaviour
+public static class MinigameSetupData
 {
-    public int history;
-    public SkillEnum skillName;   
+    public static int history;
+    public static SkillEnum skillName;   
 
-    public static MinigameSetupData instance;
-    void Awake()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 }

@@ -29,15 +29,19 @@ public class MinigameManager : MonoBehaviour
         minigame.SetActive(true);
         beginPanel.SetActive(false);
     }
-
-    public void ReturnToMainGame()
+    /// <summary>
+    /// This method is called when the player wants to exit the minigame
+    /// In will go to the MainMenu or MainGame scene depending on the last scene loaded
+    /// </summary>
+    public void ExitMiniGame()
     {
-        SceneLoader.LoadSceneAsyncWithLoadingBar("Main Game");
+        //Dont save the current scene name, its referenced in the interactables of MainMenu and MainGame
+        SceneLoader.LoadSceneAsyncWithLoadingBar(SceneLoader.lastSceneName, false);
     }
     public void FinishMinigame()
     {
-        if(MinigameSetupData.instance.skillName != SkillEnum.None)
-            UnlockSkill(MinigameSetupData.instance.skillName);
+        if(MinigameSetupData.skillName != SkillEnum.None)
+            UnlockSkill(MinigameSetupData.skillName);
         minigame.SetActive(false);
         endPanel.SetActive(true);
     }

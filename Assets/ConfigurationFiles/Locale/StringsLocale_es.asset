@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 100029314841931776
-    m_Localized: Mis Partidas
+    m_Localized: Minijuegos
     m_Metadata:
       m_Items: []
   - m_Id: 100286856133795840
@@ -48,6 +48,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 100743102884405248
     m_Localized: Crear Nueva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102066759204827136
+    m_Localized: 'Lista de Minijuegos:'
     m_Metadata:
       m_Items: []
   references:

@@ -6787,7 +6787,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1274275347}
         m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
-        m_MethodName: ReturnToMainGame
+        m_MethodName: ExitMiniGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

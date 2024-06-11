@@ -62,9 +62,9 @@ public class ZoneDetection : MonoBehaviour
 
     private void EnterMinigame(InputAction.CallbackContext inputContext)
     {
-        MinigameSetupData.instance.skillName = skillNameForUnlock;
-        MinigameSetupData.instance.history = history;
-        SceneLoader.LoadSceneAsyncWithLoadingBar(SceneName);
+        MinigameSetupData.skillName = skillNameForUnlock;
+        MinigameSetupData.history = history;
+        SceneLoader.LoadSceneAsyncWithLoadingBar(SceneName, true);
     }
 
 

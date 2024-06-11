@@ -23,6 +23,11 @@ public static class PersistorManager
 }
 public class JsonPersistor
 {
+
+    public static bool CheckIfDataExists(string fileName)
+    {
+        return File.Exists(Application.persistentDataPath + "/" + fileName + ".json");
+    }
     public static void SerializeData(string fileName, object data)
     {
         try

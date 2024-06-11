@@ -18,17 +18,9 @@ public class SavedGamesMenu : MonoBehaviour
 
     void InstantiateButtons()
     {
-        GamesData.Deserialize();
-        // populate the list to test the UI
-        for (int i = 0; i < 2; i++)
+        foreach (int key in GamesData.SavedGames.Keys)
         {
-            SavedGame g = new() { id= i, Name = "Game "+i, Date = "01/01/2021", worldMapId = "1" };
-            GamesData.SavedGames.Add(i, g);
-        }
-        Debug.Log(GamesData.SavedGames.Count);
-        for (int i = 0; i < GamesData.SavedGames.Count; i++)
-        {
-            SavedGame game = GamesData.SavedGames[i];
+            SavedGame game = GamesData.SavedGames[key];
             GameObject prefab = Instantiate(buttonsPrefab, transform);
             Button gameButton = prefab.transform.Find("Game").GetComponent<Button>();
             gameButton.GetComponentInChildren<TextMeshProUGUI>().text = game.Name;
@@ -39,17 +31,16 @@ public class SavedGamesMenu : MonoBehaviour
 
             Button deleteButton = prefab.transform.Find("Delete").GetComponent<Button>();
             deleteButton.onClick.AddListener(() => {
-                Debug.Log("Delete game " + game.Name);
                 GamesData.SavedGames.Remove(game.id);
-                Debug.Log(GamesData.SavedGames);
+                Debug.Log("Deleted game " + game.Name);
                 GamesData.Serialize();
-                RefeshButtons();
+                RefreshButtons();
             });
             
         }
     }
 
-    void RefeshButtons()
+    public void RefreshButtons()
     {
         foreach (Transform child in transform)
         {
@@ -58,5 +49,12 @@ public class SavedGamesMenu : MonoBehaviour
         InstantiateButtons();
     }
 
+    public void CreateNewGame()
+    {
+        SavedGame game = new SavedGame();
+        GamesData.SavedGames.Add(game.id, game);
+        GamesData.CurrentGameSelectedId = game.id;
+        RefreshButtons();
+    }
 
 }

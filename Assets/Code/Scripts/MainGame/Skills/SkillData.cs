@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using static SkillsMenu;
 
 public class SkillData : MonoBehaviour
@@ -29,6 +30,8 @@ public class SkillData : MonoBehaviour
     {
         GameObject inGameTransform = GameObject.Find("Weapon");
         IExecuteCommand emotionalInsightSkill = inGameTransform.GetComponent<EmotionalInsightSkill>();
+
+        commands.Add(KeyCode.Mouse0, emotionalInsightSkill);
 
         Skill skill0 = new Skill(0, SkillEnum.EmotionalInsight, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, false, 5, skillImages[0], emotionalInsightSkill);
         Skill skill1 = new Skill(1, SkillEnum.StrategicForesightSkill, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, false, false, 5, skillImages[1], emotionalInsightSkill);

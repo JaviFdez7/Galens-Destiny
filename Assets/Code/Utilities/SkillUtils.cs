@@ -14,4 +14,18 @@ public static class SkillUtils {
 
         return activeSkill;
     }
+
+    public static Skill GetOneSkillFromAll(SkillEnum skillName)
+    {
+        Skill activeSkill = null;
+
+        foreach (Skill skill in SkillData.instance.allSkillObjects)
+            if (skill != null && skill.skillEnum == skillName)
+            {
+                activeSkill = skill;
+                break;
+            }
+
+        return activeSkill;
+    }
 }

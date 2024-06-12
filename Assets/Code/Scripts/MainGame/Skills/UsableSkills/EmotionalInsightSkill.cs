@@ -8,9 +8,10 @@ public class EmotionalInsightSkill : MonoBehaviour, IExecuteCommand
     public float fireForce;
     public void Activate()
     {
-        Skill activeSkill = SkillUtils.GetActiveSkill(SkillEnum.EmotionalInsight);
+        Skill activeSkill = SkillUtils.GetOneSkillFromAll(SkillEnum.EmotionalInsight);
 
-        if (PlayerData.instance.currentEnergy - activeSkill.energyCost < 0)
+        if (PlayerData.instance.currentEnergy 
+        - activeSkill.energyCost < 0)
             return;
 
         Energy.instance.SpendEnergy(2);

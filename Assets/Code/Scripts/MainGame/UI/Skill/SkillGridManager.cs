@@ -40,36 +40,39 @@ public class SkillGridManager : MonoBehaviour
 
         foreach (Skill skill in skills)
         {
-            GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
-            skillGridElement.GetComponent<Image>().sprite = skill.skillImage;
-            skillGridElement.GetComponent<SkillHoverDetection>().id = skill.id;
-            skillGridElement.GetComponent<SkillHoverDetection>().skillHoverInformation = skillHoverInformation;
-
-            if(selectedSkillTypeIsPassive != "None")
+            if(skill.skillEnum != SkillEnum.EmotionalInsight)
             {
-                skillGridElement.GetComponent<Button>().onClick.AddListener(() => SkillsMenu.instance.ActiveSkill(skill.id));
+                GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
+                skillGridElement.GetComponent<Image>().sprite = skill.skillImage;
+                skillGridElement.GetComponent<SkillHoverDetection>().id = skill.id;
+                skillGridElement.GetComponent<SkillHoverDetection>().skillHoverInformation = skillHoverInformation;
 
-                ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
-                colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);
-                skillGridElement.GetComponent<Button>().colors = colors;
-            }
+                if(selectedSkillTypeIsPassive != "None")
+                {
+                    skillGridElement.GetComponent<Button>().onClick.AddListener(() => SkillsMenu.instance.ActiveSkill(skill.id));
 
-            if (!skill.unlocked) // Change locked skills to black
-            {
-                Image skillImage = skillGridElement.GetComponent<Image>();
-                skillImage.color = new Color(0.0f, 0.0f, 0.0f, 1f);
-            }
+                    ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
+                    colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+                    skillGridElement.GetComponent<Button>().colors = colors;
+                }
 
-            if(selectedSkillTypeIsPassive == "None") // Change the opaticity if you don't want to change any skill
-            {
-                Color color = skillGridElement.GetComponent<Image>().color;
-                color.a = 0.6f;
-                skillGridElement.GetComponent<Image>().color = color;
-            } else if(selectedSkillTypeIsPassive == "Passive" || selectedSkillTypeIsPassive == "Usable")
-            {
-                Color color = skillGridElement.GetComponent<Image>().color;
-                color.a = 1f;
-                skillGridElement.GetComponent<Image>().color = color;
+                if (!skill.unlocked) // Change locked skills to black
+                {
+                    Image skillImage = skillGridElement.GetComponent<Image>();
+                    skillImage.color = new Color(0.0f, 0.0f, 0.0f, 1f);
+                }
+
+                if(selectedSkillTypeIsPassive == "None") // Change the opaticity if you don't want to change any skill
+                {
+                    Color color = skillGridElement.GetComponent<Image>().color;
+                    color.a = 0.6f;
+                    skillGridElement.GetComponent<Image>().color = color;
+                } else if(selectedSkillTypeIsPassive == "Passive" || selectedSkillTypeIsPassive == "Usable")
+                {
+                    Color color = skillGridElement.GetComponent<Image>().color;
+                    color.a = 1f;
+                    skillGridElement.GetComponent<Image>().color = color;
+                }
             }
         }
     }

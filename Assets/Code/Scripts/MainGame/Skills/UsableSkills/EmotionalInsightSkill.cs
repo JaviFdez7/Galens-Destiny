@@ -1,7 +1,7 @@
 using UnityEngine;
 using static SkillsMenu;
 
-public class EmotionalInsightSkill : MonoBehaviour, ISkill
+public class EmotionalInsightSkill : MonoBehaviour, IExecuteCommand
 {
     public GameObject bulletPrefab;
     private Transform firePoint;

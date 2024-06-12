@@ -17,10 +17,10 @@ public class SkillInvoker : MonoBehaviour
         instance = this;
     }
 
-    public void AddNewCommand(KeyCode keyCode, SkillCommand skillCommand)
+    public void AddNewCommand(KeyCode keyCode, IExecuteCommand command)
     {
         SkillData.instance.commands.Remove(keyCode);
-        SkillData.instance.commands.Add(keyCode, skillCommand);
+        SkillData.instance.commands.Add(keyCode, command);
     }
 
     public void DeleteExistingCommandFromKeyCode(KeyCode keyCode)
@@ -34,33 +34,16 @@ public class SkillInvoker : MonoBehaviour
         {
             if (Input.GetKeyDown(kvp.Key))
             {
-                kvp.Value.Execute();
+                kvp.Value.Activate();
             }
         }
     }
 }
 
-public interface ICommand
-{
-    void Execute();
-}
-
-public class SkillCommand : ICommand
-{
-    private ISkill skill;
-
-    public SkillCommand(ISkill skill)
-    {
-        this.skill = skill;
-    }
-    public void Execute()
-    {
-        skill.Activate();
-    }
-}
-
-public interface ISkill
+public interface IExecuteCommand
 {
     void Activate();
 }
+
+
 

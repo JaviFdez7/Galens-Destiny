@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StrategicForesightSkill : ISkill
+public class StrategicForesightSkill : IExecuteCommand
 {
     public void Activate()
     {

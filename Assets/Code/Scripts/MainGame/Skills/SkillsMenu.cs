@@ -38,9 +38,9 @@ public class SkillsMenu : MonoBehaviour
         public bool passive { get; private set; }
         public int energyCost { get; private set; }
         public Sprite skillImage { get; private set; }
-        public SkillCommand skillCommand { get; private set; }
+        public IExecuteCommand skillCommand { get; private set; }
 
-        public Skill(int id, SkillEnum skillEnum, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, SkillCommand skillCommand)
+        public Skill(int id, SkillEnum skillEnum, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, IExecuteCommand skillCommand)
         {
             this.skillEnum = skillEnum;
             this.id = id;

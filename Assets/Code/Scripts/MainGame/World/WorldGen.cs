@@ -44,8 +44,31 @@ public class WorldGen : MonoBehaviour
         {
             Vector2 position = new(sector.x * worldMapData.cellWidth, sector.y * worldMapData.cellHeight);
             GameObject room = Instantiate(Resources.Load<GameObject>("Prefabs/Rooms/" + sector.roomPrefabName), position, Quaternion.identity);
-            room.name = sector.name;
+            if (room.TryGetComponent<RoomDoorFrames>(out RoomDoorFrames roomDoorFrames))
+            {
+            foreach (DoorType doorType in sector.doorFrames)
+            {
+                roomDoorFrames.OpenFrame(doorType);
+            }
+            };
+
+
         }
+    }
+
+    public void GenerateSectors()
+    {
+        // Generate sectors
+    }
+
+    public void GenerateDoors()
+    {
+        // Generate doors
+    }
+
+    public void GetNeighbours(SectorData sectorData)
+    {
+        // Get neighbours
     }
     
 

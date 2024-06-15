@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StrategicForesightSkill : IExecuteCommand
 {
-    public void Activate()
+    public void Execute()
     {
         Energy.instance.SpendEnergy(20);
         Debug.Log("USANDO HABILIDAD StrategicForesight");

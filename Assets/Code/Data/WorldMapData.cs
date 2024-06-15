@@ -44,7 +44,7 @@ public static class WorldMapManager
             // Load default data from json file in Resources folder maps.json
             string json = Resources.Load<TextAsset>("maps").text;
             Debug.Log(json);
-            StaticWorlds = JsonConvert.DeserializeObject<AllWorldMapsData>(json).maps;
+            StaticWorlds = JsonConvert.DeserializeObject<List<WorldMapData>>(json);
             Debug.Log(StaticWorlds.Count);
 
 
@@ -59,38 +59,6 @@ public static class WorldMapManager
 }
 
 
-public class TestData{
-    public string name;
-    public int age;
-    public List<Complex> hobbies;
-
-}
-public class Complex{
-    public string x;
-    public int y;
-}
-/* the test json :
-
-{
-    "name": "John",
-    "age": 30,
-    "hobbies": [
-        {
-            "x": "reading",
-            "y": 1
-        },
-        {
-            "x": "writing",
-            "y": 2
-        }
-    ]
-}
-
-*/
-public class AllWorldMapsData
-{
-    public List<WorldMapData> maps;
-}
 public class WorldMapData
 {
     public string id;
@@ -105,6 +73,7 @@ public class WorldMapData
     public List<SectorData> sectors;
 
 
+
 }
 
 public class SectorData {
@@ -113,6 +82,7 @@ public class SectorData {
     public string name;
     public string roomPrefabName;
 
+    public List<DoorType> doorFrames;
     public int numberOfEnemies;
     public List<string> possibleEnemies;
     public int difficulty;

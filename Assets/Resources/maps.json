@@ -1,82 +1,43 @@
-{
-    "maps":
-    [
-        {
-            "id": "1",
-            "name": "Default Demo Map",
-            "description": "This the default map for the demo",
-            "gridWidth": 10,
-            "gridHeight": 10,
-            "cellWidth": 65,
-            "cellHeight": 40,
-            "sectors": [
-                {
-                    "x": 0,
-                    "y": 0,
-                    "name": "The Mines",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": [],
-                    "numberOfEnemies": 5
-                },
-                {
-                    "x": 1,
-                    "y": 0,
-                    "name": "Mine entrance",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                },
-                {
-                    "x": 2,
-                    "y": 0,
-                    "name": "Safe City",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": []
-                },
-                {
-                    "x": 3,
-                    "y": 0,
-                    "name": "A new Challenge",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                },
-                {
-                    "x": 3,
-                    "y": 1,
-                    "name": "Sector 5",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                },
-                {
-                    "x": 4,
-                    "y": 1,
-                    "name": "Sector 6",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                },
-                {
-                    "x": 5,
-                    "y": 1,
-                    "name": "Sector 7",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                },
-                {
-                    "x": 5,
-                    "y": 0,
-                    "name": "Sector 8",
-                    "roomPrefabName": "InitialRoom",
-                    "difficulty": 1,
-                    "possibleEnemies": ["Drill"]
-                }
-            ]
-    
-        }
-    ]
-}
+[
+    {
+        "id": "1",
+        "name": "Default Demo Map",
+        "description": "This the default map for the demo",
+        "gridWidth": 10,
+        "gridHeight": 10,
+        "cellWidth": 33,
+        "cellHeight": 19,
+        "sectors": [
+            {
+                "x": 0,
+                "y": 0,
+                "name": "The Mines",
+                "roomPrefabName": "InitialRoom",
+                "doorFrames": ["RIGHT"],
+                "difficulty": 1,
+                "possibleEnemies": [],
+                "numberOfEnemies": 5
+            },
+            {
+                "x": 1,
+                "y": 0,
+                "name": "Mine entrance",
+                "roomPrefabName": "InitialRoom",
+                "doorFrames": ["LEFT","UP"],
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "Drill"
+                ]
+            },
+            {
+                "x": 1,
+                "y": 1,
+                "name": "Safe City",
+                "roomPrefabName": "InitialRoom",
+                "doorFrames": ["DOWN"],
+                "difficulty": 1,
+                "possibleEnemies": []
+            }
+        ]
+    }
+]

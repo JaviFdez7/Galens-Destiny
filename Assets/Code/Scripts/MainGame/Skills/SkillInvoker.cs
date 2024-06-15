@@ -34,7 +34,7 @@ public class SkillInvoker : MonoBehaviour
         {
             if (Input.GetKeyDown(kvp.Key))
             {
-                kvp.Value.Activate();
+                kvp.Value.Execute();
             }
         }
     }
@@ -42,7 +42,7 @@ public class SkillInvoker : MonoBehaviour
 
 public interface IExecuteCommand
 {
-    void Activate();
+    void Execute();
 }
 
 

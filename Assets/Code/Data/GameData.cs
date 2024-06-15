@@ -38,6 +38,8 @@ public class SavedGame
     public string Name;
     public string Date;
     public string worldMapId;
+
+    public PlayerData PlayerData = new PlayerData();
     public MiniGamesData MiniGamesData = new MiniGamesData();
     public ArchivementsData Archivements = new ArchivementsData();
 

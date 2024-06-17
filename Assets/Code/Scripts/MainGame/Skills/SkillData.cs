@@ -28,7 +28,7 @@ public class SkillData : MonoBehaviour
 
     public void Initialize()
     {
-        GameObject inGameTransform = GameObject.Find("Weapon");
+        GameObject inGameTransform = GameObject.Find("Weapons");
         IExecuteCommand emotionalInsightSkill = inGameTransform.GetComponent<EmotionalInsightSkill>();
 
         commands.Add(KeyCode.Mouse0, emotionalInsightSkill);

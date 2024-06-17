@@ -54,6 +54,10 @@ MonoBehaviour:
     m_Localized: 'Lista de Minijuegos:'
     m_Metadata:
       m_Items: []
+  - m_Id: 104365657910898688
+    m_Localized: Pulsa F
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

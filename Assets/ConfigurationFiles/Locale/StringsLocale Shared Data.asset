@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: Minigames_subtitle
     m_Metadata:
       m_Items: []
+  - m_Id: 104365657910898688
+    m_Key: F_To_Interact
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

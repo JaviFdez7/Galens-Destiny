@@ -40,9 +40,11 @@ public class PauseMenu : MonoBehaviour
             if(isPaused)
             {
                 FastResume();
+                CursorController.instance.SetCursorShoot();
             } else
             {
                 PauseGame();
+                CursorController.instance.SetCursorDefault();
             }
         }
     }

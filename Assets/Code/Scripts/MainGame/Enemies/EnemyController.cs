@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamageable
 {
     public float moveSpeed = 2f; // Constant move speed of the enemy
     public float attackRange = 1f;
@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private bool canAttack = true;
+    private bool canMove = true;
 
     public HealthEnemyBar healthEnemyBar;
 
@@ -25,7 +26,6 @@ public class EnemyController : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous; // Disable collision response
     }
 
     void FixedUpdate()
@@ -34,7 +34,8 @@ public class EnemyController : MonoBehaviour
         Vector2 directionToPlayer = ((Vector2)player.transform.position - rb.position);
 
         // Move the enemy towards the player with the constant speed.
-        rb.velocity = directionToPlayer.normalized * moveSpeed;
+        if (canMove)
+            rb.velocity = directionToPlayer.normalized * moveSpeed;
 
         // Check the distance to the player and attack if within the attack range.
         float distanceToPlayer = directionToPlayer.magnitude;
@@ -66,13 +67,32 @@ public class EnemyController : MonoBehaviour
         canAttack = true;
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, Vector2 damageDirection)
     {
         currentHealth -= damageAmount;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
+        {
             Destroy(gameObject);
+        }
         else
+        {
             healthEnemyBar.ChangeCurrentHealth(currentHealth);
+            Knockback(damageDirection); // Invoke the knockback immediately with direction
+        }
     }
+
+    void Knockback(Vector2 direction, float force = 5f)
+    {
+        canMove = false;
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direction * force, ForceMode2D.Impulse);
+        Invoke("ResetCanMove", 1f); // Reset canMove to true after 1 second
+    }
+
+    void ResetCanMove()
+    {
+        canMove = true;
+    }
+
 }

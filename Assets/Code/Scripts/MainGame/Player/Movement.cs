@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
-    public Camera sceneCamera;
     //Generated C# class from inputSystem
     private MappeableInput input = null;
     private Vector2 moveVector = Vector2.zero;
@@ -20,15 +19,6 @@ public class Movement : MonoBehaviour
         input = new MappeableInput();
     }
 
-    void Update()
-    {
-        ProccesInputs();
-    }
-
-    void ProccesInputs()
-    {
-        mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-    }
 
     private void OnEnable()
     {
@@ -63,8 +53,8 @@ public class Movement : MonoBehaviour
     //FixedUpdate because we use rigidBody
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveVector * moveSpeed * Time.fixedDeltaTime);
-
+        rb.velocity = moveVector * moveSpeed;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;

@@ -9,7 +9,7 @@ public class EmotionalInsightSkill : MonoBehaviour, IExecuteCommand
     {
         Skill activeSkill = SkillUtils.GetOneSkillFromAll(SkillEnum.EmotionalInsight);
 
-        if (PlayerData.instance.currentEnergy 
+        if (PlayerData.instance.currentEnergy
         - activeSkill.energyCost < 0)
             return;
         Energy.instance.SpendEnergy(2);
@@ -21,6 +21,7 @@ public class EmotionalInsightSkill : MonoBehaviour, IExecuteCommand
             firePoint = GameObject.Find("FirePoint").transform;
 
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        rb.velocity = firePoint.up * fireForce;
     }
 }

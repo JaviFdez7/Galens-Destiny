@@ -7,7 +7,6 @@ public class HealthEnemyBar : MonoBehaviour
 {
     public Slider slider;
     public static HealthEnemyBar instance;
-    public EnemyController enemyController;
 
     public void ChangeMaxHealth(int maxHealth)
     {

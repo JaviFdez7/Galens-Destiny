@@ -9,32 +9,39 @@
         "cellHeight": 19,
         "sectors": [
             {
-                "x": 0,
-                "y": 0,
+                "origin": {
+                    "x": 0,
+                    "y": 0
+                },
                 "name": "The Mines",
                 "roomPrefabName": "InitialRoom",
-                "doorFrames": ["RIGHT"],
+                "doors": [{"direction" : "RIGHT", "key" : -1}],
+                "key": "1",
                 "difficulty": 1,
                 "possibleEnemies": [],
                 "numberOfEnemies": 5
             },
             {
-                "x": 1,
-                "y": 0,
+                "origin": {
+                    "x": 1,
+                    "y": 0
+                },
                 "name": "Mine entrance",
                 "roomPrefabName": "InitialRoom",
-                "doorFrames": ["LEFT","UP"],
+                "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "UP", "key" : 1}],
                 "difficulty": 1,
                 "possibleEnemies": [
                     "Drill"
                 ]
             },
             {
-                "x": 1,
-                "y": 1,
+                "origin": {
+                    "x": 1,
+                    "y": 1
+                },
                 "name": "Safe City",
                 "roomPrefabName": "InitialRoom",
-                "doorFrames": ["DOWN"],
+                "doors": [{"direction" : "DOWN", "key" : -1}],
                 "difficulty": 1,
                 "possibleEnemies": []
             }

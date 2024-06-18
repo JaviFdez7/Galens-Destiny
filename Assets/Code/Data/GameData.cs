@@ -24,7 +24,6 @@ public static class GamesData
             JsonPersistor.SerializeData("GameData", SavedGames);
         }
         SavedGames = JsonPersistor.DeserializeData<SortedDictionary<int,SavedGame>>("GameData");
-        Debug.Log(SavedGames.ToString());
     }
 
 }
@@ -39,7 +38,7 @@ public class SavedGame
     public string Date;
     public string worldMapId;
 
-    public PlayerData PlayerData = new PlayerData();
+    // public PlayerData PlayerData = new PlayerData();
     public MiniGamesData MiniGamesData = new MiniGamesData();
     public ArchivementsData Archivements = new ArchivementsData();
 

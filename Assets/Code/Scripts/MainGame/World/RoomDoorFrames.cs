@@ -9,31 +9,38 @@ public class RoomDoorFrames : MonoBehaviour
     public GameObject doorFrameHoleDown;
     public GameObject doorFrameHoleLeft;
 
-    public IUnlockable[] doors;
+
+    public List<IUnlockable> doors = new();
 
 /// <summary>
 /// Open the door frame inside a room (this is executed before the game starts)
-/// These are the walls to remove if a door is placed
-/// 0 - top
-/// 1 - right
-/// 2 - bottom
-/// 3 - left
+/// Then set the door prefab in the hole
 /// </summary>
-    public void OpenFrame(DoorType doorType)
+    public void RemoveWallAndSetDoor(DoorDirection doorDirection)
     {
-        switch (doorType)
+        GameObject HorizontalDoorPrefab = Resources.Load<GameObject>("Prefabs/Rooms/HorizontalDoor");
+        GameObject currentDoorFrameHole = null;
+        switch (doorDirection)
         {
-            case DoorType.UP:
+            case DoorDirection.UP:
                 doorFrameHoleUp.SetActive(false);
+                Instantiate(HorizontalDoorPrefab, doorFrameHoleUp.transform.position, Quaternion.identity, transform);
+                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
                 break;
-            case DoorType.RIGHT:
+            case DoorDirection.RIGHT:
                 doorFrameHoleRight.SetActive(false);
+                Instantiate(HorizontalDoorPrefab, doorFrameHoleRight.transform.position, Quaternion.Euler(0, 0, 90), transform);
+                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
                 break;
-            case DoorType.DOWN:
+            case DoorDirection.DOWN:
                 doorFrameHoleDown.SetActive(false);
+                Instantiate(HorizontalDoorPrefab, doorFrameHoleDown.transform.position, Quaternion.Euler(0, 0, 180), transform);
+                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
                 break;
-            case DoorType.LEFT:
+            case DoorDirection.LEFT:
                 doorFrameHoleLeft.SetActive(false);
+                Instantiate(HorizontalDoorPrefab, doorFrameHoleLeft.transform.position, Quaternion.Euler(0, 0, 270), transform);
+                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
                 break;
         }
     }
@@ -48,7 +55,7 @@ public class RoomDoorFrames : MonoBehaviour
     }
 }
 
-public enum DoorType
+public enum DoorDirection
 {
     UP,
     RIGHT,

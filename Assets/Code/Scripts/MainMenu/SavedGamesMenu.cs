@@ -54,6 +54,7 @@ public class SavedGamesMenu : MonoBehaviour
         SavedGame game = new SavedGame();
         GamesData.SavedGames.Add(game.id, game);
         GamesData.CurrentGameSelectedId = game.id;
+        GamesData.Serialize();
         RefreshButtons();
     }
 

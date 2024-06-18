@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 /* WorldGen
@@ -15,9 +16,26 @@ public class WorldGen : MonoBehaviour
     void Start()
     {
 
+        Test();
         WorldMapManager.Deserialize(true);
         GenerateWorld(WorldMapManager.StaticWorlds[selectedMapIndex]);
-        
+    }
+
+    public void Test(){
+        var result = "";
+        Dictionary<int, Point2DInt> testDict = new Dictionary<int, Point2DInt>();
+        // Point2DInt testPoint = new();
+        // testPoint.x = 1;
+        // testPoint.y = 2;
+        Point2DInt testPoint = new(1, 2);
+        string x = JsonConvert.SerializeObject(testPoint);
+        Debug.Log("serialize: "+x);
+        testDict.Add(1, testPoint);
+        result = JsonConvert.SerializeObject(testDict);
+        Debug.Log("serialize: "+result);
+        Dictionary<int, Point2DInt> testDict2 = JsonConvert.DeserializeObject<Dictionary<int, Point2DInt>>(result);
+        Debug.Log("deserialize: "+testDict2[1]);
+        Debug.Log("suuu"+testDict2[1]);
     }
 
     // Update is called once per frame
@@ -42,14 +60,14 @@ public class WorldGen : MonoBehaviour
     {
         foreach (SectorData sector in worldMapData.sectors)
         {
-            Vector2 position = new(sector.x * worldMapData.cellWidth, sector.y * worldMapData.cellHeight);
+            Vector2 position = new(sector.origin.x * worldMapData.cellWidth, sector.origin.y * worldMapData.cellHeight);
             GameObject room = Instantiate(Resources.Load<GameObject>("Prefabs/Rooms/" + sector.roomPrefabName), position, Quaternion.identity);
             if (room.TryGetComponent<RoomDoorFrames>(out RoomDoorFrames roomDoorFrames))
             {
-            foreach (DoorType doorType in sector.doorFrames)
-            {
-                roomDoorFrames.OpenFrame(doorType);
-            }
+                foreach (DoorData door in sector.doors)
+                {
+                    roomDoorFrames.RemoveWallAndSetDoor(door.direction);
+                }
             };
 
 
@@ -73,3 +91,5 @@ public class WorldGen : MonoBehaviour
     
 
 }
+
+

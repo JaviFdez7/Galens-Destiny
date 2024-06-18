@@ -1,67 +1,72 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IDamageable, IUnlockable
+public class Door : MonoBehaviour, IUnlockable
 {
-    Animator animator;
-
-    private bool godMode = true;
-    private bool isLocked = true;
-    private int maxHealth = 100;
-    private int currentHealth;
+    /// <summary>
+    /// key id to unlock this door. -1 means no key is required
+    /// </summary>
+    public int key = -1;
+    public bool isLocked = true;
+    public DoorAnimations doorAnimations;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        doorAnimations = GetComponent<DoorAnimations>();
     }
 
         public void Unlock()
     {
-        this.godMode = false;
-        animator.Play("Blink");
+        isLocked = false;
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !isLocked)
+        if (other.CompareTag("Player"))
         {
-            animator.Play("OpenDoor");
+            if (other.TryGetComponent<KeyHolder>(out var keyHolder))
+            {
+                Debug.Log("Player entered door trigger");
+                if (PlayerIsBehindDoor(other.transform.position))
+                {
+                    Debug.Log("Player is behind door");
+                    doorAnimations.OpenDoor();
+                    return;
+                }
+                else if (keyHolder.HasKey(key) && !isLocked)
+                {
+                    Debug.Log("Player has key");
+                    doorAnimations.OpenDoor();
+                }
+                else
+                {
+                    Debug.Log("Player does not have key");
+                    doorAnimations.PlayOpenFailAnim();
+                }
+            }
+
         }
     }
+
+    private bool PlayerIsBehindDoor(Vector3 position)
+    {
+        // Local position is relative to the door. The door is facing up. The player is behind the door if the player's y position is greater than the door's y position
+        Vector3 PlayerlocalPosition = transform.InverseTransformPoint(position);
+        return PlayerlocalPosition.y > transform.localPosition.y;
+    }
+
     public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            animator.Play("CloseDoor");
-            isLocked = true;
+            doorAnimations.CloseDoor();
         }
     }
 
-    public void RemoveHealth(int amount)
-    {
-        if (currentHealth - amount < 0)
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-    }
 
-    public void TakeDamage(int damage, Vector2 direction)
-    {
-        if (godMode)
-            return;
-        animator.Play("TakeDamage");
-        RemoveHealth(damage);
-        
-    }
 
-    private void Die()
-    {
-        animator.Play("Die");
-        Destroy(gameObject, 0.5f);
-    }
 
 
 

@@ -66,7 +66,7 @@ public class WorldGen : MonoBehaviour
             {
                 foreach (DoorData door in sector.doors)
                 {
-                    roomDoorFrames.RemoveWallAndSetDoor(door.direction);
+                    roomDoorFrames.RemoveWallAndSetDoor(door);
                 }
             };
 

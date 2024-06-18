@@ -16,33 +16,37 @@ public class RoomDoorFrames : MonoBehaviour
 /// Open the door frame inside a room (this is executed before the game starts)
 /// Then set the door prefab in the hole
 /// </summary>
-    public void RemoveWallAndSetDoor(DoorDirection doorDirection)
+    public void RemoveWallAndSetDoor(DoorData door)
     {
         GameObject HorizontalDoorPrefab = Resources.Load<GameObject>("Prefabs/Rooms/HorizontalDoor");
-        GameObject currentDoorFrameHole = null;
-        switch (doorDirection)
+        Quaternion rotation = Quaternion.identity;
+        Vector3 position = Vector3.zero;
+        switch (door.direction)
         {
             case DoorDirection.UP:
                 doorFrameHoleUp.SetActive(false);
-                Instantiate(HorizontalDoorPrefab, doorFrameHoleUp.transform.position, Quaternion.identity, transform);
-                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
+                rotation = Quaternion.identity;
+                position = doorFrameHoleUp.transform.position;
                 break;
             case DoorDirection.RIGHT:
                 doorFrameHoleRight.SetActive(false);
-                Instantiate(HorizontalDoorPrefab, doorFrameHoleRight.transform.position, Quaternion.Euler(0, 0, 90), transform);
-                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
+                rotation = Quaternion.Euler(0, 0, -90);
+                position = doorFrameHoleRight.transform.position;
                 break;
             case DoorDirection.DOWN:
                 doorFrameHoleDown.SetActive(false);
-                Instantiate(HorizontalDoorPrefab, doorFrameHoleDown.transform.position, Quaternion.Euler(0, 0, 180), transform);
-                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
+                rotation = Quaternion.Euler(0, 0, 180);
+                position = doorFrameHoleDown.transform.position;
                 break;
             case DoorDirection.LEFT:
                 doorFrameHoleLeft.SetActive(false);
-                Instantiate(HorizontalDoorPrefab, doorFrameHoleLeft.transform.position, Quaternion.Euler(0, 0, 270), transform);
-                doors.Add(HorizontalDoorPrefab.GetComponent<IUnlockable>());
+                rotation = Quaternion.Euler(0, 0, 90);
+                position = doorFrameHoleLeft.transform.position;
                 break;
         }
+        GameObject doorGo = Instantiate(HorizontalDoorPrefab, position, rotation, this.transform);
+        doorGo.GetComponent<Door>().key = door.key;
+        doors.Add(doorGo.GetComponent<IUnlockable>());
     }
 
 

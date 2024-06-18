@@ -222,7 +222,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7085855, g: 0.7448693, b: 0.8018868, a: 0}
+  m_BackGroundColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1247,7 +1247,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.19246848
-  m_PointLightOuterRadius: 3.9940934
+  m_PointLightOuterRadius: 1.4
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.9167669
-  m_PointLightOuterRadius: 5.827627
+  m_PointLightOuterRadius: 2.3
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -21064,7 +21064,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.63
+  m_Intensity: 0.1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -23159,7 +23159,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.32633996
-  m_PointLightOuterRadius: 20.131289
+  m_PointLightOuterRadius: 5.83
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -33607,6 +33607,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_PointLightInnerAngle
+      value: 38.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 5.402781
+      objectReference: {fileID: 0}
     - target: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -33651,9 +33663,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_ConstrainProportionsScale
+    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4211976085478639439, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentHealthBarMaxHealth

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Experience : MonoBehaviour
 {
-    void SubirExp(int exp)
+    public void IncreaseExp(int exp)
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -39,7 +39,7 @@ public class Experience : MonoBehaviour
         UIText();
         if(PlayerData.instance.testMode)
         {
-            SubirExp(2);
+            IncreaseExp(2);
         }
     }
 

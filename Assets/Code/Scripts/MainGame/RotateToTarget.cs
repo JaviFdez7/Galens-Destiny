@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class FollowTarget : MonoBehaviour
+public class RotateToTarget : MonoBehaviour
 {
     public FollowTargetType followTargetType;
 
@@ -18,12 +18,12 @@ public class FollowTarget : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        RotateToTarget();
+        Rotate();
     }
 
 
 
-    public void RotateToTarget()
+    public void Rotate()
     {
         switch (followTargetType)
         {

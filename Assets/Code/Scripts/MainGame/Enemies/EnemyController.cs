@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour, IDamageable
@@ -13,8 +15,12 @@ public class EnemyController : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     private bool canAttack = true;
     private bool canMove = true;
+    [Range(0, 1)]
+    public float dropChance = 0.2f;
 
     public HealthEnemyBar healthEnemyBar;
+
+    public List<GameObject> dropitems = new List<GameObject>();
 
     void Start()
     {
@@ -97,7 +103,20 @@ public class EnemyController : MonoBehaviour, IDamageable
         // Put your death logic here.
         // For example, you can play a death animation, disable the enemy, etc.
         Debug.Log("Enemy died!");
+        DropItems();
         Destroy(gameObject);
+    }
+
+    private void DropItems()
+    {
+        bool shouldDrop = UnityEngine.Random.value < dropChance; // 20% chance to drop items
+        int elementToDrop = UnityEngine.Random.Range(1, dropitems.Count);
+        if (shouldDrop)
+        {
+            Instantiate(dropitems[elementToDrop], transform.position, Quaternion.identity);
+        }
+        //Experience
+        Instantiate(dropitems[0], transform.position, Quaternion.identity);
     }
 
     void Knockback(Vector2 direction, float force = 5f)

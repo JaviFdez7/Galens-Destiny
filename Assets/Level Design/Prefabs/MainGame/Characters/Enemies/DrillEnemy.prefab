@@ -219,7 +219,12 @@ MonoBehaviour:
   attackDamage: 10
   attackCooldown: 2
   maxHealth: 100
+  dropChance: 0.914
   healthEnemyBar: {fileID: 6169021947785153604}
+  dropitems:
+  - {fileID: 6630909642152125892, guid: a4b4383390a1fd3439d688640fbddc33, type: 3}
+  - {fileID: 920640291103928201, guid: 3ced0caff91e5d744b88b2bf94f346cb, type: 3}
+  - {fileID: 2937833435991476494, guid: 2d2615fc3740c08459f6a05be96e3edd, type: 3}
 --- !u!114 &6169021947785153604
 MonoBehaviour:
   m_ObjectHideFlags: 0

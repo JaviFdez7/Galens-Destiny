@@ -1,0 +1,350 @@
+fileFormatVersion: 2
+guid: f13b2e22b84c7454482bad3d043e34e1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GalenSpriteAntenna
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 1447
+        width: 135
+        height: 244
+      alignment: 9
+      pivot: {x: 0.39547142, y: 0.09130959}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 42.5, y: -53}
+        - {x: 27.081055, y: -42.35486}
+        - {x: 62.564728, y: 87.06409}
+        - {x: 52.8869, y: 119.25806}
+        - {x: -1.9196167, y: -30.64502}
+        - {x: -15.5, y: -28}
+        - {x: -67.5, y: -77}
+        - {x: -67.5, y: -86}
+        - {x: 16.5, y: -122}
+        - {x: 27.5, y: -122}
+        - {x: 32.5, y: -119}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: 3b8ff9a1b37b01b45b2cba41e0db2b72
+      internalID: -20861189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalenSpriteLeg
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1432
+        width: 115
+        height: 311
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8344719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 57.5, y: -10.5}
+        - {x: 49.5, y: -2.5}
+        - {x: 45.5, y: 2.5}
+        - {x: 51.5, y: 98.5}
+        - {x: 51.5, y: 123.5}
+        - {x: 49.5, y: 128.5}
+        - {x: 39.5, y: 136.5}
+        - {x: 13.5, y: 149.5}
+        - {x: 5.5, y: 150.5}
+        - {x: -9.5, y: 150.5}
+        - {x: -19.5, y: 147.5}
+        - {x: -44.5, y: 133.5}
+        - {x: -48.5, y: 128.5}
+        - {x: -50.5, y: 123.5}
+        - {x: -50.5, y: 98.5}
+        - {x: -44.5, y: 3.5}
+        - {x: -57.5, y: -9.5}
+        - {x: -57.5, y: -53.5}
+        - {x: -46.5, y: -131.5}
+        - {x: -44.5, y: -136.5}
+        - {x: -40.5, y: -141.5}
+        - {x: -9.5, y: -155.5}
+        - {x: 10.5, y: -155.5}
+        - {x: 42.5, y: -142.5}
+        - {x: 48.5, y: -132.5}
+        - {x: 57.5, y: -44.5}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: 293edf45fb4cd1b44b38c64f48ee9d82
+      internalID: 2134007205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalenSpriteHead
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 859
+        width: 360
+        height: 449
+      alignment: 9
+      pivot: {x: 0.50418746, y: 0.5470058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -109.09732, y: 213.89307}
+        - {x: -165.7229, y: 155.00574}
+        - {x: -148.97581, y: -84.85632}
+        - {x: -101.81903, y: -131.42743}
+        - {x: 106.162415, y: -133.90936}
+        - {x: 147.26324, y: -84.5589}
+        - {x: 162.00592, y: 152.59009}
+        - {x: 102.53003, y: 212.09033}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c37577fb98922409ea12ba60979347
+      internalID: -346449222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalenSpriteBody
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 852
+        width: 690
+        height: 429
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 186, y: -188.5}
+        - {x: 255, y: -111.5}
+        - {x: 272, y: -108.5}
+        - {x: 338, y: -53.5}
+        - {x: 340, y: 23.5}
+        - {x: 264, y: 55.5}
+        - {x: 224, y: 55.5}
+        - {x: 225, y: 133.5}
+        - {x: 200, y: 176.5}
+        - {x: 135, y: 214.5}
+        - {x: -139, y: 214.5}
+        - {x: -197, y: 181.5}
+        - {x: -226, y: 132.5}
+        - {x: -226, y: 55.5}
+        - {x: -264, y: 55.5}
+        - {x: -345, y: 22.5}
+        - {x: -345, y: -57.5}
+        - {x: -270, y: -111.5}
+        - {x: -254, y: -106.5}
+        - {x: -187, y: -188.5}
+        - {x: -21, y: -214.5}
+        - {x: 24, y: -214.5}
+      tessellationDetail: 0.28
+      bones: []
+      spriteID: bc2456f0f609cc7458e2890f76398956
+      internalID: -837580154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalenSpriteArm1
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 265
+        width: 268
+        height: 522
+      alignment: 9
+      pivot: {x: 0.5, y: 0.78}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -72.15741, y: 243.47351}
+        - {x: -128.31573, y: 159.84131}
+        - {x: -103.210266, y: 52.263184}
+        - {x: -39.536377, y: -210.59332}
+        - {x: 4.7378235, y: -238.9523}
+        - {x: 41.556274, y: -207.22513}
+        - {x: 98.94708, y: 59.895813}
+        - {x: 122.922, y: 167.42847}
+        - {x: 77.15744, y: 243.47351}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29522679617c24d43a681817d4b08a9d
+      internalID: -1181566994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GalenSpriteArm2
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 341
+        width: 138
+        height: 401
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8120359}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 42.208984, y: 77.66022}
+        - {x: 66.10693, y: 86.795166}
+        - {x: 64.29895, y: 166.52216}
+        - {x: 11.575684, y: 196.88379}
+        - {x: -9.553467, y: 199.05347}
+        - {x: -69, y: 170.5}
+        - {x: -66.8869, y: 84.369446}
+        - {x: -44.339844, y: 76.84631}
+        - {x: -37.221558, y: -71.530945}
+        - {x: -62.711304, y: -87.61859}
+        - {x: -63.654602, y: -156.38141}
+        - {x: 1.1647949, y: -191.06699}
+        - {x: 63.968994, y: -158.43811}
+        - {x: 63.969116, y: -84.41754}
+        - {x: 41.789673, y: -69.477844}
+      tessellationDetail: 0.2
+      bones: []
+      spriteID: 4a48639438aeda94aa2bc408b61f58ab
+      internalID: -1581431002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GalenSpriteAntenna: -20861189
+      GalenSpriteArm1: -1181566994
+      GalenSpriteArm2: -1581431002
+      GalenSpriteBody: -837580154
+      GalenSpriteHead: -346449222
+      GalenSpriteLeg: 2134007205
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

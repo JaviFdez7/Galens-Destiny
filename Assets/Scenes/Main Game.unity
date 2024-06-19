@@ -5727,7 +5727,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -8330,7 +8330,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -8980,7 +8980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -9186,7 +9186,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -11712,7 +11712,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -12660,7 +12660,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -13883,7 +13883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -16207,7 +16207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -16219,7 +16219,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -16361,7 +16361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -16373,7 +16373,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -16523,7 +16523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -17839,7 +17839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -19002,7 +19002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -19809,7 +19809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -20026,7 +20026,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -20111,32 +20111,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324184419}
   m_CullTransparentMesh: 1
---- !u!1 &1334151044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6324906906336962155, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-  m_PrefabInstance: {fileID: 895343323694149331}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1334151046
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334151044}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: da77eee9c46f6264a961634958f30652, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1335259607
 GameObject:
   m_ObjectHideFlags: 0
@@ -20358,7 +20332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -21049,7 +21023,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -21473,33 +21447,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396964979}
   m_CullTransparentMesh: 1
---- !u!4 &1405495071 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-  m_PrefabInstance: {fileID: 895343323694149331}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1405495075 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7629302952625555745, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-  m_PrefabInstance: {fileID: 895343323694149331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df07a5d4a702eb4a9b1cfef2b67f94a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1405495083 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-  m_PrefabInstance: {fileID: 895343323694149331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fcafb8f618bd384a95774dcc3abfbe6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1412258412
 GameObject:
   m_ObjectHideFlags: 0
@@ -23065,7 +23012,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -24043,7 +23990,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -24554,7 +24501,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -24979,7 +24926,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -24991,7 +24938,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -27056,7 +27003,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1603244367}
-  - {fileID: 1405495071}
+  - {fileID: 1270800418782475657}
   m_Father: {fileID: 1839637071}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27691,7 +27638,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -28575,7 +28522,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -29758,7 +29705,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495075}
+      - m_Target: {fileID: 7317325333879547890}
         m_TargetAssemblyTypeName: UpgradeTree, Assembly-CSharp
         m_MethodName: UnlockUpgrade
         m_Mode: 3
@@ -30983,7 +30930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -32725,7 +32672,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -33394,7 +33341,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -33406,7 +33353,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1405495083}
+      - m_Target: {fileID: 145149405913754993}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -33586,6 +33533,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad1804359cb3eaf44983c73fa3ab0bec, type: 3}
+--- !u!114 &145149405913754993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+  m_PrefabInstance: {fileID: 3202213867618115111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcafb8f618bd384a95774dcc3abfbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &834509037546631896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33647,7 +33605,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ced0caff91e5d744b88b2bf94f346cb, type: 3}
---- !u!1001 &895343323694149331
+--- !u!4 &1270800418782475657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+  m_PrefabInstance: {fileID: 3202213867618115111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3202213867618115111
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -33761,31 +33724,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_Intensity
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_NormalMapQuality
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_NormalMapDistance
-      value: 1.5
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_PointLightInnerAngle
-      value: 37.500004
-      objectReference: {fileID: 0}
-    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_PointLightOuterAngle
-      value: 73.66
+      value: 31.05
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 5.402781
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_RootOrder
@@ -33831,94 +33778,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2441573400396182700, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Size.x
-      value: 1.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 2441573400396182700, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Size.y
-      value: 0.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 2441573400396182700, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722774842194892587, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541173100581231756, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Size.x
-      value: 0.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541173100581231756, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Size.y
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541173100581231756, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541173100581231756, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4211976085478639439, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentHealthBarMaxHealth
       value: 
       objectReference: {fileID: 1876249116}
-    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902189609791350835, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Mass
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5902189609791350835, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Interpolate
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_NormalMapQuality
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_NormalMapDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6387343917163416728, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentEnergyBarMaxEnergy
       value: 
@@ -34007,17 +33870,10 @@ PrefabInstance:
       propertyPath: availableTokensText
       value: 
       objectReference: {fileID: 1592365116}
-    - target: {fileID: 8567296530758931436, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6324906906336962155, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1334151046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
 --- !u!1001 &3830431119939375806
 PrefabInstance:
@@ -34548,6 +34404,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4f4506cb50fcd4fae194f4bbc9d2c1, type: 3}
+--- !u!114 &7317325333879547890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7629302952625555745, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+  m_PrefabInstance: {fileID: 3202213867618115111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df07a5d4a702eb4a9b1cfef2b67f94a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8051349727066138549
 PrefabInstance:
   m_ObjectHideFlags: 0

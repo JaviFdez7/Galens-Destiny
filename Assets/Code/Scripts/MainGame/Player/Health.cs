@@ -30,6 +30,13 @@ public class Health : MonoBehaviour
 
     }
 
+    public void Heal(int healAmount)
+    {
+        PlayerData.instance.currentHealth += healAmount;
+        PlayerData.instance.currentHealth = Mathf.Clamp(PlayerData.instance.currentHealth, 0, PlayerData.instance.maxHealth);
+        HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
+    }
+
     private void Die()
     {
         // Here you can add logic for what happens when the player dies.

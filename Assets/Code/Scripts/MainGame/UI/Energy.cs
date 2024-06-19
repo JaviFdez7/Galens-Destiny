@@ -46,6 +46,13 @@ public class Energy : MonoBehaviour
         regenerationCoroutine = StartCoroutine(RegenerateEnergyAfterDelay());
     }
 
+    public void AddEnergy(int energyAmount)
+    {
+        PlayerData.instance.currentEnergy += energyAmount;
+        PlayerData.instance.currentEnergy = Mathf.Clamp(PlayerData.instance.currentEnergy, 0, PlayerData.instance.maxEnergy);
+        EnergyBar.instance.ChangeCurrentEnergy(PlayerData.instance.currentEnergy);
+    }
+
     private IEnumerator RegenerateEnergyAfterDelay()
     {
         yield return new WaitForSeconds(regenerationDelay);

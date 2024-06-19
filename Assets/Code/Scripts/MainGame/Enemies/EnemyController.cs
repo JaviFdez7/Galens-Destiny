@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         Health playerHealth = player.GetComponent<Health>();
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(attackDamage);
+            playerHealth.TakeDamage(attackDamage,Vector2.zero);
         }
 
         // Set a cooldown before the enemy can attack again.
@@ -73,13 +73,31 @@ public class EnemyController : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
         else
         {
             healthEnemyBar.ChangeCurrentHealth(currentHealth);
             Knockback(damageDirection); // Invoke the knockback immediately with direction
         }
+    }
+
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthEnemyBar.ChangeCurrentHealth(currentHealth);
+    }
+
+    public void Die()
+    {
+        // Put your death logic here.
+        // For example, you can play a death animation, disable the enemy, etc.
+        Debug.Log("Enemy died!");
+        Destroy(gameObject);
     }
 
     void Knockback(Vector2 direction, float force = 5f)

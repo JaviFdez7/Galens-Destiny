@@ -18,7 +18,7 @@ public class HealAndEnergy : MonoBehaviour
                 energy.AddEnergy(energyAmount);
                 Debug.Log("Player picked up " + energyAmount + " energy");
             }
-            Health heal = other.GetComponent<Health>();
+            IDamageable heal = other.GetComponent<IDamageable>();
             if (heal != null)
             {
                 heal.Heal(healAmount);

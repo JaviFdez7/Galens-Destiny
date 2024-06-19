@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
     void Start()
     {
@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
         UIText();
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, Vector2 direction)
     {
 
         PlayerData.instance.currentHealth -= damageAmount;
@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
         HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
     }
 
-    private void Die()
+    public void Die()
     {
         // Here you can add logic for what happens when the player dies.
         // For example, restart the level or show a game over screen.

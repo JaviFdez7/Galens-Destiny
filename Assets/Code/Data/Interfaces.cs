@@ -3,10 +3,9 @@ using UnityEngine;
 public interface IDamageable
 {
     void TakeDamage(int damage, Vector2 direction);
-}
 
-public interface IHealable
-{
+    void Die();
+
     void Heal(int amount);
 }
 

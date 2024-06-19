@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealAndEnergy : MonoBehaviour
+public class PickHealAndEnergy : MonoBehaviour
 {
     // Start is called before the first frame update
     public int healAmount = 0;

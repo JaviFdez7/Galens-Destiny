@@ -33703,12 +33703,28 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_Intensity
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_FalloffIntensity
-      value: 0.42
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_NormalMapQuality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_NormalMapDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_PointLightInnerAngle
-      value: 38.26
+      value: 37.500004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_PointLightOuterAngle
+      value: 73.66
       objectReference: {fileID: 0}
     - target: {fileID: 2112707615685814411, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_PointLightOuterRadius
@@ -33806,6 +33822,22 @@ PrefabInstance:
       propertyPath: currentHealthBarMaxHealth
       value: 
       objectReference: {fileID: 1876249116}
+    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5577858719156683797, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5902189609791350835, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_Mass
       value: 10
@@ -33815,8 +33847,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_NormalMapQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_NormalMapDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183162078161440614, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6387343917163416728, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentEnergyBarMaxEnergy
@@ -33906,6 +33950,10 @@ PrefabInstance:
       propertyPath: availableTokensText
       value: 
       objectReference: {fileID: 1592365116}
+    - target: {fileID: 8567296530758931436, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -12,11 +12,25 @@ public class Door : MonoBehaviour, IUnlockable
     public bool isLocked = true;
     public DoorAnimations doorAnimations;
 
+
     private void Start()
     {
         doorAnimations = GetComponent<DoorAnimations>();
+        GameObject doorLock = transform.Find("DoorLeftPanel").Find("DoorLock").gameObject;
+        RemoveOrPaintLock(doorLock);
     }
 
+    private void RemoveOrPaintLock(GameObject doorLock)
+    {
+        if (key == -1)
+        {
+            Destroy(doorLock);
+        }
+        else
+        {
+            doorLock.GetComponent<SpriteRenderer>().color = KeyHolder.GetKeyColor(key);
+        }
+    }
         public void Unlock()
     {
         isLocked = false;
@@ -42,7 +56,7 @@ public class Door : MonoBehaviour, IUnlockable
                 }
                 else
                 {
-                    Debug.Log("Player does not have key");
+                    Debug.Log("Player cannot open door");
                     doorAnimations.PlayOpenFailAnim();
                 }
             }

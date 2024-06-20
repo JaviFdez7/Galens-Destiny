@@ -6,6 +6,22 @@ public class PickKey : MonoBehaviour
 {
     // Start is called before the first frame update
     public int id;
+    private Sprite sprite;
+
+    private void Start()
+    {
+        if (id < 0)
+        {
+            Debug.LogWarning("Key id cannot be negative");
+            Destroy(gameObject);
+        }
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = KeyHolder.GetKeyColor(id);
+            sprite = spriteRenderer.sprite;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

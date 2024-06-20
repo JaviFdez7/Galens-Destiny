@@ -68,8 +68,8 @@ public class WorldMapData
 
     public int gridWidth;
     public int gridHeight;
-    public int cellWidth;
-    public int cellHeight;
+    public int sectorWidth;
+    public int sectorHeight;
 
     public List<SectorData> sectors;
 

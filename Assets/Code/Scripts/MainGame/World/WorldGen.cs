@@ -60,7 +60,7 @@ public class WorldGen : MonoBehaviour
     {
         foreach (SectorData sector in worldMapData.sectors)
         {
-            Vector2 position = new(sector.origin.x * worldMapData.cellWidth, sector.origin.y * worldMapData.cellHeight);
+            Vector2 position = new(sector.origin.x * worldMapData.sectorWidth, sector.origin.y * worldMapData.sectorHeight);
             GameObject room = Instantiate(Resources.Load<GameObject>("Prefabs/Rooms/" + sector.roomPrefabName), position, Quaternion.identity);
             if (room.TryGetComponent<RoomDoorFrames>(out RoomDoorFrames roomDoorFrames))
             {

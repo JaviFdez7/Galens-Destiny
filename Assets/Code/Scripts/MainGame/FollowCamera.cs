@@ -13,25 +13,15 @@ public class CameraFollow : MonoBehaviour
 
     public Animator shakeAnimatior;
 
-    private static List<Shake> screenShakes = new List<Shake>();
+    private static int screenShakes = 0;
 
 
     public static void ScreenShake(float duration, float magnitude)
     {
-        screenShakes.Add(new Shake(duration, magnitude));
+        screenShakes++;
 
     }
-    public class Shake
-    {
-        public float duration;
-        public float magnitude;
 
-        public Shake(float duration, float magnitude)
-        {
-            this.duration = duration;
-            this.magnitude = magnitude;
-        }
-    }
 
 
 
@@ -63,14 +53,10 @@ public class CameraFollow : MonoBehaviour
         {
             return;
         }
-        if (screenShakes.Count > 0)
+        if (screenShakes > 0)
         {
-            ShakeCamera(screenShakes[0].duration, screenShakes[0].magnitude);
-            screenShakes.RemoveAt(0);
-        }
-
-        if (Input.GetMouseButtonDown(0)){
-            ScreenShake(0.2f, 0.2f);
+            ShakeCamera();
+            screenShakes--;
         }
 
         // Get the mouse position in the world
@@ -85,7 +71,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = newPosition;
     }
 
-    private void ShakeCamera(float duration, float magnitude)
+    private void ShakeCamera()
     {
         //animation
         shakeAnimatior.Play("ScreenShake");

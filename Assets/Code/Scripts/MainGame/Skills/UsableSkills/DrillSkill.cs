@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StrategicForesightSkill : IExecuteCommand
+public class DrillSkill : MonoBehaviour, IExecuteCommand
 {
     public void Execute()
     {

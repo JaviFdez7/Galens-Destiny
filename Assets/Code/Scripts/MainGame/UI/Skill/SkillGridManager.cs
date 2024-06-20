@@ -40,7 +40,7 @@ public class SkillGridManager : MonoBehaviour
 
         foreach (Skill skill in skills)
         {
-            if(skill.skillEnum != SkillEnum.EmotionalInsight)
+            if(skill.skillEnum != SkillEnum.Shoot)
             {
                 GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
                 skillGridElement.GetComponent<Image>().sprite = skill.skillImage;

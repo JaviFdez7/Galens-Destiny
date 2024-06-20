@@ -5,8 +5,8 @@
         "description": "This the default map for the demo",
         "gridWidth": 10,
         "gridHeight": 10,
-        "cellWidth": 47,
-        "cellHeight": 33,
+        "sectorWidth": 47,
+        "sectorHeight": 33,
         "sectors": [
             {
                 "origin": {

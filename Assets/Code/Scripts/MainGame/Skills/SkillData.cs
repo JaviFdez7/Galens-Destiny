@@ -28,13 +28,22 @@ public class SkillData : MonoBehaviour
 
     public void Initialize()
     {
-        GameObject inGameTransform = GameObject.Find("Weapons");
-        IExecuteCommand emotionalInsightSkill = inGameTransform.GetComponent<EmotionalInsightSkill>();
+        GameObject inGameTransform = GameObject.Find("ShootSkill");
+        IExecuteCommand emotionalInsightSkill = inGameTransform.GetComponent<ShootSkill>();
+        
+        GameObject shootGo = GameObject.Find("ShootSkill");
+        SpriteRenderer sp = shootGo.GetComponentInChildren<SpriteRenderer>();
+        if (sp != null) sp.enabled = false;
+    
 
-        commands.Add(KeyCode.Mouse0, emotionalInsightSkill);
+        GameObject drillGo = GameObject.Find("DrillSkill");
+        SpriteRenderer spDrill = drillGo.GetComponentInChildren<SpriteRenderer>();
+        if (spDrill != null) spDrill.enabled = false;
 
-        Skill skill0 = new Skill(0, SkillEnum.EmotionalInsight, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, false, 5, skillImages[0], emotionalInsightSkill);
-        Skill skill1 = new Skill(1, SkillEnum.StrategicForesightSkill, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, false, false, 5, skillImages[1], emotionalInsightSkill);
+        
+
+        Skill skill0 = new Skill(0, SkillEnum.Shoot, "Emotional Insight", "Recognizing and managing one's own and others' emotions, fostering healthy relationships and making conscientious decisions.", "Kill all enemies around the IA's mate", 1, true, false, 5, skillImages[0], emotionalInsightSkill);
+        Skill skill1 = new Skill(1, SkillEnum.Drill, "Strategic Foresight", "Anticipating trends, assessing risks, and designing long-term strategies for personal or business success.", "Generates a large storm that pushes enemies", 1, false, false, 5, skillImages[1], emotionalInsightSkill);
         Skill skill2 = new Skill(2, SkillEnum.Empty, "Multidimensional Creativity", "Approaching problems from diverse perspectives, merging ideas to generate innovative solutions.", "Teleport in a range's distance", 2, false, false, 5, skillImages[2], emotionalInsightSkill);
         Skill skill3 = new Skill(3, SkillEnum.Empty, "Resilient Adaptability", "Adapting flexibly to changes, overcoming challenges with emotional and mental resilience.", "Summon  3 littles robots", 2, false, false, 5, skillImages[3], emotionalInsightSkill);
         Skill skill4 = new Skill(4, SkillEnum.Empty, "Persuasive Communication", "Ethically influencing through compelling arguments, using empathy and integrity to achieve consensus and positive impact.", "Throw a big energy ball", 2, false, false, 5, skillImages[4], emotionalInsightSkill);

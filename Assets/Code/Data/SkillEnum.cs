@@ -3,5 +3,7 @@ public enum SkillEnum
     Empty,
     None,
     Shoot,
-    Drill
+    Drill,
+    Shield,
+    Bomb,
 }

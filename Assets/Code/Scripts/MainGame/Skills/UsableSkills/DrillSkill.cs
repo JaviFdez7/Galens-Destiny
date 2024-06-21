@@ -5,12 +5,15 @@ using UnityEngine;
 public class DrillSkill : MonoBehaviour, IExecuteCommand
 {
 
-    public int damageAmount = 2;
+    public int damageAmount = 10;
     private Collider2D areaCollider;
 
     private KeyCode keyCode = KeyCode.Mouse1;
     private bool holdingKey = false;
     private Animator animator;
+
+    public int SlowAtackBy = 2;
+    private float AtackCooldown = 1;
 
     void Awake()
     {
@@ -24,14 +27,18 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
 
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        AtackCooldown++;
         if (Input.GetKeyUp(keyCode))
         {
             holdingKey = false;
             animator.SetFloat("DrillSpeed", 1f);
         }
-        Drill();
+        if (AtackCooldown==SlowAtackBy){
+            Drill();
+            AtackCooldown = 1;
+        }
     }
 
 
@@ -41,9 +48,11 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
     }
 
 
+
     public void Drill()
     {
         if(!holdingKey) return;
+
         animator.SetFloat("DrillSpeed", 4f);
         if (areaCollider == null)
         {

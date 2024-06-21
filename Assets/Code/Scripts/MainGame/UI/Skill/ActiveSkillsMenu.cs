@@ -21,7 +21,8 @@ public class ActiveSkillsMenu : MonoBehaviour
         if(skill!=null)
         {
             skillImage.sprite = skill.skillImage;
-            skillName.text = skill.name;
+            
+            if(skillName != null) skillName.text = skill.name;
             if(skillShortDescription!=null){
                 skillShortDescription.text = skill.shortDescription;
             }
@@ -36,8 +37,8 @@ public class ActiveSkillsMenu : MonoBehaviour
             }
         } else
         {
-            skillImage.sprite = unequippedSkillSprite;
-            skillName.text = "Unequipped Skill";
+            if(skillImage!=null) skillImage.sprite = unequippedSkillSprite;
+            if(skillName != null) skillName.text = "Unequipped Skill";
             if(skillShortDescription!=null){
                 skillShortDescription.text = "Equip a skill available from the Skills menu";
             }

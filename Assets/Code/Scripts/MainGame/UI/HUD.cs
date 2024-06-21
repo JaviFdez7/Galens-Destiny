@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    public EnergyBar energyBar;
-    public ExperienceBar experienceBar;
+
+    public GameObject HUDPanel;
 
     public static HUD instance;
 
@@ -22,15 +22,11 @@ public class HUD : MonoBehaviour
 
     public void ActiveHUD()
     {
-        HealthBar.instance.sliderHUD.gameObject.SetActive(true);
-        energyBar.sliderHUD.gameObject.SetActive(true);
-        experienceBar.sliderHUD.gameObject.SetActive(true);
+        HUDPanel.SetActive(true);
     }
 
     public void DisableHUD()
     {
-        HealthBar.instance.sliderHUD.gameObject.SetActive(false);
-        energyBar.sliderHUD.gameObject.SetActive(false);
-        experienceBar.sliderHUD.gameObject.SetActive(false);
+        HUDPanel.SetActive(false);
     }
 }

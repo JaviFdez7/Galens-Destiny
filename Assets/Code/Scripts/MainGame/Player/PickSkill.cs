@@ -34,6 +34,11 @@ public class PickSkill : MonoBehaviour
                 default:
                     Skill skillToUnlock = SkillUtils.GetOneSkillFromAll(skillEnum);
                     skillToUnlock.UnlockSkill();
+                    SkillsMenu.instance.ChangeSkillsGrid("None Passive");
+                    SkillsMenu.instance.ChangeSkillsGrid("Usable");
+                    SkillsMenu.instance.ChangeSkillsGrid("Passive");
+                    SkillsMenu.instance.ChangeSkillsGrid("None Active");
+                    
                     break;
             }
             Destroy(gameObject);

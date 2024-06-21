@@ -217,7 +217,7 @@ public class SkillsMenu : MonoBehaviour
                 usableSkills.Add(skill);
     }
 
-    private void ChangeSkillsGrid(string selectedSkillType)
+    public void ChangeSkillsGrid(string selectedSkillType)
     {
         if(selectedSkillType == "None Active")
             skillGridManager.BuildSkillsGrid(usableSkills, "None");

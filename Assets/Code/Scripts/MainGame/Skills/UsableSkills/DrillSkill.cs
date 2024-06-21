@@ -1,16 +1,16 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class DrillSkill : MonoBehaviour, IExecuteCommand
 {
 
-    public int damageAmount = 5;
-    private MappeableInput input;
+    public int damageAmount = 2;
     private Collider2D areaCollider;
-    private void Start()
-    {
-        input = new MappeableInput();
-    }
+
+    private KeyCode keyCode = KeyCode.Mouse1;
+    private bool holdingKey = false;
+    private Animator animator;
 
     void Awake()
     {
@@ -19,10 +19,32 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
         {
             Debug.LogError("No Collider attached to the GameObject.");
         }
+        animator = GetComponent<Animator>();
+
+
     }
 
-    public void Execute()
+    void Update()
     {
+        if (Input.GetKeyUp(keyCode))
+        {
+            holdingKey = false;
+            animator.SetFloat("DrillSpeed", 1f);
+        }
+        Drill();
+    }
+
+
+
+    public void Execute(){
+        holdingKey = true;
+    }
+
+
+    public void Drill()
+    {
+        if(!holdingKey) return;
+        animator.SetFloat("DrillSpeed", 4f);
         if (areaCollider == null)
         {
             Debug.LogError("No Collider found for damage area.");
@@ -30,10 +52,13 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
         }
 
         // Ensure that areaCollider is a Collider2D
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(areaCollider.bounds.center, areaCollider.bounds.size, areaCollider.transform.eulerAngles.z);
+        Collider2D[] colliders = new Collider2D[10];
+        Physics2D.OverlapCollider(areaCollider, new ContactFilter2D().NoFilter(),colliders);
         foreach (Collider2D collider in colliders)
         {
+            if (collider == null) continue;
             Debug.Log("Collided with: " + collider.name);
+            if (collider.CompareTag("Player")) continue;
             IDamageable damageable = collider.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {

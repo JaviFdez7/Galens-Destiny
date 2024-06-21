@@ -119,7 +119,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         Instantiate(dropitems[0], transform.position, Quaternion.identity);
     }
 
-    void Knockback(Vector2 direction, float force = 5f)
+    void Knockback(Vector2 direction, float force = 25f)
     {
         canMove = false;
         rb.velocity = Vector2.zero;

@@ -78,17 +78,39 @@ public class BinaryManager : MonoBehaviour
 
     private void InitializeHistoryLevels()
     {
-        BinaryLevel history1level1 = new BinaryLevel(1, 1, 2, new List<int> { 0, 0, 0, 0, 1, 0, 0, 1, 0 }, 1);
-        BinaryLevel history1level2 = new BinaryLevel(1, 2, 3, new List<int> { 1, 0, 0, 1, 0, 1, 0 ,1 }, 1);
-        BinaryLevel history1level3 = new BinaryLevel(1, 3, 6, new List<int> { 1, 0, 0, 1, 0 , 0 }, 3);
-        BinaryLevel history1level4 = new BinaryLevel(1, 4, 8, new List<int> { 1, 1, 0, 1, 1 }, 5);
-        BinaryLevel history2level1 = new BinaryLevel(2, 1, 8, new List<int> { 0, 0, 0, 1, 1 }, 5);
+        BinaryLevel history1level1 = new BinaryLevel(1, 1, 2, new List<int> { 0, 0, 0, 0, 0, 0, 1, 0 }, 1);
+        BinaryLevel history1level2 = new BinaryLevel(1, 2, 3, new List<int> { 1, 0, 0, 0, 0 ,1, 0 }, 1);
+        BinaryLevel history1level3 = new BinaryLevel(1, 3, 3, new List<int> { 1, 0, 0, 1, 0 , 0 }, 2);
+        BinaryLevel history1level4 = new BinaryLevel(1, 4, 4, new List<int> { 1, 0, 0, 1, 0 }, 3);
 
         binaryLevels.Add(history1level1);
         binaryLevels.Add(history1level2);
         binaryLevels.Add(history1level3);
         binaryLevels.Add(history1level4);
+
+        BinaryLevel history2level1 = new BinaryLevel(2, 1, 2, new List<int> { 0, 0, 0, 0, 1, 0, 0, 1, 0 }, 1);
+        BinaryLevel history2level2 = new BinaryLevel(2, 2, 3, new List<int> { 1, 0, 0, 1, 0, 1, 0 ,1 }, 1);
+        BinaryLevel history2level3 = new BinaryLevel(2, 3, 6, new List<int> { 1, 0, 0, 1, 0 , 0 }, 3);
+        BinaryLevel history2level4 = new BinaryLevel(2, 4, 8, new List<int> { 1, 1, 0, 1, 1 }, 5);
+
         binaryLevels.Add(history2level1);
+        binaryLevels.Add(history2level2);
+        binaryLevels.Add(history2level3);
+        binaryLevels.Add(history2level4);
+
+        BinaryLevel history3level1 = new BinaryLevel(3, 1, 4, new List<int> { 0, 1, 1, 0, 1, 0, 0, 1, 0 }, 2);
+        BinaryLevel history3level2 = new BinaryLevel(3, 2, 5, new List<int> { 1, 0, 1, 1, 0, 1, 0 ,1 }, 4);
+        BinaryLevel history3level3 = new BinaryLevel(3, 3, 6, new List<int> { 1, 0, 0, 1, 0 , 0 }, 3);
+        BinaryLevel history3level4 = new BinaryLevel(3, 4, 9, new List<int> { 1, 0, 0, 1, 1 }, 5);
+        BinaryLevel history3level5 = new BinaryLevel(3, 5, 11, new List<int> { 0, 1, 0, 1, 0, 1 }, 6);
+        BinaryLevel history3level6 = new BinaryLevel(3, 6, 12, new List<int> { 0, 0, 1, 0, 1, 0, 0, 1 }, 8);
+
+        binaryLevels.Add(history3level1);
+        binaryLevels.Add(history3level2);
+        binaryLevels.Add(history3level3);
+        binaryLevels.Add(history3level4);
+        binaryLevels.Add(history3level5);
+        binaryLevels.Add(history3level6);
     }
 
     void Start()

@@ -13,7 +13,7 @@ public class ShieldSkill : MonoBehaviour, IExecuteCommand
     public void Execute()
     {
         if(PlayerData.instance.currentEnergy < energyCost) return;
-        if(shield != null) Destroy(shield);
+        if(shield != null) return;
         Energy.instance.SpendEnergy(10);
         shield = Instantiate(shieldPrefab, transform.position, Quaternion.identity);
         //THIS IS REALLY IMPORTANT. The game object where skills scritps are attached to is allways in the player coordinates.

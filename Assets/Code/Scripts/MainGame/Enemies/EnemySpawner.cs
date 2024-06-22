@@ -45,7 +45,7 @@ public class EnemySpawner : MonoBehaviour
             yield return wait;
             int rand = Random.Range(0, enemyPrefabs.Count);
             GameObject enemyToSpawn = enemyPrefabs[rand];
-            Vector2 spawnPosition = new Vector2(transform.position.x + Random.Range(-16f, 16f), transform.position.y + Random.Range(-10f, 10f));
+            Vector2 spawnPosition = new Vector2(transform.position.x + Random.Range(-15f, 8f), transform.position.y + Random.Range(-10f, 10f));
             Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
             
             spawnedEnemies++;

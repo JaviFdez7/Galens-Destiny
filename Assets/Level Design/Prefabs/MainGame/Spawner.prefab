@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47bf5c05d1493f4c8ceca39f4c96ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  spawnRate: 0.2
   enemyPrefabs:
   - {fileID: 5103858748030131719, guid: 9bf79814fe22d17479d8e85cf6a43986, type: 3}
   possibleEnemies: []
+  canSpawn: 1
   numberOfEnemy: 3
 --- !u!61 &6495946851838714992
 BoxCollider2D:

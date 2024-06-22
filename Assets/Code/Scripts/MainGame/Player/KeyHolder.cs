@@ -35,7 +35,7 @@ public class KeyHolder : MonoBehaviour
     {
         if (key < 0) return Color.black;
         Color selectedColor = keyColors[key % keyColors.Count];
-        return IncreaseBrightness(selectedColor, 0.7f);
+        return IncreaseBrightness(selectedColor, 0.6f);
     }
     public static Color IncreaseBrightness(Color color, float amount)
     {

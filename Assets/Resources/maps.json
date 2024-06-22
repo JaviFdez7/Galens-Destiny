@@ -48,7 +48,7 @@
                 "possibleEnemies": [
                     "DrillEnemy"
                 ],
-                "numberOfEnemies": 10
+                "numberOfEnemies": 5
             },
             {
                 "origin": {
@@ -63,7 +63,7 @@
                 "possibleEnemies": [
                     "DrillEnemy","TurretEnemyFollows"
                 ],
-                "numberOfEnemies": 10
+                "numberOfEnemies": 8
             },
             {
                 "origin": {
@@ -72,16 +72,92 @@
                 },
                 "name": "Not Safe City",
                 "roomPrefabName": "EnemyRoom",
-                "doors": [{"direction" : "UP", "key" : -1},{"direction" : "RIGHT", "key" : 2}],
+                "doors": [{"direction" : "UP", "key" : -1},{"direction" : "DOWN", "key" : 2},{"direction" : "RIGHT", "key" : 3}],
                 "difficulty": 1,
                 "possibleEnemies": [
-                    "DrillEnemy","TurretEnemyFollows"
+                    "TurretEnemyFollows"
                 ],
-                "numberOfEnemies": 10
+                "numberOfEnemies": 8
+            },
+            {
+                "origin": {
+                    "x": 2,
+                    "y": -2
+                },
+                "name": "Minigame Room",
+                "roomPrefabName": "MinigameRoom",
+                "doors": [{"direction" : "UP", "key" : -1},{"direction" : "RIGHT", "key" : -1}],
+                "difficulty": 1,
+                "minigameData":{
+                    "minigameName": "Binary Minigame",
+                    "minigameSceneName": "MG1 Binary",
+                    "minigameHistory": 2,
+                    "skillNameForUnlock": "Bomb"
+                }
             },
             {
                 "origin": {
                     "x": 3,
+                    "y": -2
+                },
+                "name": "Not Safe City",
+                "roomPrefabName": "EnemyRoom",
+                "doors": [{"direction" : "LEFT", "key" : -1}],
+                "difficulty": 1,
+                "key": "3",
+                "possibleEnemies": [
+                    "DrillEnemy","TurretEnemyFollows"
+                ],
+                "numberOfEnemies": 15
+            },
+            {
+                "origin": {
+                    "x": 3,
+                    "y": -1
+                },
+                "name": "Not Safe City",
+                "roomPrefabName": "EnemyRoom",
+                "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "RIGHT", "key" : -1},{"direction" : "UP", "key" : -1}],
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "DrillEnemy"
+                ],
+                "numberOfEnemies": 20
+            },
+            {
+                "origin": {
+                    "x": 3,
+                    "y": 0
+                },
+                "name": "Minigame Room",
+                "roomPrefabName": "MinigameRoom",
+                "doors": [{"direction" : "DOWN", "key" : -1}],
+                "difficulty": 1,
+                "key": "4",
+                "minigameData":{
+                    "minigameName": "Binary Minigame",
+                    "minigameSceneName": "MG1 Binary",
+                    "minigameHistory": 3,
+                    "skillNameForUnlock": "Empty"
+                }
+            },
+            {
+                "origin": {
+                    "x": 4,
+                    "y": -1
+                },
+                "name": "Not Safe City",
+                "roomPrefabName": "EnemyRoom",
+                "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "RIGHT", "key" : 4}],
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "DrillEnemy","TurretEnemyFollows"
+                ],
+                "numberOfEnemies": 20
+            },
+            {
+                "origin": {
+                    "x": 5,
                     "y": -1
                 },
                 "name": "End Room",

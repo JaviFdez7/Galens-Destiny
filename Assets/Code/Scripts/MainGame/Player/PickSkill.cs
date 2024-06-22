@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build.Pipeline.Tasks;
 using UnityEngine;
 using static SkillsMenu;
 

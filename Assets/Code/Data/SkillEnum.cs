@@ -6,4 +6,5 @@ public enum SkillEnum
     Drill,
     Bomb,
     Shield,
+    Heal,
 }

@@ -58,6 +58,9 @@ public class SkillData : MonoBehaviour
 
         GameObject shieldSkillGo = GameObject.Find("ShieldSkill");
         IExecuteCommand shieldSkillCommand = shieldSkillGo.GetComponent<IExecuteCommand>();
+
+        GameObject healSkillGo = GameObject.Find("HealSkill");
+        IExecuteCommand healSkillCommand = healSkillGo.GetComponent<IExecuteCommand>();
         
         // ================== SKILL ACTIVE ==================
         Skill skill0 = new Skill(0, SkillEnum.Shoot, "Electric Gun", "Using a mini nuclear reactor to generate electricity, this weapon can be used for both offense and defense.", "Shoots a powerful electric bolt", 1, true, false, 5, skillImages[0], bomberSkillCommand);
@@ -68,7 +71,7 @@ public class SkillData : MonoBehaviour
 
         // ================== SKILL PASSIVE ==================
 
-        Skill skill4 = new Skill(4, SkillEnum.Empty, "Empty", "Empty", "Empty", 0, false, true, 0, skillImages[4], emptySkill);
+        Skill skill4 = new Skill(4, SkillEnum.Heal, "Regenerative Healing", "Robots are not immune to damage. But they can heal themselves.", "Heals the player", 3, false, true, 5, skillImages[4], healSkillCommand);
 
 
         allSkillObjects.Add(skill0);

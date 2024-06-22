@@ -67,7 +67,7 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
         {
             if (collider == null) continue;
             Debug.Log("Collided with: " + collider.name);
-            if (collider.CompareTag("Player")) continue;
+            if (collider.CompareTag("Player") || collider.CompareTag("PlayerCollider")) continue;
             IDamageable damageable = collider.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {

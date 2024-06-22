@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,6 +8,7 @@ public class BinaryScore : MonoBehaviour
 {
     public static BinaryScore instance;
 
+    public int currentScore = 1000;
     void Awake()
     {
         if (instance != null)
@@ -17,8 +19,14 @@ public class BinaryScore : MonoBehaviour
         instance = this;
     }
 
-    private int currentScore = 1000;
+    void Start()
+    {
+        currentScoreText.text = currentScore.ToString();
+        currentScoreTextInEndPanel.text = currentScore.ToString();
+    }
+
     public TextMeshProUGUI currentScoreText;
+    public TextMeshProUGUI currentScoreTextInEndPanel;
     public void CalculateCurrentScore(int minimumNumberOfClicksInTheLevel, int currentNumberOfClicks)
     {
         int negativePoints = 25;
@@ -26,21 +34,17 @@ public class BinaryScore : MonoBehaviour
         if(currentNumberOfClicks > minimumNumberOfClicksInTheLevel)
             if(currentScore != 0)
                 if((currentScore-negativePoints)>=0)
-                    currentScore -= negativePoints;
-                else
-                    currentScore = 0;
-            
-        currentScoreText.text = currentScore.ToString();
+                    SubstractPoints(negativePoints);
     }
 
     public void SubstractPoints(int negativePoints)
     {
-        if((currentScore-negativePoints)>=0)
-            currentScore -= negativePoints;
-        else
-            currentScore = 0;
-
+        currentScore -= negativePoints;
+        currentScore = Math.Max(0, currentScore);
         currentScoreText.text = currentScore.ToString();
+        currentScoreTextInEndPanel.text = currentScore.ToString();
     }
 
 }
+
+

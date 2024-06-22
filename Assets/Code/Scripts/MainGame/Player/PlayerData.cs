@@ -8,6 +8,8 @@ public class PlayerData : MonoBehaviour
 
     public Vector2 lastCheckPoint;
 
+    public List<int> keys = new List<int>();
+
 
     public int maxHealth = 100;
     public int currentHealth;

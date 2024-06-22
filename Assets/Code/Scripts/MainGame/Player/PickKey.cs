@@ -32,7 +32,6 @@ public class PickKey : MonoBehaviour
             {
                 keyHolder.AddKey(id);
                 Debug.Log("Player picked up key with id: " + id);
-                Debug.Log("Player now has keys: " + string.Join(", ", keyHolder.keys));
                 Destroy(gameObject);
             }
         }

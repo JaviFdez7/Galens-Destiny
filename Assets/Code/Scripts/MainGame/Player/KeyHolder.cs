@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class KeyHolder : MonoBehaviour
 {
     // Start is called before the first frame update
-    public List<int> keys = new();
     //Reference to the gridlayout gameobject
     public GameObject gridLayout;
     public GameObject keyImagePrefab;
@@ -23,6 +22,15 @@ public class KeyHolder : MonoBehaviour
         Color.black,
         Color.white
     };
+
+    public void Start()
+    {
+        foreach (int key in PlayerData.instance.keys)
+        {
+            AddKeyGUI(key);
+        }
+    }
+
     public static Color GetKeyColor(int key)
     {
         if (key < 0) return Color.black;
@@ -37,25 +45,29 @@ public class KeyHolder : MonoBehaviour
     public void AddKey(int key)
     {
 
-        keys.Add(key);
+        PlayerData.instance.keys.Add(key);
+        AddKeyGUI(key);
+
+    }
+
+    public void AddKeyGUI(int key)
+    {
         // Instantiate the keyImage prefab
         GameObject keyImage = Instantiate(keyImagePrefab);
         // Set the parent to the gridLayoutGroup to automatically position it
         keyImage.transform.SetParent(gridLayout.transform, false);
         // Set the color of the keyImage
         keyImage.GetComponent<Image>().color = GetKeyColor(key);
-
     }
     public void RemoveKey(int key)
     {
-        keys.Remove(key);
+        PlayerData.instance.keys.Remove(key);
         Destroy(gridLayout.transform.GetChild(key).gameObject);
     }
 
     public bool HasKey(int key)
     {
         if (key == -1) return true;
-        Debug.Log("Checking if player has key: " + key + " keys: " + string.Join(", ", keys));
-        return keys.Contains(key);
+        return PlayerData.instance.keys.Contains(key);
     }
 }

@@ -77,7 +77,7 @@ public class WorldGen : MonoBehaviour
                 spawner.possibleEnemies = sector.possibleEnemies;
                 spawner.LoadEnemiesFromResources();
             }
-            if (sector.key != -1 && sector.key != 0)            {
+            if (sector.key != -1 && sector.key != 0 && !PlayerData.instance.keys.Contains(sector.key)){
                 GameObject key = Instantiate(Resources.Load<GameObject>("Prefabs/Items/Key"),room.transform);
                 key.transform.localPosition = new Vector2(7,0);
                 PickKey pickKey = key.GetComponent<PickKey>();

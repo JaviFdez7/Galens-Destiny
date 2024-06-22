@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,14 @@ public class EnviromentDamageable : MonoBehaviour, IDamageable
     public bool isDestructible = true;
 
     GameObject damagedEffect;
+
+    public event Action<int> OnHealthChanged;
+
     public void TakeDamage(int damage, Vector2 direction)
     {
         if (!isDestructible) return;
         health -= damage;
+        OnHealthChanged?.Invoke(health);
         Debug.Log("Enviroment "+gameObject.name+" Health: " + health);
         if (damagedEffect != null)
         {
@@ -33,5 +38,6 @@ public class EnviromentDamageable : MonoBehaviour, IDamageable
     public void Heal(int amount)
     {
         health += amount;
+        OnHealthChanged?.Invoke(health);
     }
 }

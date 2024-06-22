@@ -5,14 +5,14 @@ public class Bullet : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private Vector3 target;
+    public Vector2 target;
 
-    private int damage = 5;
+    public int damage = 5;
 
-    public void SetDamage(int damage)
-    {
-        this.damage = damage;
-    }
+    public bool followsTarget = false;
+    private GameObject player;
+
+
 
 [SerializeField]
     private List<string> tagsToIgnore = new();
@@ -28,18 +28,22 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        player = GameObject.FindGameObjectWithTag("Player");
         Destroy(gameObject, 5);
     }
 
     private void Update()
     {
+        if(followsTarget){
+            target = player.transform.position;
+        }
         MoveToTarget();
     }
 
     private void MoveToTarget()
     {
-        Vector2 direction = (Vector2)target - rb.position;
+        Vector2 direction = target - rb.position;
         direction.Normalize();
         rb.velocity = transform.up * 10;}
 
@@ -74,8 +78,8 @@ public class Bullet : MonoBehaviour
     }
 
     private void MakeDamage(IDamageable damagable, Vector2 direction)
-    {
-            
+    {    
             damagable.TakeDamage(this.damage, direction);
     }
+
 }

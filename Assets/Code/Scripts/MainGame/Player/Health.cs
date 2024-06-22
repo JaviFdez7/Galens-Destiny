@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
+    public event Action<int> OnHealthChanged;
     void Start()
     {
         HealthBar.instance.InitializeHealthBar(PlayerData.instance.maxHealth, PlayerData.instance.currentHealth);
@@ -18,6 +20,8 @@ public class Health : MonoBehaviour, IDamageable
     {
 
         PlayerData.instance.currentHealth -= damageAmount;
+        PlayerData.instance.currentHealth = Mathf.Clamp(PlayerData.instance.currentHealth, 0, PlayerData.instance.maxHealth);
+        OnHealthChanged?.Invoke(PlayerData.instance.currentHealth);
         
         HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
 
@@ -34,6 +38,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         PlayerData.instance.currentHealth += healAmount;
         PlayerData.instance.currentHealth = Mathf.Clamp(PlayerData.instance.currentHealth, 0, PlayerData.instance.maxHealth);
+        OnHealthChanged?.Invoke(PlayerData.instance.currentHealth);
         HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
     }
 
@@ -46,6 +51,7 @@ public class Health : MonoBehaviour, IDamageable
     }
 
     public TextMeshProUGUI currentHealthBarMaxHealth;
+
 
     public void UIText()
     {

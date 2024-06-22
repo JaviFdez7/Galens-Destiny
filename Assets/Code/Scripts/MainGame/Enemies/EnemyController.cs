@@ -22,10 +22,15 @@ public class EnemyController : MonoBehaviour, IDamageable
 
     public List<GameObject> dropitems = new List<GameObject>();
 
+    public event Action<int> OnHealthChanged;
+
+
+
     void Start()
     {
         currentHealth = maxHealth;
         healthEnemyBar.InitializeHealthBar(maxHealth, currentHealth);
+  
     }
 
     private void Awake()
@@ -76,6 +81,8 @@ public class EnemyController : MonoBehaviour, IDamageable
     public void TakeDamage(int damageAmount, Vector2 damageDirection)
     {
         currentHealth -= damageAmount;
+        // Invoke the event to notify the health bar about the change in health.
+        OnHealthChanged?.Invoke(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -83,7 +90,6 @@ public class EnemyController : MonoBehaviour, IDamageable
         }
         else
         {
-            healthEnemyBar.ChangeCurrentHealth(currentHealth);
             Knockback(damageDirection); // Invoke the knockback immediately with direction
         }
     }
@@ -95,7 +101,8 @@ public class EnemyController : MonoBehaviour, IDamageable
         {
             currentHealth = maxHealth;
         }
-        healthEnemyBar.ChangeCurrentHealth(currentHealth);
+        // Invoke the event to notify the health bar about the change in health.
+        OnHealthChanged?.Invoke(currentHealth);
     }
 
     public void Die()
@@ -103,24 +110,15 @@ public class EnemyController : MonoBehaviour, IDamageable
         // Put your death logic here.
         // For example, you can play a death animation, disable the enemy, etc.
         Debug.Log("Enemy died!");
-        DropItems();
+        DropItems.Drop(this.transform, dropChance, dropitems);
         Destroy(gameObject);
     }
 
-    private void DropItems()
-    {
-        bool shouldDrop = UnityEngine.Random.value < dropChance; // 20% chance to drop items
-        int elementToDrop = UnityEngine.Random.Range(1, dropitems.Count);
-        if (shouldDrop)
-        {
-            Instantiate(dropitems[elementToDrop], transform.position, Quaternion.identity);
-        }
-        //Experience
-        Instantiate(dropitems[0], transform.position, Quaternion.identity);
-    }
+
 
     void Knockback(Vector2 direction, float force = 20f)
     {
+        if (!canMove) return;
         canMove = false;
         rb.velocity = Vector2.zero;
         rb.AddForce(direction * force, ForceMode2D.Impulse);
@@ -131,5 +129,6 @@ public class EnemyController : MonoBehaviour, IDamageable
     {
         canMove = true;
     }
+
 
 }

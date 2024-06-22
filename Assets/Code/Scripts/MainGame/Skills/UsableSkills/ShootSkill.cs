@@ -26,7 +26,7 @@ public class ShootSkill : MonoBehaviour, IExecuteCommand
 
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         projectile.GetComponent<Bullet>().AddAllTagToIgnore(tagsToIgnore);
-        projectile.GetComponent<Bullet>().SetDamage(fireDamage);
+        projectile.GetComponent<Bullet>().damage =fireDamage;
         CameraFollow.ScreenShake(0.2f, 0.2f);
     }
 }

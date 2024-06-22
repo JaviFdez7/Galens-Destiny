@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Environment
   - PlayerCollider
+  - EnemyCollider
   layers:
   - Default
   - TransparentFX

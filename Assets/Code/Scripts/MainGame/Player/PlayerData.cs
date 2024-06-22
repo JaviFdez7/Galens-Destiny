@@ -43,14 +43,31 @@ public class PlayerData : MonoBehaviour
         }
 
         instance = this;
-        this.lastCheckPoint = new Vector2(-7, 5);
+        ResetPlayerData();
         DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    public void ResetPlayerData()
     {
-        currentHealth = maxHealth;
-        currentEnergy = maxEnergy;
+        this.lastCheckPoint = new Vector2(-7, 5);
+        this.maxHealth = 100;
+        this.currentHealth = 100;
+        HealthBar.instance.InitializeHealthBar(this.maxHealth, this.currentHealth);
+        this.maxEnergy = 100;
+        this.currentEnergy = 100;
+        this.currentExp = 0;
+        this.maxExp = 10;
+        this.level = 1;
+        this.token = 0;
+        this.skillSlotsMax = 0;
+        this.skillSlots = 0;
+        this.vitality = 0;
+        this.damage = 0;
+        this.attackSpeed = 0;
+        this.armor = 0;
+        this.energy = 0;
+        this.weight = 0;
+        this.movementSpeed = 0;
     }
 
 

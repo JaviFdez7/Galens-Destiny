@@ -44,10 +44,9 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Die()
     {
-        // Here you can add logic for what happens when the player dies.
-        // For example, restart the level or show a game over screen.
-        Debug.Log("Player died!");
-        // You may want to disable player controls, show a game over screen, etc.
+        PlayerData.instance.currentHealth = PlayerData.instance.maxHealth;
+        PlayerData.instance.currentEnergy = PlayerData.instance.maxEnergy;
+        this.transform.position = PlayerData.instance.lastCheckPoint;
     }
 
     public TextMeshProUGUI currentHealthBarMaxHealth;

@@ -8,7 +8,7 @@ public class PickKey : MonoBehaviour
     public int id;
     private Sprite sprite;
 
-    private void Start()
+    public void Start()
     {
         if (id < 0)
         {

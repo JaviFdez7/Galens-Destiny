@@ -11,7 +11,7 @@ using UnityEngine;
  */
 public class WorldGen : MonoBehaviour
 {
-
+    public static WorldGen instance;
     public int selectedMapIndex = 0;
     void Start()
     {
@@ -69,6 +69,23 @@ public class WorldGen : MonoBehaviour
                     roomDoorFrames.RemoveWallAndSetDoor(door);
                 }
             };
+            EnemySpawner spawner = room.GetComponentInChildren<EnemySpawner>();
+            if (spawner != null)
+            {
+                spawner.possibleEnemies = sector.possibleEnemies;
+                spawner.numberOfEnemy = sector.numberOfEnemies;
+                spawner.possibleEnemies = sector.possibleEnemies;
+                spawner.LoadEnemiesFromResources();
+            }
+            if (sector.key != -1 && sector.key != 0)            {
+                GameObject key = Instantiate(Resources.Load<GameObject>("Prefabs/Items/Key"),room.transform);
+                key.transform.localPosition = new Vector2(7,0);
+                PickKey pickKey = key.GetComponent<PickKey>();
+                if (pickKey != null)
+                    pickKey.id = sector.key;
+                pickKey.Start();
+            }
+
 
 
         }

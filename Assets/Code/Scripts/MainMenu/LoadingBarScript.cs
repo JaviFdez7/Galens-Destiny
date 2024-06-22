@@ -35,7 +35,7 @@ public class LoadingBarManager : SceneLoaderGameObject
         //be the minimun between the delaySliderValue and the progress of the asyncLoad
 
         //Load the scene async
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         asyncOperation.allowSceneActivation = false;
         float elapsedTime = 0;
 

@@ -6,6 +6,9 @@ public class PlayerData : MonoBehaviour
     public bool testMode;
 
 
+    public Vector2 lastCheckPoint;
+
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -38,6 +41,7 @@ public class PlayerData : MonoBehaviour
         }
 
         instance = this;
+        this.lastCheckPoint = new Vector2(-7, 5);
         DontDestroyOnLoad(gameObject);
     }
 
@@ -46,4 +50,7 @@ public class PlayerData : MonoBehaviour
         currentHealth = maxHealth;
         currentEnergy = maxEnergy;
     }
+
+
+
 }

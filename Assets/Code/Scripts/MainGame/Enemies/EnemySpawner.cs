@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,29 +9,64 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = 1f;
 
     [SerializeField]
-    private GameObject[] enemyPrefabs;
+    private List<GameObject> enemyPrefabs;
+    public List<string> possibleEnemies = new List<string>();
 
     [SerializeField]
     private bool canSpawn = true;
 
     [SerializeField]
-    private int numberOfEnemy = 1;
+    public int numberOfEnemy = 1;
 
-    private void Start() {
-        StartCoroutine(Spawner());
+    public void Start()
+    {
+        LoadEnemiesFromResources();
+
+    }
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(Spawner());
+            canSpawn = false;
+        }
     }
 
-    private IEnumerator Spawner(){
+    private IEnumerator Spawner()
+    {
+        if(!canSpawn)
+        {
+            yield break;
+        }
         WaitForSeconds wait = new(spawnRate);
         int spawnedEnemies = 0;
-        while(canSpawn && (spawnedEnemies!=numberOfEnemy)) {
+        while (spawnedEnemies < numberOfEnemy)
+        {
             yield return wait;
-            int rand =  Random.Range(0, enemyPrefabs.Length);
+            int rand = Random.Range(0, enemyPrefabs.Count);
             GameObject enemyToSpawn = enemyPrefabs[rand];
-
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            Vector2 spawnPosition = new Vector2(transform.position.x + Random.Range(-16f, 16f), transform.position.y + Random.Range(-10f, 10f));
+            Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+            
             spawnedEnemies++;
         }
     }
 
+    public void LoadEnemiesFromResources()
+    {
+        enemyPrefabs = new List<GameObject>();
+        foreach (string enemy in possibleEnemies)
+        {
+            try
+            {
+                GameObject enemyPrefab = Resources.Load<GameObject>("Prefabs/Enemy/" + enemy);
+                enemyPrefabs.Add(enemyPrefab);
+            }
+            catch (System.Exception)
+            {
+                Debug.LogError("Failed to load enemy " + enemy);
+            }
+        }
+        canSpawn = true;
+    }
 }

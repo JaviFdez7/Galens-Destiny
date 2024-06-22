@@ -11,14 +11,20 @@ public class Movement : MonoBehaviour
     private Vector2 mousePosition;
     private Rigidbody2D rb = null;
     [SerializeField]
-    private float moveSpeed= 10f;
+    private float moveSpeed = 10f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         input = new MappeableInput();
+
     }
 
+    public void Start()
+    {
+        this.transform.position = PlayerData.instance.lastCheckPoint;
+        print("Player spawned at: " + PlayerData.instance.lastCheckPoint);
+    }
 
     private void OnEnable()
     {
@@ -27,7 +33,7 @@ public class Movement : MonoBehaviour
         input.InGame.Movement.performed += OnMovementPerformed;
         input.InGame.Movement.canceled += OnMovementCanceled;
 
-        
+
     }
 
     private void OnDisable()

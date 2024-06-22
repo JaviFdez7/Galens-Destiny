@@ -16,10 +16,8 @@
                 "name": "The Mines",
                 "roomPrefabName": "InitialRoom",
                 "doors": [{"direction" : "RIGHT", "key" : -1}],
-                "key": "1",
-                "difficulty": 1,
-                "possibleEnemies": [],
-                "numberOfEnemies": 5
+                "difficulty": 1
+                
             },
             {
                 "origin": {
@@ -27,24 +25,67 @@
                     "y": 0
                 },
                 "name": "Mine entrance",
-                "roomPrefabName": "InitialRoom",
-                "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "UP", "key" : 1}],
+                "roomPrefabName": "MinigameRoom",
+                "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "RIGHT", "key" : -1}],
                 "difficulty": 1,
-                "possibleEnemies": [
-                    "Drill"
-                ]
+                "key": "1"
             },
             {
                 "origin": {
-                    "x": 1,
+                    "x": 2,
+                    "y": 0
+                },
+                "name": "Not Safe City",
+                "roomPrefabName": "EnemyRoom",
+                "doors": [{"direction" : "DOWN", "key" : -1},{"direction" : "UP", "key" : 1},{"direction" : "LEFT", "key" : -1}],
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "DrillEnemy"
+                ],
+                "numberOfEnemies": 10
+            },
+            {
+                "origin": {
+                    "x": 2,
                     "y": 1
                 },
-                "name": "Safe City",
-                "roomPrefabName": "InitialRoom",
+                "name": "The Mines",
+                "roomPrefabName": "EnemyRoom",
                 "doors": [{"direction" : "DOWN", "key" : -1}],
+                "key": "2",
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "DrillEnemy","TurretEnemyFollows"
+                ],
+                "numberOfEnemies": 10
+            },
+            {
+                "origin": {
+                    "x": 2,
+                    "y": -1
+                },
+                "name": "Not Safe City",
+                "roomPrefabName": "EnemyRoom",
+                "doors": [{"direction" : "UP", "key" : -1},{"direction" : "RIGHT", "key" : 2}],
+                "difficulty": 1,
+                "possibleEnemies": [
+                    "DrillEnemy","TurretEnemyFollows"
+                ],
+                "numberOfEnemies": 10
+            },
+            {
+                "origin": {
+                    "x": 3,
+                    "y": -1
+                },
+                "name": "End Room",
+                "roomPrefabName": "EndRoom",
+                "doors": [{"direction" : "LEFT", "key" : -1}],
                 "difficulty": 1,
                 "possibleEnemies": []
             }
+
+
         ]
     }
 ]

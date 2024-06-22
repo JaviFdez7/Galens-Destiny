@@ -8687,7 +8687,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3761860941009945962}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -17430,7 +17430,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3761860941009945962}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -20954,7 +20954,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3761860941009945962}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -28760,7 +28760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3761860941009945962}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: ChangeActiveSkillSlot
         m_Mode: 3
@@ -35336,6 +35336,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2147702713565895514, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
   m_PrefabInstance: {fileID: 946025417583820255}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3761860941009945962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+  m_PrefabInstance: {fileID: 946025417583820255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcafb8f618bd384a95774dcc3abfbe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3830431119939375806
 PrefabInstance:
   m_ObjectHideFlags: 0

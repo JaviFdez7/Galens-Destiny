@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7240943356006032601}
   m_Layer: 0
   m_Name: HealSkill
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 22127393808287666}
   m_Layer: 0
   m_Name: Visual
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770604482899406861}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -373,8 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f102a31dc5e4954595e92ab4c545323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regenerationDelay: 3
-  regenerationAmount: 1
+  regenerationDelay: 2
+  regenerationAmount: 2
   regenerationInterval: 0.2
   currentEnergyBarMaxEnergy: {fileID: 0}
 --- !u!114 &6709931227129863541
@@ -504,7 +504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9f5f00135b801488a21eb16f5dd03b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keys: 
   gridLayout: {fileID: 0}
   keyImagePrefab: {fileID: 7446893258754562477, guid: 84b6d05418d723a43949a86f5dba309f, type: 3}
 --- !u!58 &8315650063514279592
@@ -821,7 +820,7 @@ GameObject:
   - component: {fileID: 5866034818922621702}
   m_Layer: 0
   m_Name: EmptySkill
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1403,7 +1402,7 @@ GameObject:
   - component: {fileID: 8725421056680466091}
   m_Layer: 0
   m_Name: Lights
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1542,7 +1541,7 @@ GameObject:
   - component: {fileID: 6596476359661959828}
   m_Layer: 0
   m_Name: ShieldSkill
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1620,7 +1619,7 @@ GameObject:
   - component: {fileID: 2038935562209107068}
   m_Layer: 0
   m_Name: BomberSkill
-  m_TagString: Untagged
+  m_TagString: PlayerCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

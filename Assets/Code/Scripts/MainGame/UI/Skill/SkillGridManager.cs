@@ -16,6 +16,10 @@ public class SkillGridManager : MonoBehaviour
 
     public void BuildSkillsGrid(List<Skill> skills, string selectedSkillTypeIsPassive)
     {
+        if(skills.Count == 0)
+        {
+            return;
+        }
         if(selectedSkillTypeIsPassive != "None")
             filterSkillsToggle.SetActive(false);
         else
@@ -40,7 +44,7 @@ public class SkillGridManager : MonoBehaviour
 
         foreach (Skill skill in skills)
         {
-            if(skill.skillEnum != SkillEnum.Shoot)
+            if(skill.skillEnum != SkillEnum.Shoot || skill.skillEnum != SkillEnum.Drill || skill.skillEnum != SkillEnum.Empty)
             {
                 GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
                 skillGridElement.GetComponent<Image>().sprite = skill.skillImage;

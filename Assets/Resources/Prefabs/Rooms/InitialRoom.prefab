@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1352613245577827204}
   - component: {fileID: 4252335440834070191}
   - component: {fileID: 130766009496931059}
+  - component: {fileID: 4857472260167151336}
   m_Layer: 0
   m_Name: roomwall (2)
   m_TagString: Untagged
@@ -27,11 +28,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 87569306930640590}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0000036, y: -13.000003, z: 0}
+  m_LocalPosition: {x: -2, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1352613245577827204
@@ -158,6 +159,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4857472260167151336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87569306930640590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &563570974335261801
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +184,7 @@ GameObject:
   - component: {fileID: 2146341890109486342}
   - component: {fileID: 5829608119264934355}
   - component: {fileID: 9200396221383272808}
+  - component: {fileID: 1783756313583173079}
   m_Layer: 0
   m_Name: NonBreakableWall_RIGHT
   m_TagString: Untagged
@@ -288,6 +304,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1783756313583173079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563570974335261801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &703709822602835635
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +330,7 @@ GameObject:
   - component: {fileID: 6995761354962307356}
   - component: {fileID: 8475374746509084636}
   - component: {fileID: 2402977404501446121}
+  - component: {fileID: 8420447278959951013}
   m_Layer: 0
   m_Name: roomwall (3)
   m_TagString: Untagged
@@ -315,11 +346,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703709822602835635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9999964, y: -13.000003, z: 0}
+  m_LocalPosition: {x: 2, y: -13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6995761354962307356
@@ -446,6 +477,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8420447278959951013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703709822602835635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &819137902599329717
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,16 +524,8 @@ Transform:
   - {fileID: 6682256725936666532}
   - {fileID: 2179988504515964983}
   - {fileID: 5860360677636073436}
-  - {fileID: 7943576814526717850}
-  - {fileID: 6318972444526250639}
-  - {fileID: 2625967411657246143}
-  - {fileID: 8391275972629517414}
-  - {fileID: 3309142836776438193}
-  - {fileID: 7884348547454056075}
-  - {fileID: 5558342182724687976}
-  - {fileID: 846872762283862913}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3552468616335881012
 MonoBehaviour:
@@ -518,6 +555,7 @@ GameObject:
   - component: {fileID: 1150767457834421489}
   - component: {fileID: 3687735399758853467}
   - component: {fileID: 950315407701068999}
+  - component: {fileID: 8230382731861486085}
   m_Layer: 0
   m_Name: roomwall (6)
   m_TagString: Untagged
@@ -533,11 +571,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081326259068328368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 1.9999971, z: 0}
+  m_LocalPosition: {x: -20, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1150767457834421489
@@ -664,6 +702,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8230382731861486085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081326259068328368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &3054224471269045014
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +728,7 @@ GameObject:
   - component: {fileID: 7371671426700057896}
   - component: {fileID: 9076433816877369657}
   - component: {fileID: 1376283950568572486}
+  - component: {fileID: 3336085639491537984}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -822,6 +875,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3336085639491537984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054224471269045014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &3861035258713956187
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,6 +901,7 @@ GameObject:
   - component: {fileID: 6200770822801139303}
   - component: {fileID: 3886953698512265376}
   - component: {fileID: 6509322514566890471}
+  - component: {fileID: 5790514630274990454}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -980,6 +1048,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5790514630274990454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3861035258713956187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &4165782808480890857
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1074,7 @@ GameObject:
   - component: {fileID: 7261872391561519345}
   - component: {fileID: 832292236167340933}
   - component: {fileID: 5826273435948620816}
+  - component: {fileID: 8530820723040139178}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -1007,11 +1090,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4165782808480890857}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9999964, y: 12.999997, z: 0}
+  m_LocalPosition: {x: 2, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7261872391561519345
@@ -1138,6 +1221,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8530820723040139178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165782808480890857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &4616858118962396787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1247,7 @@ GameObject:
   - component: {fileID: 2649373041992144037}
   - component: {fileID: 393055140324016574}
   - component: {fileID: 4334999761921292809}
+  - component: {fileID: 243827964108527386}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -1296,6 +1394,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &243827964108527386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4616858118962396787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &5043189147667502449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1419,7 @@ GameObject:
   - component: {fileID: 8266632903202619381}
   - component: {fileID: 2210180265573696900}
   - component: {fileID: 7404572367271839084}
+  - component: {fileID: 3229661229374868750}
   m_Layer: 0
   m_Name: NonBreakableWall_Left
   m_TagString: Untagged
@@ -1426,6 +1539,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &3229661229374868750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043189147667502449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &5062900578430966797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1600,7 @@ GameObject:
   - component: {fileID: 5403705974482727623}
   - component: {fileID: 7633331708814773555}
   - component: {fileID: 6410681802807288881}
+  - component: {fileID: 6486960897421103575}
   m_Layer: 0
   m_Name: roomwall (4)
   m_TagString: Untagged
@@ -1488,11 +1616,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5126667216286464244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: 1.9999971, z: 0}
+  m_LocalPosition: {x: 20, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5403705974482727623
@@ -1619,6 +1747,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6486960897421103575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5126667216286464244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &6075876642904512225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1773,7 @@ GameObject:
   - component: {fileID: 1127462937190719258}
   - component: {fileID: 5942328354531042251}
   - component: {fileID: 3884140884659693351}
+  - component: {fileID: 8593721045877987397}
   m_Layer: 0
   m_Name: roomwall (7)
   m_TagString: Untagged
@@ -1646,11 +1789,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075876642904512225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: -2.0000029, z: 0}
+  m_LocalPosition: {x: -20, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1127462937190719258
@@ -1777,6 +1920,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8593721045877987397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6075876642904512225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &6331519696648278879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1961,15 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7943576814526717850}
+  - {fileID: 6318972444526250639}
+  - {fileID: 2625967411657246143}
+  - {fileID: 8391275972629517414}
+  - {fileID: 3309142836776438193}
+  - {fileID: 7884348547454056075}
+  - {fileID: 5558342182724687976}
+  - {fileID: 846872762283862913}
   m_Father: {fileID: 4793380868111546154}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1820,6 +1985,7 @@ GameObject:
   - component: {fileID: 1999350880168113313}
   - component: {fileID: 2623897550902226415}
   - component: {fileID: 294826664215203310}
+  - component: {fileID: 8226089724760638890}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -1966,6 +2132,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8226089724760638890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379251290606726294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &6793768945318137179
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +2158,7 @@ GameObject:
   - component: {fileID: 7001544139649031271}
   - component: {fileID: 5074736660268990506}
   - component: {fileID: 5313882531828073974}
+  - component: {fileID: 1154941106297879091}
   m_Layer: 0
   m_Name: roomwall (1)
   m_TagString: Untagged
@@ -1993,11 +2174,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6793768945318137179}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0000036, y: 12.999997, z: 0}
+  m_LocalPosition: {x: -2, y: 13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7001544139649031271
@@ -2124,6 +2305,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1154941106297879091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793768945318137179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &7051284235680657509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2331,7 @@ GameObject:
   - component: {fileID: 4936019843485364399}
   - component: {fileID: 8988963383807392861}
   - component: {fileID: 1078769979591878995}
+  - component: {fileID: 809016370354003172}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -2282,6 +2478,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &809016370354003172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051284235680657509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &7675041948539210718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,6 +2588,7 @@ GameObject:
   - component: {fileID: 1423460098510957040}
   - component: {fileID: 2019627325835950274}
   - component: {fileID: 1236756047919736647}
+  - component: {fileID: 2142685290155657680}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -2524,6 +2735,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2142685290155657680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8498195611929363893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &8595941850734262197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2574,6 +2799,7 @@ GameObject:
   - component: {fileID: 2195918948835295452}
   - component: {fileID: 4187475157950877221}
   - component: {fileID: 1875383274304448218}
+  - component: {fileID: 5774094850324371568}
   m_Layer: 0
   m_Name: NonBreakableWall_UP
   m_TagString: Untagged
@@ -2693,6 +2919,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5774094850324371568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8674157545839853863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &8739491783072213942
 GameObject:
   m_ObjectHideFlags: 0
@@ -2705,6 +2945,7 @@ GameObject:
   - component: {fileID: 2801405922704094185}
   - component: {fileID: 2705324247401053637}
   - component: {fileID: 8244734502401111879}
+  - component: {fileID: 3879570310975092847}
   m_Layer: 0
   m_Name: roomwall (5)
   m_TagString: Untagged
@@ -2720,11 +2961,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8739491783072213942}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20, y: -2.0000029, z: 0}
+  m_LocalPosition: {x: 20, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4793380868111546154}
+  m_Father: {fileID: 5860360677636073436}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2801405922704094185
@@ -2851,6 +3092,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3879570310975092847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8739491783072213942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &8791538456621252915
 GameObject:
   m_ObjectHideFlags: 0
@@ -2863,6 +3118,7 @@ GameObject:
   - component: {fileID: 4343628901362768819}
   - component: {fileID: 8242813669700259788}
   - component: {fileID: 5178798768582328429}
+  - component: {fileID: 923833871972289310}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -3009,6 +3265,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &923833871972289310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791538456621252915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &9041345905211397748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,6 +3291,7 @@ GameObject:
   - component: {fileID: 593645073454334945}
   - component: {fileID: 4976166879640260760}
   - component: {fileID: 4967162837870564609}
+  - component: {fileID: 1699489096018776721}
   m_Layer: 0
   m_Name: roomwall
   m_TagString: Untagged
@@ -3167,6 +3438,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1699489096018776721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041345905211397748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0
 --- !u!1 &9154019977753045240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,6 +3463,7 @@ GameObject:
   - component: {fileID: 9012648231666860851}
   - component: {fileID: 9030124748248424103}
   - component: {fileID: 1109439898668910769}
+  - component: {fileID: 4730325729284575980}
   m_Layer: 0
   m_Name: NonBreakableWall_Down
   m_TagString: Untagged
@@ -3297,3 +3583,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4730325729284575980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9154019977753045240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874f0307f252554b9d0f0f4dd74b606, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  isDestructible: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static SkillsMenu;
 public class ShootSkill : MonoBehaviour, IExecuteCommand
@@ -5,7 +6,9 @@ public class ShootSkill : MonoBehaviour, IExecuteCommand
     public GameObject bulletPrefab;
     private Transform firePoint;
 
-    public float fireForce;
+    public List<string> tagsToIgnore=new List<string>();
+
+    public int fireDamage = 15;
     public void Execute()
     {
         Skill activeSkill = SkillUtils.GetOneSkillFromAll(SkillEnum.Shoot);
@@ -22,8 +25,9 @@ public class ShootSkill : MonoBehaviour, IExecuteCommand
             firePoint = GameObject.Find("FirePoint").transform;
 
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.up * fireForce;
+        projectile.GetComponent<Bullet>().AddAllTagToIgnore(tagsToIgnore);
+        projectile.GetComponent<Bullet>().SetDamage(fireDamage);
         CameraFollow.ScreenShake(0.2f, 0.2f);
     }
 }
+

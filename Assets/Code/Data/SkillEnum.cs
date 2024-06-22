@@ -4,6 +4,6 @@ public enum SkillEnum
     None,
     Shoot,
     Drill,
-    Shield,
     Bomb,
+    Shield,
 }

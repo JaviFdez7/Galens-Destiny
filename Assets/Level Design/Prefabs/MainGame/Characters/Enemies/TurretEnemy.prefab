@@ -181,8 +181,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2531446869574083931}
   - {fileID: 6236548818477644100}
+  - {fileID: 2531446869574083931}
   m_Father: {fileID: 3113032312827816908}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -275,8 +275,8 @@ MonoBehaviour:
   attackRange: 1
   attackDamage: 10
   attackCooldown: 2
-  maxHealth: 100
-  dropChance: 0.476
+  maxHealth: 80
+  dropChance: 0.731
   healthEnemyBar: {fileID: 4430336026275009304}
   dropitems:
   - {fileID: 6630909642152125892, guid: a4b4383390a1fd3439d688640fbddc33, type: 3}
@@ -334,13 +334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b24a9de3cd8334a8fcfb4bac9ff67a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 7
-  attackDamage: 7
-  attackCooldown: 0.5
+  attackRange: 8
+  attackDamage: 1
+  attackCooldown: 2
   bulletFollowsPlayer: 1
   bulletPrefab: {fileID: 6657612264115584138, guid: 5997c93c39b5d5e4ab2800deaf8ebe6a, type: 3}
   shootPoint: {fileID: 6581324020693240926}
-  animator: {fileID: 0}
 --- !u!95 &2454715753524146471
 Animator:
   serializedVersion: 5

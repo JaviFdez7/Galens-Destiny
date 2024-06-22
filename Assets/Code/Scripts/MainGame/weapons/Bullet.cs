@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     public Vector2 target;
 
+    public float speed = 10f;
+
     public int damage = 5;
 
     public bool followsTarget = false;
@@ -37,15 +39,17 @@ public class Bullet : MonoBehaviour
     {
         if(followsTarget){
             target = player.transform.position;
+            this.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(target.y - transform.position.y, target.x - transform.position.x) * Mathf.Rad2Deg - 90);
         }
         MoveToTarget();
     }
 
-    private void MoveToTarget()
-    {
+private void MoveToTarget()
+{
         Vector2 direction = target - rb.position;
         direction.Normalize();
-        rb.velocity = transform.up * 10;}
+        rb.velocity = transform.up * speed;
+}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

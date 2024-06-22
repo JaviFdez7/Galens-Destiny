@@ -14,7 +14,7 @@ public class EnemyShooting : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private bool canAttack = true;
-    public Animator animator;
+    private Animator animator;
 
 
 
@@ -26,6 +26,7 @@ public class EnemyShooting : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()

@@ -86,6 +86,14 @@ public class WorldGen : MonoBehaviour
                 pickKey.Start();
             }
 
+            if(sector.minigameData != null){
+                MinigameLauncherZone minigameLauncher = room.GetComponentInChildren<MinigameLauncherZone>();
+                if (minigameLauncher != null)
+                {
+                    minigameLauncher.PopulateMinigameData(sector.minigameData);
+                }
+            }
+
 
 
         }

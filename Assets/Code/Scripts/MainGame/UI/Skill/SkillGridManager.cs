@@ -16,16 +16,16 @@ public class SkillGridManager : MonoBehaviour
 
     public void BuildSkillsGrid(List<Skill> skills, string selectedSkillTypeIsPassive)
     {
-        if(skills.Count == 0)
+        if (skills.Count == 0)
         {
             return;
         }
-        if(selectedSkillTypeIsPassive != "None")
+        if (selectedSkillTypeIsPassive != "None")
             filterSkillsToggle.SetActive(false);
         else
             filterSkillsToggle.SetActive(true);
 
-        if(skills[0].passive)
+        if (skills[0].passive)
         {
             activeSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
             passiveSkillsToggleText.color = new Color(1.0f, 1.0f, 1.0f, 1f);
@@ -44,39 +44,39 @@ public class SkillGridManager : MonoBehaviour
 
         foreach (Skill skill in skills)
         {
-            if(skill.skillEnum != SkillEnum.Shoot || skill.skillEnum != SkillEnum.Drill || skill.skillEnum != SkillEnum.Empty)
+            if (skill.skillEnum == SkillEnum.Shoot || skill.skillEnum == SkillEnum.Drill || skill.skillEnum == SkillEnum.Empty)
+            { continue; }
+            GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
+            skillGridElement.GetComponent<Image>().sprite = skill.skillImage;
+            skillGridElement.GetComponent<SkillHoverDetection>().id = skill.id;
+            skillGridElement.GetComponent<SkillHoverDetection>().skillHoverInformation = skillHoverInformation;
+
+            if (selectedSkillTypeIsPassive != "None")
             {
-                GameObject skillGridElement = Instantiate(skillGridElementPrefab, skillGridPanel.transform);
-                skillGridElement.GetComponent<Image>().sprite = skill.skillImage;
-                skillGridElement.GetComponent<SkillHoverDetection>().id = skill.id;
-                skillGridElement.GetComponent<SkillHoverDetection>().skillHoverInformation = skillHoverInformation;
+                skillGridElement.GetComponent<Button>().onClick.AddListener(() => SkillsMenu.instance.ActiveSkill(skill.id));
 
-                if(selectedSkillTypeIsPassive != "None")
-                {
-                    skillGridElement.GetComponent<Button>().onClick.AddListener(() => SkillsMenu.instance.ActiveSkill(skill.id));
+                ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
+                colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+                skillGridElement.GetComponent<Button>().colors = colors;
+            }
 
-                    ColorBlock colors = skillGridElement.GetComponent<Button>().colors;
-                    colors.highlightedColor = new Color(1.0f, 1.0f, 1.0f, 0.3f);
-                    skillGridElement.GetComponent<Button>().colors = colors;
-                }
+            if (!skill.unlocked) // Change locked skills to black
+            {
+                Image skillImage = skillGridElement.GetComponent<Image>();
+                skillImage.color = new Color(0.0f, 0.0f, 0.0f, 1f);
+            }
 
-                if (!skill.unlocked) // Change locked skills to black
-                {
-                    Image skillImage = skillGridElement.GetComponent<Image>();
-                    skillImage.color = new Color(0.0f, 0.0f, 0.0f, 1f);
-                }
-
-                if(selectedSkillTypeIsPassive == "None") // Change the opaticity if you don't want to change any skill
-                {
-                    Color color = skillGridElement.GetComponent<Image>().color;
-                    color.a = 0.6f;
-                    skillGridElement.GetComponent<Image>().color = color;
-                } else if(selectedSkillTypeIsPassive == "Passive" || selectedSkillTypeIsPassive == "Usable")
-                {
-                    Color color = skillGridElement.GetComponent<Image>().color;
-                    color.a = 1f;
-                    skillGridElement.GetComponent<Image>().color = color;
-                }
+            if (selectedSkillTypeIsPassive == "None") // Change the opaticity if you don't want to change any skill
+            {
+                Color color = skillGridElement.GetComponent<Image>().color;
+                color.a = 0.6f;
+                skillGridElement.GetComponent<Image>().color = color;
+            }
+            else if (selectedSkillTypeIsPassive == "Passive" || selectedSkillTypeIsPassive == "Usable")
+            {
+                Color color = skillGridElement.GetComponent<Image>().color;
+                color.a = 1f;
+                skillGridElement.GetComponent<Image>().color = color;
             }
         }
     }

@@ -26,6 +26,12 @@
                 },
                 "name": "Mine entrance",
                 "roomPrefabName": "MinigameRoom",
+                "minigameData":{
+                    "minigameName": "Binary Minigame",
+                    "minigameSceneName": "MG1 Binary",
+                    "minigameHistory": 1,
+                    "skillNameForUnlock": "Shield"
+                },
                 "doors": [{"direction" : "LEFT", "key" : -1},{"direction" : "RIGHT", "key" : -1}],
                 "difficulty": 1,
                 "key": "1"

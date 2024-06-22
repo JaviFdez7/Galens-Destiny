@@ -110,6 +110,7 @@ public class SectorData {
     public Point2DInt origin;
     public string name;
     public string roomPrefabName;
+    public MinigameData minigameData;
 
     public List<DoorData> doors;
     public int key;
@@ -122,5 +123,12 @@ public class SectorData {
 public class DoorData{
     public int key;
     public DoorDirection direction;
+}
+
+public class MinigameData{
+    public string minigameName;
+    public string minigameSceneName;
+    public int minigameHistory;
+    public SkillEnum skillNameForUnlock;
 }
 

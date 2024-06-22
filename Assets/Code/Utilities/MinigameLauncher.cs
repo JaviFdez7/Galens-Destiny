@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 // Needs to be in an object with a COLLIDER component with isTrigger ACTIVATED
 
 
-public class ZoneDetection : MonoBehaviour
+public class MinigameLauncherZone : MonoBehaviour
 {
     // Drag in the editor the text or image UI you want to appear.
     public Canvas interactionUI;
@@ -16,16 +16,32 @@ public class ZoneDetection : MonoBehaviour
     public MappeableInput input;
     [SerializeField] private string SceneName = "";
     [SerializeField] private int history = 1;
+
+    [SerializeField] private string minigameName = "Minigame";
     [SerializeField] private SkillEnum skillNameForUnlock = SkillEnum.None;
+
+    private MinigameData minigameData;
 
     private bool isPlayerDetected = false;
 
     private void Awake()
     {
         interactionUI.gameObject.SetActive(false);
+        interactionUI.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Press F to enter " + minigameName + "\n\n" + "Unlocks " + skillNameForUnlock.ToString() + " skill";
         input = new MappeableInput();
         input.InGame.Interact.Enable();
         input.InGame.Interact.started += EnterMinigame;
+
+    }
+
+    public void PopulateMinigameData(MinigameData minigameData)
+    {
+        this.minigameData = minigameData;
+        this.history = minigameData.minigameHistory;
+        this.skillNameForUnlock = minigameData.skillNameForUnlock;
+        this.SceneName = minigameData.minigameSceneName;
+        this.minigameName = minigameData.minigameName;
+        Awake();
     }
 
     private void OnEnable()

@@ -60,7 +60,7 @@ public class PlayerData : MonoBehaviour
         this.level = 1;
         this.token = 1;
         this.skillSlotsMax = 20;
-        this.skillSlots = 0;
+        this.skillSlots = 20;
         this.vitality = 0;
         this.damage = 0;
         this.attackSpeed = 1;

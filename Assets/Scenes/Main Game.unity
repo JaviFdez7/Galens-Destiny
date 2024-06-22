@@ -13878,6 +13878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testMode: 0
   lastCheckPoint: {x: 0, y: 0}
+  keys: 
   maxHealth: 100
   currentHealth: 0
   maxEnergy: 100
@@ -18667,7 +18668,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: a6c748f49d349f34b842b0af2756806e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1

@@ -46,6 +46,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         PlayerData.instance.currentHealth = PlayerData.instance.maxHealth;
         PlayerData.instance.currentEnergy = PlayerData.instance.maxEnergy;
+        HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);
         this.transform.position = PlayerData.instance.lastCheckPoint;
     }
 

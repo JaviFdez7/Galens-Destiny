@@ -38,9 +38,14 @@ public class SkillsMenu : MonoBehaviour
         public bool passive { get; private set; }
         public int energyCost { get; private set; }
         public Sprite skillImage { get; private set; }
-        public IExecuteCommand skillCommand { get; private set; }
 
-        public Skill(int id, SkillEnum skillEnum, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, IExecuteCommand skillCommand)
+        public string skillGameObjectName ;
+        public IExecuteCommand getSkillCommand()
+        {
+            return GameObject.Find(skillGameObjectName).GetComponent<IExecuteCommand>();
+        }
+
+        public Skill(int id, SkillEnum skillEnum, string name, string longdescription, string shortDescription, int skillSlots, bool unlocked, bool passive, int energyCost, Sprite skillImage, string skillGameObjectName)
         {
             this.skillEnum = skillEnum;
             this.id = id;
@@ -52,7 +57,7 @@ public class SkillsMenu : MonoBehaviour
             this.passive = passive;
             this.energyCost = energyCost;
             this.skillImage = skillImage;
-            this.skillCommand = skillCommand;
+            this.skillGameObjectName = skillGameObjectName;
         }
 
         public void UnlockSkill(){
@@ -139,11 +144,11 @@ public class SkillsMenu : MonoBehaviour
             if(SkillData.instance.activeSkills[i] != null)
             {
                 if(i == 0)
-                    SkillInvoker.instance.AddNewCommand(KeyCode.Q, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.Q, SkillData.instance.activeSkills[i].getSkillCommand());
                 else if(i == 1)
-                    SkillInvoker.instance.AddNewCommand(KeyCode.E, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.E, SkillData.instance.activeSkills[i].getSkillCommand());
                 else if(i == 2)
-                    SkillInvoker.instance.AddNewCommand(KeyCode.C, SkillData.instance.activeSkills[i].skillCommand);
+                    SkillInvoker.instance.AddNewCommand(KeyCode.C, SkillData.instance.activeSkills[i].getSkillCommand());
             } else
             {
                 if(i == 0)

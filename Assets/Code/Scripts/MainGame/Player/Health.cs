@@ -10,6 +10,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         HealthBar.instance.InitializeHealthBar(PlayerData.instance.maxHealth, PlayerData.instance.currentHealth);
         SkillData.instance.RegenerateCommands();
+        PlayerData.instance.ResetPlayerData();
     }
 
     private void Update()

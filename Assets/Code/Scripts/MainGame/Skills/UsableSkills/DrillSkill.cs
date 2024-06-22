@@ -30,17 +30,21 @@ public class DrillSkill : MonoBehaviour, IExecuteCommand
     void FixedUpdate()
     {
         AtackCooldown++;
-        if (Input.GetKeyUp(keyCode))
-        {
-            holdingKey = false;
-            animator.SetFloat("DrillSpeed", 1f);
-        }
-        if (AtackCooldown==SlowAtackBy){
+
+        if (AtackCooldown>=SlowAtackBy){
             Drill();
             AtackCooldown = 1;
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyUp(keyCode))
+        {
+            holdingKey = false;
+            animator.SetFloat("DrillSpeed", 1f);
+        }
+    }
 
 
     public void Execute(){

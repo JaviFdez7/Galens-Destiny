@@ -58,16 +58,16 @@ public class PlayerData : MonoBehaviour
         this.currentExp = 0;
         this.maxExp = 10;
         this.level = 1;
-        this.token = 0;
-        this.skillSlotsMax = 0;
+        this.token = 1;
+        this.skillSlotsMax = 20;
         this.skillSlots = 0;
         this.vitality = 0;
         this.damage = 0;
-        this.attackSpeed = 0;
+        this.attackSpeed = 1;
         this.armor = 0;
-        this.energy = 0;
+        this.energy = 100;
         this.weight = 0;
-        this.movementSpeed = 0;
+        this.movementSpeed = 3;
     }
 
 

@@ -35097,6 +35097,14 @@ PrefabInstance:
       propertyPath: activeSkillsMenus.Array.data[15]
       value: 
       objectReference: {fileID: 804274603}
+    - target: {fileID: 1056572242343965724, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360772729666163777, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 1770604482899406861, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: m_Name
       value: Player
@@ -35145,10 +35153,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3097108421089699459, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 4211976085478639439, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentHealthBarMaxHealth
       value: 
       objectReference: {fileID: 1876249116}
+    - target: {fileID: 6324906906336962155, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 6387343917163416728, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: currentEnergyBarMaxEnergy
       value: 
@@ -35157,6 +35173,10 @@ PrefabInstance:
       propertyPath: currentExpBarMaxExp
       value: 
       objectReference: {fileID: 878200772}
+    - target: {fileID: 6760194395969957503, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 7078399817061013320, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
       propertyPath: gridLayout
       value: 
@@ -35241,6 +35261,10 @@ PrefabInstance:
       propertyPath: availableTokensText
       value: 
       objectReference: {fileID: 1592365116}
+    - target: {fileID: 7754673515134122712, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringsLocale_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 3adc601be9d488a4fa726f4b3c4547f0, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 61611397120
+    m_Localized: Jugar Partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7299767947264
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6193658679296
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17058998996992
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100029314841931776
+    m_Localized: Minijuegos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100286856133795840
+    m_Localized: Cargando Partida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100741938214264832
+    m_Localized: 'Mis partidas:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 100743102884405248
+    m_Localized: Crear Nueva
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102066759204827136
+    m_Localized: 'Lista de Minijuegos:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104365657910898688
+    m_Localized: Pulsa F
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -65,6 +65,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         Health playerHealth = player.GetComponent<Health>();
         if (playerHealth != null)
         {
+            SoundMainManager.instance.PlayHit();
             playerHealth.TakeDamage(attackDamage,Vector2.zero);
         }
 
@@ -83,7 +84,7 @@ public class EnemyController : MonoBehaviour, IDamageable
         currentHealth -= damageAmount;
         // Invoke the event to notify the health bar about the change in health.
         OnHealthChanged?.Invoke(currentHealth);
-
+        SoundMainManager.instance.PlayMetalicHit();
         if (currentHealth <= 0)
         {
             Die();

@@ -8,7 +8,11 @@ public class BomberSkill : MonoBehaviour, IExecuteCommand
 
     public void Execute()
     {
-        Energy.instance.SpendEnergy(25);
-        Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        if(PlayerData.instance.energy > 25)
+        {
+            SoundMainManager.instance.PlayBomb();
+            Energy.instance.SpendEnergy(25);
+            Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

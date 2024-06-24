@@ -30,6 +30,7 @@ public class PickKey : MonoBehaviour
             KeyHolder keyHolder = other.GetComponent<KeyHolder>();
             if (keyHolder != null)
             {
+                SoundMainManager.instance.PlayPick();
                 keyHolder.AddKey(id);
                 Debug.Log("Player picked up key with id: " + id);
                 Destroy(gameObject);

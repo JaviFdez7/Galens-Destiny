@@ -34,7 +34,8 @@ public class SkillInvoker : MonoBehaviour
         {
             if (Input.GetKeyDown(kvp.Key))
             {
-                kvp.Value.Execute();
+                if(!PauseMenu.instance.isPaused)
+                    kvp.Value.Execute();
             }
         }
     }

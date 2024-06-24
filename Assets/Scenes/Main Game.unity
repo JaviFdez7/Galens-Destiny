@@ -5426,7 +5426,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -9477,7 +9477,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -12601,7 +12601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -15987,6 +15987,7 @@ GameObject:
   - component: {fileID: 987482063}
   - component: {fileID: 987482062}
   - component: {fileID: 987482064}
+  - component: {fileID: 987482065}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -16041,6 +16042,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee94c5f470d5e0c408865ab38514641c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &987482065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987482061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ab97e37c2a92b419fddd3a5ace2de1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstBinaryMusicSound:
+  - {fileID: 8300000, guid: 7374319b71bbb314b9b7a88197ec0aa0, type: 3}
+  - {fileID: 8300000, guid: a7601d8ba3cfcc84fada367a91178295, type: 3}
+  - {fileID: 8300000, guid: 6716129fb22cf394c8b1ef7a5deb5a81, type: 3}
+  shootPlayerSound: {fileID: 8300000, guid: af6aa7d4d1a71b04f9bdf33d1eedebb2, type: 3}
+  shootEnemySound: {fileID: 8300000, guid: af9da3ecc362370418f0ed4d7175ba1e, type: 3}
+  pickSound: {fileID: 8300000, guid: 332a726afb1c8a54aa46f12050792fe7, type: 3}
+  doorSound: {fileID: 8300000, guid: 579f1fa2bbe6792459297a5844d6866b, type: 3}
+  closeDoorSound: {fileID: 8300000, guid: 1eba4c9e08b6dbb49a7b622a9c0074df, type: 3}
+  shieldSound: {fileID: 8300000, guid: 5491f1673e7b57c4e92359efc01f830e, type: 3}
+  bombSound: {fileID: 8300000, guid: c8ea13dc82e75e244890dad785f1d380, type: 3}
+  explosionSound: {fileID: 8300000, guid: e8b8201709e13fc4da233384d0a84f58, type: 3}
+  hitSound: {fileID: 8300000, guid: 57b8f7af75109fe438189a7eac661482, type: 3}
+  metalicHitSound: {fileID: 8300000, guid: 9416a61a582e0c34889909c662a1de8b, type: 3}
+  playerHitSound: {fileID: 8300000, guid: 56f63dd3536d6a74fba07e253c20347a, type: 3}
+  dieSound: {fileID: 8300000, guid: d5af902e5e702f8408facccfe3f150a5, type: 3}
 --- !u!1 &990176861
 GameObject:
   m_ObjectHideFlags: 0
@@ -17254,7 +17283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -17408,7 +17437,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -18907,7 +18936,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -20878,7 +20907,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -24081,7 +24110,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -25913,7 +25942,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -32319,7 +32348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -34196,7 +34225,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3
@@ -35000,7 +35029,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1040132088962450338, guid: a3df809bf8a20b149bbdb303d32f3457, type: 3}
         m_TargetAssemblyTypeName: SkillsMenu, Assembly-CSharp
         m_MethodName: UnequipSkill
         m_Mode: 3

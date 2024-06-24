@@ -13,6 +13,7 @@ public class Experience : MonoBehaviour
         }
         if(!PlayerData.instance.testMode) 
         {
+            SoundMainManager.instance.PlayPick();
             PlayerData.instance.currentExp += exp;
         }
 

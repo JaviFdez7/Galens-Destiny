@@ -11,10 +11,12 @@ public class DoorAnimations : MonoBehaviour
     }
 
     public void OpenDoor() {
+        SoundMainManager.instance.PlayDoor();
         doorAnimator.SetBool("Open", true);
     }
 
     public void CloseDoor() {
+        SoundMainManager.instance.PlayCloseDoor();
         doorAnimator.SetBool("Open", false);
     }
 

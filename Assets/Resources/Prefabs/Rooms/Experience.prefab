@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 8647529123484408615}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &2201602091428060939
 CircleCollider2D:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5edac033c0b6cf4092fe07d016383f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   canMove: 1
 --- !u!1 &8951506748885229034
 GameObject:

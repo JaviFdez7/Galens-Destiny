@@ -42,6 +42,7 @@ public class EnemyShooting : MonoBehaviour
 
     void Attack()
     {
+        SoundMainManager.instance.PlayShootEnemy();
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.target = player.transform.position;

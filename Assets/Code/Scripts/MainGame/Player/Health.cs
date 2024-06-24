@@ -20,7 +20,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageAmount, Vector2 direction)
     {
-
+        SoundMainManager.instance.PlayPlayerHit();
         PlayerData.instance.currentHealth -= damageAmount;
         PlayerData.instance.currentHealth = Mathf.Clamp(PlayerData.instance.currentHealth, 0, PlayerData.instance.maxHealth);
         OnHealthChanged?.Invoke(PlayerData.instance.currentHealth);
@@ -33,7 +33,7 @@ public class Health : MonoBehaviour, IDamageable
             Die();
             return;
         }
-
+        
     }
 
     public void Heal(int healAmount)
@@ -46,6 +46,7 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        SoundMainManager.instance.PlayDie();
         PlayerData.instance.currentHealth = PlayerData.instance.maxHealth;
         PlayerData.instance.currentEnergy = PlayerData.instance.maxEnergy;
         HealthBar.instance.ChangeCurrentHealth(PlayerData.instance.currentHealth);

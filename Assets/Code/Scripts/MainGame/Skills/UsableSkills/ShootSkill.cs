@@ -24,6 +24,7 @@ public class ShootSkill : MonoBehaviour, IExecuteCommand
         if (firePoint == null)
             firePoint = GameObject.Find("FirePoint").transform;
 
+        SoundMainManager.instance.PlayShootPlayer();
         GameObject projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         projectile.GetComponent<Bullet>().AddAllTagToIgnore(tagsToIgnore);
         projectile.GetComponent<Bullet>().damage =fireDamage;

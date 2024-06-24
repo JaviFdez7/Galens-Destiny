@@ -34,7 +34,7 @@ public class Bomb : MonoBehaviour
                     }
                 }
             }
-
+            SoundMainManager.instance.PlayExplosion();
             Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

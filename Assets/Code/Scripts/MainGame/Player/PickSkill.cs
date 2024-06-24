@@ -12,6 +12,7 @@ public class PickSkill : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            SoundMainManager.instance.PlayPick();
             switch (skillEnum)
             {
                 case SkillEnum.Shoot:

@@ -9,17 +9,20 @@ public class PickHealXpAndEnergy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.CompareTag("Player"))
         {
             Energy energy = other.GetComponent<Energy>();
             if (energy != null && energyAmount > 0)
             {
+                SoundMainManager.instance.PlayPick();   
                 energy.AddEnergy(energyAmount);
                 Debug.Log("Player picked up " + energyAmount + " energy");
             }
             IDamageable heal = other.GetComponent<IDamageable>();
             if (heal != null && healAmount > 0)
             {
+                SoundMainManager.instance.PlayPick();
                 heal.Heal(healAmount);
                 Debug.Log("Player picked up " + healAmount + " health");
             }

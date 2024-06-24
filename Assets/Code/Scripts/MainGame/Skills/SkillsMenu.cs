@@ -168,16 +168,23 @@ public class SkillsMenu : MonoBehaviour
     // Unequip/Unequipable Skill ------------------------------------------------------------------------------
     public void UnequipSkill(int slotId)
     {
-        if(slotId != 3) // Unequip normal Skills
+        if(slotId>3)
+        {
+            Debug.Log("Not supported slotId: " + slotId);
+            return;
+        }
+        if(slotId < 3) // Unequip normal Skills
         {
             PlayerData.instance.skillSlots += SkillData.instance.activeSkills[slotId].skillSlots;
             SkillData.instance.activeSkills[slotId] =  null;
             CreateAndUpdateNewCommandsForNewActiveSkills();
-        } else // Unequip passive Skill
+        }  
+        if(slotId == 3) // Unequip passive Skill
         {
             PlayerData.instance.skillSlots += SkillData.instance.passiveActiveSkill.skillSlots;
             SkillData.instance.passiveActiveSkill = null;
         }
+
         UpdateActiveSkillPanel(null, slotId);
         UIText();
     }    
@@ -185,11 +192,11 @@ public class SkillsMenu : MonoBehaviour
     // Dynamic buttons, information and image after equip or unequip skills --------------------------------------------------------------------
     public void UpdateActiveSkillPanel(Skill skill, int slotId)
     {
-        for(int i = 0; i < activeSkillsMenus.Count; i++)
+        for(int i = 0; i < instance.activeSkillsMenus.Count; i++)
         {
-            if(activeSkillsMenus[i].index == slotId)
+            if(instance.activeSkillsMenus[i].index == slotId)
             {
-                activeSkillsMenus[i].LoadActiveSkillsSprites(skill);
+                instance.activeSkillsMenus[i].LoadActiveSkillsSprites(skill);
             }
         }
     }
@@ -262,9 +269,9 @@ public class SkillsMenu : MonoBehaviour
     {
         for(int i = 0; i < skillSlotsText.Count; i++)
         {
-            skillSlotsText[i].text = "Skill Slots: " + PlayerData.instance.skillSlots.ToString() + " / " + PlayerData.instance.skillSlotsMax.ToString();
+            instance.skillSlotsText[i].text = "Skill Slots: " + PlayerData.instance.skillSlots.ToString() + " / " + PlayerData.instance.skillSlotsMax.ToString();
         }
         
-        warningText.text = "" + warningMessage;
+        instance.warningText.text = "" + warningMessage;
     }
 }
